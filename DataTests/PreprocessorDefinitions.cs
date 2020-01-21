@@ -1,0 +1,1 @@
+﻿#define COWPOKE_CHILI
