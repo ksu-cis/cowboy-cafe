@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
 
-namespace CowbowCafe.DataTests
+namespace CowboyCafe.DataTests
 {
     public class CowpokeChiliTest
     {

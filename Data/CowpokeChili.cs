@@ -77,7 +77,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                var ingredients = new List<string> ()
+                var ingredients = new List<string>()
                 {
                     "beef",
                     "pinto beans",
@@ -91,7 +91,7 @@ namespace CowboyCafe.Data
                 if (sourCream) ingredients.Add("sour cream");
                 if (greenOnions) ingredients.Add("green onions");
                 if (tortillaStrips) ingredients.Add("tortilla strips");
-                
+
                 return ingredients;
             }
         }
