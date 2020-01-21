@@ -11,14 +11,14 @@ namespace CowboyCafe.DataTests
         public void DefaultPriceShouldBeCorrect()
         {
             var burger = new DakotaDoubleBurger();
-            Assert.Equal(4.50, burger.Price);
+            Assert.Equal(5.20, burger.Price);
         }
 
         [Fact]
         public void DefaultCaloriesShouldBeCorrect()
         {
             var burger = new DakotaDoubleBurger();
-            Assert.Equal<uint>(288, burger.Calories);
+            Assert.Equal<uint>(464, burger.Calories);
         }
 
         [Fact]

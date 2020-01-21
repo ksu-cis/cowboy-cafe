@@ -11,22 +11,22 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void DefaultPriceShouldBeCorrect()
         {
-            var burger = new RustlersRibs();
-            Assert.Equal(4.50, burger.Price);
+            var ribs = new RustlersRibs();
+            Assert.Equal(7.50, ribs.Price);
         }
 
         [Fact]
         public void DefaultCaloriesShouldBeCorrect()
         {
-            var burger = new RustlersRibs();
-            Assert.Equal<uint>(288, burger.Calories);
+            var ribs = new RustlersRibs();
+            Assert.Equal<uint>(894, ribs.Calories);
         }
 
         [Fact]
         public void DefaultSpecialInstructionsShouldBeEmpty()
         {
-            var burger = new RustlersRibs();
-            Assert.Empty(burger.SpecialInstructions);
+            var ribs = new RustlersRibs();
+            Assert.Empty(ribs.SpecialInstructions);
         }
     }
 }
