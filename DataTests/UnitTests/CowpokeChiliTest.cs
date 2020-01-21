@@ -22,55 +22,76 @@ namespace CowboyCafe.DataTests
         }
 
         [Fact]
-        public void DefaultIngredientsShouldBeCorrect()
+        public void DefaultSpecialInstructionsShouldBeEmpty()
         {
-            var ingredients = new List<string>()
-            {
-                "beef",
-                "pinto beans",
-                "vegetable stock",
-                "tomato sauce",
-                "onion",
-                "spices",
-                "cheese",
-                "sour cream",
-                "green onions",
-                "tortilla strips"
-            };
             var chili = new CowpokeChili();
-            Assert.Equal(ingredients, chili.Ingredients);
+            Assert.Empty(chili.SpecialInstructions);
         }
 
         [Fact]
-        public void HoldingCheeseShouldNotListAsIngredient()
+        public void HoldingCheeseShouldAddSpecialInstruction()
         {
             var chili = new CowpokeChili();
             chili.Cheese = false;
-            Assert.DoesNotContain("cheese", chili.Ingredients);
+            Assert.Collection(chili.SpecialInstructions, instruction =>
+            {
+                Assert.Equal("hold cheese", instruction);
+            });
         }
 
         [Fact]
-        public void HoldingSourCreamShouldNotListAsIngredient()
+        public void HoldingSourCreamShouldAddSpecialInstruction()
         {
             var chili = new CowpokeChili();
             chili.SourCream = false;
-            Assert.DoesNotContain("sour cream", chili.Ingredients);
+            Assert.Collection(chili.SpecialInstructions, instruction =>
+            {
+                Assert.Equal("hold sour cream", instruction);
+            });
         }
 
         [Fact]
-        public void HoldingGreenOnionsShouldNotListAsIngredient()
+        public void HoldingGreenOnionsShouldAddSpecialInstruction()
         {
             var chili = new CowpokeChili();
             chili.GreenOnions = false;
-            Assert.DoesNotContain("green onions", chili.Ingredients);
+            Assert.Collection(chili.SpecialInstructions, instruction =>
+            {
+                Assert.Equal("hold green onions", instruction);
+            });
         }
 
         [Fact]
-        public void HoldingTortillaStripsShouldNotListAsIngredient()
+        public void HoldingTortillaStripsShouldAddSpecialInstruction()
         {
             var chili = new CowpokeChili();
             chili.TortillaStrips = false;
-            Assert.DoesNotContain("tortilla strips", chili.Ingredients);
+            Assert.Collection(chili.SpecialInstructions, instruction =>
+            {
+                Assert.Equal("hold tortilla strips", instruction);
+            });
+        }
+
+        [Fact]
+        public void HoldCheeseAndTortillaStripsShouldAddTwoSpecialInstructions()
+        {
+            var chili = new CowpokeChili();
+            chili.Cheese = false;
+            chili.TortillaStrips = false;
+            Assert.Contains("hold cheese", chili.SpecialInstructions);
+            Assert.Contains("hold tortilla strips", chili.SpecialInstructions);
+        }
+
+        [Fact]
+        public void HoldCheeseSourCreamAndGreenOnionsShouldAddThreeSpecialInstructions()
+        {
+            var chili = new CowpokeChili();
+            chili.Cheese = false;
+            chili.SourCream = false;
+            chili.GreenOnions = false;
+            Assert.Contains("hold cheese", chili.SpecialInstructions);
+            Assert.Contains("hold sour cream", chili.SpecialInstructions);
+            Assert.Contains("hold green onions", chili.SpecialInstructions);
         }
     }
 }

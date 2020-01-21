@@ -45,7 +45,7 @@ namespace CowboyCafe.Data
         public bool TortillaStrips
         {
             get { return tortillaStrips; }
-            set { tortillaStrips = false; }
+            set { tortillaStrips = value; }
         }
 
         /// <summary>
@@ -71,28 +71,20 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The ingredients of the chili
+        /// Special instructions for the preparation of the chili
         /// </summary>
-        public List<string> Ingredients
+        public List<string> SpecialInstructions
         {
             get
             {
-                var ingredients = new List<string>()
-                {
-                    "beef",
-                    "pinto beans",
-                    "vegetable stock",
-                    "tomato sauce",
-                    "onion",
-                    "spices"
-                };
+                var instructions = new List<string>();
 
-                if (cheese) ingredients.Add("cheese");
-                if (sourCream) ingredients.Add("sour cream");
-                if (greenOnions) ingredients.Add("green onions");
-                if (tortillaStrips) ingredients.Add("tortilla strips");
+                if (!cheese) instructions.Add("hold cheese");
+                if (!sourCream) instructions.Add("hold sour cream");
+                if (!greenOnions) instructions.Add("hold green onions");
+                if (!tortillaStrips) instructions.Add("hold tortilla strips");
 
-                return ingredients;
+                return instructions;
             }
         }
     }
