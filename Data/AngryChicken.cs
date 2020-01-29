@@ -4,17 +4,17 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    class AngryChicken
+    public class AngryChicken
     {
         /// <summary>
-        /// If chicken has bread
+        /// If chicken has Bread
         /// </summary>
-        private bool bread = true;
+        public bool Bread { get; set; } = true;
 
         /// <summary>
-        /// If chicken has pickle
+        /// If chicken has Pickle
         /// </summary>
-        private bool pickle = true;
+        public bool Pickle { get; set; } = true;
 
         /// <summary>
         /// The price of the Chicken
@@ -47,8 +47,8 @@ namespace CowboyCafe.Data
             {
                 var instructions = new List<string>();
 
-                if (!bread) instructions.Add("hold bread");
-                if (!pickle) instructions.Add("hold pickle");        
+                if (!Bread) instructions.Add("hold bread");
+                if (!Pickle) instructions.Add("hold Pickle");        
                 return instructions;
             }
         }

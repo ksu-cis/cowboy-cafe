@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    class Rustler_s_Ribs
+    public class Rustler_s_Ribs
     {
         /// <summary>
         /// The price of the Ribs

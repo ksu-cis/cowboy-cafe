@@ -4,17 +4,17 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    class Pecos_Pulled_Pork
+    public class Pecos_Pulled_Pork
     {
         /// <summary>
-        /// If Pulled Pork has bread
+        /// If Pulled Pork has Bread
         /// </summary>
-        private bool bread = true;
+        private bool Bread = true;
 
         /// <summary>
-        /// If Pulled Pork has pickle
+        /// If Pulled Pork has Pickle
         /// </summary>
-        private bool pickle = true;
+        private bool Pickle = true;
 
         /// <summary>
         /// The price of the Pulled Pork
@@ -47,8 +47,8 @@ namespace CowboyCafe.Data
             {
                 var instructions = new List<string>();
 
-                if (!bread) instructions.Add("hold bread");
-                if (!pickle) instructions.Add("hold pickle");
+                if (!Bread) instructions.Add("hold Bread");
+                if (!Pickle) instructions.Add("hold Pickle");
                 return instructions;
             }
         }

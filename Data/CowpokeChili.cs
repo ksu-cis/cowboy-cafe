@@ -10,7 +10,7 @@ namespace CowboyCafe.Data
     {
         private bool cheese = true;
         /// <summary>
-        /// If the chili is topped with cheese
+        /// If the chili is topped with Cheese
         /// </summary>
         public bool Cheese
         {
@@ -79,7 +79,7 @@ namespace CowboyCafe.Data
             {
                 var instructions = new List<string>();
 
-                if (!cheese) instructions.Add("hold cheese");
+                if (!cheese) instructions.Add("hold Cheese");
                 if (!sourCream) instructions.Add("hold sour cream");
                 if (!greenOnions) instructions.Add("hold green onions");
                 if (!tortillaStrips) instructions.Add("hold tortilla strips");

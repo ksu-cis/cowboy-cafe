@@ -4,42 +4,42 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    class DakotaDouble
+    public class DakotaDouble
     {
         /// <summary>
-        /// If Burger has tomato
+        /// If Burger has Tomato
         /// </summary>
-        private bool tomato = true;
+        public bool Tomato { get; set; } = true;
 
         /// <summary>
-        /// If Burger has lettuce
+        /// If Burger has Lettuce
         /// </summary>
-        private bool lettuce = true;
+        public bool Lettuce { get; set; } = true;
 
         /// <summary>
-        /// If Burger has mayo
+        /// If Burger has Mayo
         /// </summary>
-        private bool mayo = true;
+        public bool Mayo { get; set; } = true;
 
         /// <summary>
-        /// If Burger has ketchup
+        /// If Burger has Ketchup
         /// </summary>
-        private bool ketchup = true;
+        public bool Ketchup { get; set; } = true;
 
         /// <summary>
-        /// If Burger has pickle
+        /// If Burger has Pickle
         /// </summary>
-        private bool pickle = true;
+        public bool Pickle { get; set; } = true;
 
         /// <summary>
-        /// If Burger has cheese
+        /// If Burger has Cheese
         /// </summary>
-        private bool cheese = true;
+        public bool Cheese { get; set; } = true;
 
         /// <summary>
-        /// If Burger has mustard
+        /// If Burger has Mustard
         /// </summary>
-        private bool mustard = true;
+        public bool Mustard { get; set; } = true;
 
         /// <summary>
         /// The price of the Burger
@@ -72,13 +72,13 @@ namespace CowboyCafe.Data
             {
                 var instructions = new List<string>();
 
-                if (!tomato) instructions.Add("hold tomato");
-                if (!lettuce) instructions.Add("hold lettuce");
-                if (!mayo) instructions.Add("hold mayo");
-                if (!ketchup) instructions.Add("hold ketchup");
-                if (!mustard) instructions.Add("hold mustard");
-                if (!pickle) instructions.Add("hold pickle");
-                if (!cheese) instructions.Add("hold cheese");
+                if (!Tomato) instructions.Add("hold Tomato");
+                if (!Lettuce) instructions.Add("hold Lettuce");
+                if (!Mayo) instructions.Add("hold Mayo");
+                if (!Ketchup) instructions.Add("hold Ketchup");
+                if (!Mustard) instructions.Add("hold Mustard");
+                if (!Pickle) instructions.Add("hold Pickle");
+                if (!Cheese) instructions.Add("hold Cheese");
                 return instructions;
             }
         }

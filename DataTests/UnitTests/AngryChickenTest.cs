@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
-/*
+
 namespace CowboyCafe.DataTests
 {
     public class AngryChickenTest
@@ -46,7 +46,7 @@ namespace CowboyCafe.DataTests
             chicken.Pickle = false;
             Assert.Collection(chicken.SpecialInstructions, instruction =>
             {
-                Assert.Equal("hold pickle", instruction);
+                Assert.Equal("hold Pickle", instruction);
             });
         }
 
@@ -56,9 +56,8 @@ namespace CowboyCafe.DataTests
             var chicken = new AngryChicken();
             chicken.Bread = false;
             chicken.Pickle = false;
-            Assert.Contains("hold pickle", chicken.SpecialInstructions);
+            Assert.Contains("hold Pickle", chicken.SpecialInstructions);
             Assert.Contains("hold bread", chicken.SpecialInstructions);
         }
     }
 }
-*/

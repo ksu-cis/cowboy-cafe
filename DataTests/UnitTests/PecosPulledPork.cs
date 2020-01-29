@@ -46,7 +46,7 @@ namespace CowboyCafe.DataTests
             pulledPork.Pickle = false;
             Assert.Collection(pulledPork.SpecialInstructions, instruction =>
             {
-                Assert.Equal("hold pickle", instruction);
+                Assert.Equal("hold Pickle", instruction);
             });
         }
 
@@ -56,7 +56,7 @@ namespace CowboyCafe.DataTests
             var pulledPork = new PecosPulledPork();
             pulledPork.Bread = false;
             pulledPork.Pickle = false;
-            Assert.Contains("hold pickle", pulledPork.SpecialInstructions);
+            Assert.Contains("hold Pickle", pulledPork.SpecialInstructions);
             Assert.Contains("hold bread", pulledPork.SpecialInstructions);
         }
     }
