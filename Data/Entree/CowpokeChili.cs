@@ -66,6 +66,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// constructor that sets the price and calorie values
+        /// </summary>
         public CowpokeChili()
         {
             price = 6.10;
