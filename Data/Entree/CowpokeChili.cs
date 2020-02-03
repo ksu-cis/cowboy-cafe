@@ -6,7 +6,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Cowpoke Chili entree
     /// </summary>
-    public class CowpokeChili
+    public class CowpokeChili : Entree
     {
         private bool cheese = true;
         /// <summary>
@@ -49,31 +49,9 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The price of the chili
-        /// </summary>
-        public double Price
-        {
-            get
-            {
-                return 6.10;
-            }
-        }
-
-        /// <summary>
-        /// The calories of the chili
-        /// </summary>
-        public uint Calories
-        {
-            get
-            {
-                return 171;
-            }
-        }
-
-        /// <summary>
         /// Special instructions for the preparation of the chili
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
@@ -86,6 +64,12 @@ namespace CowboyCafe.Data
 
                 return instructions;
             }
+        }
+
+        public CowpokeChili()
+        {
+            price = 6.10;
+            calories = 171;
         }
     }
 }
