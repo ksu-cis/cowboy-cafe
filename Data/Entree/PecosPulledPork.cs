@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class AngryChicken : Entree
+    public class PecosPulledPork : Entree
     {
         private bool bread = true;
         private bool pickle = true;
@@ -27,30 +27,23 @@ namespace CowboyCafe.Data
             set { pickle = value; }
         }
 
-
-        /// <summary>
-        /// Special instructions for the preparation of the sammich
-        /// </summary>
         public override List<string> SpecialInstructions
         {
             get
             {
-                var instructions = new List<string>();
+                List<string> s = new List<string>();
 
-                if (!bread) instructions.Add("hold bread");
-                if (!pickle) instructions.Add("hold pickle");
+                if (!bread) s.Add("hold bread");
+                if (!pickle) s.Add("hold pickle");
 
-                return instructions;
+                return s;
             }
         }
 
-        /// <summary>
-        /// constructor that sets the price and calorie values
-        /// </summary>
-        public AngryChicken()
+        public PecosPulledPork()
         {
-            price = 5.99;
-            calories = 190;
+            price = 5.88;
+            calories = 528;
         }
     }
 }
