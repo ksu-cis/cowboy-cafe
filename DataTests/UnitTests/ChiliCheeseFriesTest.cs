@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
-/*
+
 namespace CowboyCafe.DataTests
 {
     public class ChiliCheeseFriesTest
@@ -54,4 +54,3 @@ namespace CowboyCafe.DataTests
         }
     }
 }
-*/
