@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
-/*
+
 namespace CowboyCafe.DataTests
 {
     public class TrailBurgerTest
@@ -106,4 +106,3 @@ namespace CowboyCafe.DataTests
         }
     }
 }
-*/
