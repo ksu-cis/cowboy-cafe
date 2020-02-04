@@ -9,8 +9,13 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class DakotaDouble
+    public class DakotaDoubleBurger
     {
+        /// <summary>
+        /// If Burger has Bun
+        /// </summary>
+        public bool Bun { get; set; } = true;
+
         /// <summary>
         /// If Burger has Tomato
         /// </summary>
@@ -84,6 +89,7 @@ namespace CowboyCafe.Data
                 if (!Mustard) instructions.Add("hold Mustard");
                 if (!Pickle) instructions.Add("hold Pickle");
                 if (!Cheese) instructions.Add("hold Cheese");
+                if (!Bun) instructions.Add("hold bun");
                 return instructions;
             }
         }

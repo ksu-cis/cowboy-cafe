@@ -12,6 +12,11 @@ namespace CowboyCafe.Data
     public class TrailBurger
     {
         /// <summary>
+        /// If Burger has Bun
+        /// </summary>
+        public bool Bun { get; set; } = true;
+
+        /// <summary>
         /// If Burger has Ketchup
         /// </summary>
         public bool Ketchup { get; set; } = true;
@@ -66,6 +71,7 @@ namespace CowboyCafe.Data
                 if (!Mustard) instructions.Add("hold Mustard");
                 if (!Pickle) instructions.Add("hold Pickle");
                 if (!Cheese) instructions.Add("hold Cheese");
+                if (!Bun) instructions.Add("hold bun");
                 return instructions;
             }
         }

@@ -9,8 +9,13 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class TexasTriple
+    public class TexasTripleBurger
     {
+        /// <summary>
+        /// If Burger has Bun
+        /// </summary>
+        public bool Bun { get; set; } = true;
+
         /// <summary>
         /// If Burger has Tomato
         /// </summary>
@@ -96,6 +101,7 @@ namespace CowboyCafe.Data
                 if (!Cheese) instructions.Add("hold Cheese");
                 if (!Bacon) instructions.Add("hold Bacon");
                 if (!Egg) instructions.Add("hold Egg");
+                if (!Bun) instructions.Add("hold bun");
                 return instructions;
             }
         }
