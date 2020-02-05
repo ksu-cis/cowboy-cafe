@@ -1,7 +1,7 @@
 ﻿/*
  * Mohamed Khalil
- * 02/03/2020
- * ChiliCheeseFries
+ * 02/05/2020
+ * Pan De Campo
  */
 using System;
 using System.Collections.Generic;
@@ -9,10 +9,10 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class ChiliCheeseFries : Side
+    public class PanDeCampo : Side
     {
         /// <summary>
-        /// Gets calories of Chilli Cheese Fries based on size of side dish
+        /// Gets calories of Pan De Campo based on size of side dish
         /// </summary>
         public override uint Calories
         {
@@ -21,13 +21,13 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case (Size.Small):
-                        return 433;
+                        return 227;
                         break;
                     case (Size.Medium):
-                        return 524;
+                        return 269;
                         break;
                     case (Size.Large):
-                        return 610;
+                        return 367;
                         break;
                     default:
                         throw new NotImplementedException();
@@ -37,7 +37,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Gets price of Chilli Cheese Fries based on size of side dish
+        /// Gets price of Pan De Campo based on size of side dish
         /// </summary>
         public override double Price
         {
@@ -46,13 +46,13 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case (Size.Small):
-                        return 1.99;
+                        return 1.59;
                         break;
                     case (Size.Medium):
-                        return 2.99;
+                        return 1.79;
                         break;
                     case (Size.Large):
-                        return 3.99;
+                        return 1.99;
                         break;
                     default:
                         throw new NotImplementedException();
