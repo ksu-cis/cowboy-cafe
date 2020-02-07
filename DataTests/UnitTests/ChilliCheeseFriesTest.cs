@@ -3,29 +3,29 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
-/*
+
 namespace CowboyCafe.DataTests
 {
-    public class ChiliCheeseFriesTest
+    public class ChilliCheeseFriesTest
     {
         [Fact]
         public void ShouldHaveCorrectDefaultPrice()
         {
-            ChiliCheeseFries fries = new ChiliCheeseFries();
+            ChilliCheeseFries fries = new ChilliCheeseFries();
             Assert.Equal(1.99, fries.Price);
         }
 
         [Fact]
         public void ShouldHaveCorrectDefaultCalories()
         {
-            ChiliCheeseFries fries = new ChiliCheeseFries();
+            ChilliCheeseFries fries = new ChilliCheeseFries();
             Assert.Equal<uint>(433, fries.Calories);
         }
 
         [Fact]
         public void ShouldHaveCorrectDefaultSize()
         {
-            ChiliCheeseFries fries = new ChiliCheeseFries();
+            ChilliCheeseFries fries = new ChilliCheeseFries();
             Assert.Equal<Size>(Size.Small, fries.Size);
         }
 
@@ -35,7 +35,7 @@ namespace CowboyCafe.DataTests
         [InlineData(Size.Large, 3.99)]
         public void ShouldUseCorrectPriceForSize(Size size, double price)
         {
-            ChiliCheeseFries fries = new ChiliCheeseFries();
+            ChilliCheeseFries fries = new ChilliCheeseFries();
             fries.Size = Size.Medium;
             fries.Size = size;
             Assert.Equal(price, fries.Price);
@@ -47,11 +47,10 @@ namespace CowboyCafe.DataTests
         [InlineData(Size.Large, 610)]
         public void ShouldUseCorrectCaloriesForSize(Size size, uint calories)
         {
-            ChiliCheeseFries fries = new ChiliCheeseFries();
+            ChilliCheeseFries fries = new ChilliCheeseFries();
             fries.Size = Size.Medium;
             fries.Size = size;
             Assert.Equal<uint>(calories, fries.Calories);
         }
     }
 }
-*/

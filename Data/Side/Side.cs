@@ -10,18 +10,25 @@ namespace CowboyCafe.Data
     public abstract class Side
     {
         /// <summary>
+        /// protected backing variables
+        /// </summary>
+        protected Size size = Size.Small;
+        protected double[] prices;
+        protected uint[] calories;
+
+        /// <summary>
         /// Gets the size of the entree
         /// </summary>
-        public virtual Size Size { get; set; }
+        public virtual Size Size { get => size ; set => size = value ; }
 
         /// <summary>
         /// Gets the price of the side
         /// </summary>
-        public abstract double Price { get; }
+        public double Price { get => prices[(int)size]; }
 
         /// <summary>
-        /// Gets the calories of the entree
+        /// Gets the calories of the entreec
         /// </summary>
-        public abstract uint Calories { get; }
+        public uint Calories { get => calories[(int)size]; }
     }
 }

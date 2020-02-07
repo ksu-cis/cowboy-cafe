@@ -101,14 +101,19 @@ namespace CowboyCafe.Data
             get { return bacon; }
             set { bacon = value; }
         }
-
-        //does it got eggs in it?
+        
+        /// <summary>
+        /// /does it got eggs in it?
+        /// </summary>
         public bool Egg
         {
             get { return egg; }
             set { egg = value; }
         }
 
+        /// <summary>
+        /// special prep instructions for preping borgar
+        /// </summary>
         public override List<string> SpecialInstructions
         {
             get
