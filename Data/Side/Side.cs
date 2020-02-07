@@ -41,7 +41,7 @@ namespace CowboyCafe.Data
         public double Price { get => prices[(int)size]; }
 
         /// <summary>
-        /// Gets the calories of the entreec
+        /// Gets the calories of the entree
         /// </summary>
         public uint Calories { get => calories[(int)size]; }
     }
