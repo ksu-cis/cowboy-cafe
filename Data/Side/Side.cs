@@ -10,10 +10,24 @@ namespace CowboyCafe.Data
     public abstract class Side
     {
         /// <summary>
-        /// protected backing variables
+        /// protected backing variable for size
         /// </summary>
         protected Size size = Size.Small;
+
+        /// <summary>
+        /// array of possable prices 
+        /// small = [0]
+        /// medium = [1]
+        /// large = [2]
+        /// </summary>
         protected double[] prices;
+
+        /// <summary>
+        /// array of possable calorie values 
+        /// small = [0]
+        /// medium = [1]
+        /// large = [2]
+        /// </summary>
         protected uint[] calories;
 
         /// <summary>
