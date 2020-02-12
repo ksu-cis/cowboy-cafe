@@ -24,15 +24,6 @@ namespace CowboyCafe.Data
         private SodaFlavor flavor = SodaFlavor.BirchBeer;
 
         /// <summary>
-        /// constructor to make a new Jerked Soda
-        /// </summary>
-        public JerkedSoda()
-        {
-            prices = new double[] { 1.59, 2.10, 2.59 };
-            calories = new uint[] { 110, 146, 198 };
-        }
-
-        /// <summary>
         /// gets and sets the flavor of the pop
         /// </summary>
         public SodaFlavor Flavor { get => flavor; set => flavor = value; }
@@ -45,9 +36,18 @@ namespace CowboyCafe.Data
             get
             {
                 List<string> special = new List<string>();
-                if (!ice) special.Add("hold ice");
+                if (!ice) special.Add("Hold Ice");
                 return special;
             }
+        }
+
+        /// <summary>
+        /// constructor to make a new Jerked Soda
+        /// </summary>
+        public JerkedSoda()
+        {
+            prices = new double[] { 1.59, 2.10, 2.59 };
+            calories = new uint[] { 110, 146, 198 };
         }
     }
 }

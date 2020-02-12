@@ -39,12 +39,12 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Gets the price of the side
         /// </summary>
-        public double Price { get => prices[(int)size]; }
+        public virtual double Price { get => prices[(int)size]; }
 
         /// <summary>
         /// Gets the calories of the entree
         /// </summary>
-        public uint Calories { get => calories[(int)size]; }
+        public virtual uint Calories { get => calories[(int)size]; }
 
         /// <summary>
         /// does this DRANK have ice?
