@@ -7,6 +7,16 @@ namespace CowboyCafe.Data
     public class CowboyCoffee : DrinkBase
     {
         /// <summary>
+        /// Checks to see if there is Ice
+        /// </summary>
+        public override bool Ice { get; set; } = false;
+
+        /// <summary>
+        /// Checks to see if coffee is decaf or regular
+        /// </summary>
+        public bool Decaf { get; set; }
+
+        /// <summary>
         /// Checks to see if there is room for cream
         /// </summary>
         public bool RoomForCream { get; set; } = false;
