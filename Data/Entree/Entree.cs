@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public partial class Entree
+    public abstract class Entree
     {
         /// <summary>
         /// protected backing variables
@@ -23,6 +23,9 @@ namespace CowboyCafe.Data
         /// </summary>
         public uint Calories { get => calories; }
 
-        public virtual List<string> SpecialInstructions { get; }
+        /// <summary>
+        /// gets special prep instructions
+        /// </summary>
+        public abstract List<string> SpecialInstructions { get; }
     }
 }
