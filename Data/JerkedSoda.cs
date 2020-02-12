@@ -1,43 +1,18 @@
-﻿/*
- * Mohamed Khalil
- * 02/03/2020
- * ChiliCheeseFries
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class ChiliCheeseFries : Side
+    public class JerkedSoda : DrinkBase
     {
         /// <summary>
-        /// Gets calories of Chilli Cheese Fries based on size of side dish
+        /// gets flavor of soda
         /// </summary>
-        public override uint Calories
-        {
-            get
-            {
-                switch (Size)
-                {
-                    case (Size.Small):
-                        return 433;
-                        break;
-                    case (Size.Medium):
-                        return 524;
-                        break;
-                    case (Size.Large):
-                        return 610;
-                        break;
-                    default:
-                        throw new NotImplementedException();
-                }
-
-            }
-        }
+        public SodaFlavor Flavor { get; set; }
 
         /// <summary>
-        /// Gets price of Chilli Cheese Fries based on size of side dish
+        /// Gtes price of jerked soda
         /// </summary>
         public override double Price
         {
@@ -46,17 +21,54 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case (Size.Small):
-                        return 1.99;
+                        return 1.59;
                         break;
                     case (Size.Medium):
-                        return 2.99;
+                        return 2.10;
                         break;
                     case (Size.Large):
-                        return 3.99;
+                        return 2.59;
                         break;
                     default:
                         throw new NotImplementedException();
                 }
+            }
+        }
+
+        /// <summary>
+        /// Gets calories of jerked soda
+        /// </summary>
+        public override uint Calories
+        {
+            get
+            {
+                switch (Size)
+                {
+                    case (Size.Small):
+                        return 110;
+                        break;
+                    case (Size.Medium):
+                        return 146;
+                        break;
+                    case (Size.Large):
+                        return 198;
+                        break;
+                    default:
+                        throw new NotImplementedException();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets special instructions for jerked soda
+        /// </summary>
+        public override List<string> SpecialInstructions
+        {
+            get
+            {
+                var instructions = new List<string>();
+                if (!Ice) instructions.Add("Hold Ice");
+                return instructions;
             }
         }
     }

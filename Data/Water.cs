@@ -1,59 +1,48 @@
-﻿/*
- * Mohamed Khalil
- * 01/31/2020
- * PecosPulledPork
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class PecosPulledPork : Entree
+    public class Water : DrinkBase
     {
         /// <summary>
-        /// If Pulled Pork has Bread
+        /// Checks whether to add lemon or not
         /// </summary>
-        public bool Bread = true;
+        public bool Lemon { get; set; } = false;
 
         /// <summary>
-        /// If Pulled Pork has Pickle
-        /// </summary>
-        public bool Pickle = true;
-
-        /// <summary>
-        /// The price of the Pulled Pork
+        /// Gets price of water
         /// </summary>
         public override double Price
         {
             get
             {
-                return 5.88;
+                return 0.12;
             }
         }
 
         /// <summary>
-        /// The calories of the Pulled Pork
+        /// Gets calories of water
         /// </summary>
         public override uint Calories
         {
             get
             {
-                return 528;
+                return 0;
             }
         }
 
         /// <summary>
-        /// Special instructions for the preparation of the pulled pork
+        /// gets special instructions for water
         /// </summary>
         public override List<string> SpecialInstructions
         {
             get
             {
                 var instructions = new List<string>();
-
-                if (!Bread) instructions.Add("hold bread");
-                if (!Pickle) instructions.Add("hold Pickle");
+                if (!Ice) instructions.Add("Hold Ice");
+                if (Lemon) instructions.Add("Add Lemon");
                 return instructions;
             }
         }

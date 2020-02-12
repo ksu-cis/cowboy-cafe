@@ -9,7 +9,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class TrailBurger
+    public class TrailBurger : Entree
     {
         /// <summary>
         /// If Burger has Bun
@@ -39,7 +39,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of the Burger
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -50,7 +50,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories of the Burger
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -61,7 +61,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the burger
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
