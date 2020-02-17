@@ -20,23 +20,5 @@ namespace CowboyCafe.Data
             price = 5.88;
             calories = 528;
         }
-
-        /// <summary>
-        /// holds bread 
-        /// </summary>
-        public void HoldBread()
-        {
-            bread = false;
-            special.Add("hold bread");
-        }
-
-        /// <summary>
-        /// no pickles alllowed
-        /// </summary>
-        public void HoldPickle()
-        {
-            pickle = false;
-            special.Add("hold pickle");
-        }
     }
 }

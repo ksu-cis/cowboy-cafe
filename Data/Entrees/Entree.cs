@@ -6,28 +6,14 @@ namespace CowboyCafe.Data
 {
     public partial class Entree
     {
-        /// <summary>
-        /// backing variables
-        /// </summary>
-        private double price;
-        private int calories;
-        private List<string> special = new List<string>();
-
+        protected double price;
+        protected uint calories;
 
         /// <summary>
         /// public getters and private setters
         /// </summary>
-        double Price {
-            public get => price;
-            private set;
-        }
-        int Calories {
-            public get => calories;
-            private set; }
-        List<string> SpecialInstructions {
-            public get => special;
-            private set;
-        }
-
+        public double Price { get => price; }
+        public uint Calories { get => calories; }
+        public virtual List<string> SpecialInstructions { get; private set; }
     }
 }
