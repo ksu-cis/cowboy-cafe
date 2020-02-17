@@ -10,11 +10,15 @@ namespace CowboyCafe.Data
         /// private backing variables
         /// </summary>
         private bool roomForCream = false;
+        private bool decaf = false;
 
         /// <summary>
         /// gets and sets if the coffee should leave room for cream
         /// </summary>
         public bool RoomForCream { get => roomForCream; set => roomForCream = value; }
+
+
+        public bool Decaf { get => decaf; set => decaf = value; }
 
         /// <summary>
         /// special prep instructions for the covfefe
