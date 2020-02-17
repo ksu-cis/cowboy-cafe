@@ -12,7 +12,7 @@ namespace CowboyCafe.Data
         public BakedBeans()
         {
             prices = new double[] { 1.59, 1.79, 1.99 };
-            calories = new uint[] { 312, 378, 410 };
+            calories = new uint[] { 312, 378, 410 }; 
         }
     }
 }
