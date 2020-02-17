@@ -6,7 +6,7 @@ namespace CowboyCafe.Data
 {
     public class BakedBeans : Side
     {
-        /// <summary>
+        /// <summary> 
         /// initializes the values for the prices of various sizes
         /// </summary>
         public BakedBeans()
