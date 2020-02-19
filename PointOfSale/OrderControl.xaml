@@ -9,7 +9,7 @@
 
     <UserControl.Resources>
         <Style TargetType="Button">
-            <Setter Property="Height" Value="69"/>
+            <Setter Property="Height" Value="60"/>
         </Style>
     </UserControl.Resources>
     
@@ -24,25 +24,33 @@
         <StackPanel Grid.Column="0">
             <TextBlock TextAlignment ="Center">Entrees</TextBlock>
             <Button>Angry Chicken</Button>
-            <Button>Cow PokeChili</Button>
+            <Button>Cowpoke Chili</Button>
+            <Button>Dakota Double Burger</Button>
+            <Button>Pecos Pulled Pork</Button>
+            <Button>Rustlers Ribs</Button>
+            <Button>Texas Triple Burger</Button>
+            <Button>Trailburger</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="1">
             <TextBlock TextAlignment ="Center">Sides</TextBlock>
-            <Button>Angry Chicken</Button>
-            <Button>Cow PokeChili</Button>
+            <Button>Baked Beans</Button>
+            <Button>Chilli Cheese Fries</Button>
+            <Button>Corn Dodgers</Button>
+            <Button>Pan De Campo</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="2">
             <TextBlock TextAlignment ="Center">Drinks</TextBlock>
-            <Button>Angry Chicken</Button>
-            <Button>Cow PokeChili</Button>
+            <Button>Cowboy Coffee</Button>
+            <Button>Jerked Soda</Button>
+            <Button>Texas Tea</Button>
+            <Button>Water</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="3">
             <TextBlock TextAlignment ="Center">Order</TextBlock>
-            <Button>Angry Chicken</Button>
-            <Button>Cow PokeChili</Button>
+            
         </StackPanel>
     </Grid>
 </UserControl>
