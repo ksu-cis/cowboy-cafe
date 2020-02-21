@@ -59,5 +59,14 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Overrides to string method in order control
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return Size.ToString() + " Bakes Beans";
+        }
     }
 }

@@ -93,5 +93,15 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Overrides to string method in order control
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            var instructions = SpecialInstructions;
+            return "Dakota Double " + instructions.ToString();
+        }
     }
 }
