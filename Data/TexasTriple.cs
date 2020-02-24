@@ -112,8 +112,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            var instructions = SpecialInstructions;
-            return "Texas Triple " + instructions.ToString();
+            return "Texas Triple Burger";
          
         }
     }

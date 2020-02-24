@@ -100,8 +100,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            var instructions = SpecialInstructions;
-            return "Dakota Double " + instructions.ToString();
+            return "Dakota Double Burger";
         }
     }
 }

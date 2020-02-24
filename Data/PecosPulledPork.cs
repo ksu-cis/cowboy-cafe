@@ -64,8 +64,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            var instructions = SpecialInstructions;
-            return  "Pecos Pulled Pork " + instructions.ToString();
+            return  "Pecos Pulled Pork";
         }
     }
 }

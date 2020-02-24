@@ -51,8 +51,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            var instructions = SpecialInstructions;
-            return "Ruslter's Ribs " + instructions.ToString();
+            return "Rustler's Ribs";
         }
     }
 }

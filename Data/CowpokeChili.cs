@@ -99,8 +99,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            var instructions = SpecialInstructions;
-            return "Cowpoke Chilli  " + instructions.ToString();
+            return "Cowpoke Chili";
         }
     }
 }

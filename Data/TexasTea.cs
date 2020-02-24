@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class TexasTea : DrinkBase
+    public class TexasTea : Drink
     {
         /// <summary>
         /// Mkaes drink sweet or unsweet
@@ -104,14 +104,13 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            var instructions = SpecialInstructions;
             if (Sweet)
             {
-                return Size.ToString() + " Sweet Texas Tea " + instructions.ToString();
+                return Size.ToString() + " Texas Sweet Tea";
             }
             else
             {
-                return Size.ToString() + " Unsweet Texas Tea " + instructions.ToString();
+                return Size.ToString() + " Texas Plain Tea";
             }
         }
     }

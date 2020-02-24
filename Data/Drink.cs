@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public abstract class DrinkBase
+    public abstract class Drink
     {
         /// <summary>
         /// Gets size of drink

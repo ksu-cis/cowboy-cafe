@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class Water : DrinkBase
+    public class Water : Drink
     {
         /// <summary>
         /// Checks whether to add lemon or not
@@ -53,8 +53,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            var instructions = SpecialInstructions;
-            return Size.ToString() + " Water " + instructions.ToString();
+            return Size.ToString() + " Water";
         }
     }
 }

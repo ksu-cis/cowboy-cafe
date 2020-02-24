@@ -52,7 +52,7 @@
 
         <StackPanel Grid.Column="3">
             <TextBlock TextAlignment="Center" FontSize="25">Order</TextBlock>
-            <ListView x:Name="Listview1" Height="1452">
+            <ListView x:Name="OrderBox" Height="1452">
 
             </ListView>
         </StackPanel>

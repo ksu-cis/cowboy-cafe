@@ -64,8 +64,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            var instructions = SpecialInstructions;
-            return "Angry Chicken " + instructions.ToString();
+            return "Angry Chicken";
         }
     }
 }

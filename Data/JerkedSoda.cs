@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class JerkedSoda : DrinkBase
+    public class JerkedSoda : Drink
     {
         /// <summary>
         /// gets flavor of soda
@@ -78,8 +78,27 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            var instructions = SpecialInstructions;
-            return Size.ToString() + Flavor.ToString() + " Jerked Soda " + instructions.ToString();
+            if(Flavor == SodaFlavor.CreamSoda)
+            {
+                return Size.ToString() + " Cream Soda" + " Jerked Soda";
+            }
+            else if (Flavor == SodaFlavor.OrangeSoda)
+            {
+                return Size.ToString() + " Orange Soda" + " Jerked Soda";
+            }
+            else if (Flavor == SodaFlavor.Sarsparilla)
+            {
+                return Size.ToString() + " Sarsparilla" + " Jerked Soda";
+            }
+            else if (Flavor == SodaFlavor.BirchBeer)
+            {
+                return Size.ToString() + " Birch Beer" + " Jerked Soda";
+            }
+            else
+            {
+                return Size.ToString() + " Root Beer" + " Jerked Soda";
+            }
+            
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class CowboyCoffee : DrinkBase
+    public class CowboyCoffee : Drink
     {
         /// <summary>
         /// Checks to see if there is Ice
@@ -89,14 +89,13 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            var instructions = SpecialInstructions;
             if (!Decaf)
             {
-                return Size.ToString() + " Cowboy Coffee " + instructions.ToString();
+                return Size.ToString() + " Cowboy Coffee";
             }
             else
             {
-                return Size.ToString() + " Decaf " + instructions.ToString();
+                return Size.ToString() + " Decaf Cowboy Coffee";
             }
         }
     }
