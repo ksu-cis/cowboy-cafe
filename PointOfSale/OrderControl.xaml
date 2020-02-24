@@ -42,18 +42,15 @@
 
         <StackPanel Grid.Column="2">
             <TextBlock TextAlignment ="Center">Drinks</TextBlock>
-            <Button>Angry Chicken</Button>
-            <Button>Cow PokeChili</Button>
-            <Button>Cowboy Coffee</Button>
-            <Button>Jerked Soda</Button>
-            <Button>Texas Tea</Button>
-            <Button>Water</Button>
+            <Button Name="CowboyCoffeeButton">Cowboy Coffee</Button>
+            <Button Name="JerkedSodaButton">Jerked Soda</Button>
+            <Button Name="TexasTeaButton">Texas Tea</Button>
+            <Button Name="WaterButton">Water</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="3">
             <TextBlock TextAlignment ="Center">Order</TextBlock>
-            <Button>Angry Chicken</Button>
-            <Button>Cow PokeChili</Button>
+            
 
         </StackPanel>
         
