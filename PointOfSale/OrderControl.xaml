@@ -22,7 +22,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0">
-            <TextBlock TextAlignment ="Center">Entrees</TextBlock>
+            <TextBlock TextAlignment="Center">Entrees</TextBlock>
             <Button Name="AngryChickenButton">Angry Chicken</Button>
             <Button Name="CowPokeChiliButton">Cow PokeChili</Button>
             <Button Name="DakotaDoubleBurgerButton">Dakota Double Burger</Button>
@@ -34,12 +34,10 @@
 
         <StackPanel Grid.Column="1">
             <TextBlock TextAlignment ="Center">Sides</TextBlock>
-            <Button>Angry Chicken</Button>
-            <Button>Cow PokeChili</Button>
-            <Button>Baked Beans</Button>
-            <Button>Chilli Cheese Fries</Button>
-            <Button>Corn Dodgers</Button>
-            <Button>Pan De Campo</Button>
+            <Button Name="BakedBeansButton">Baked Beans</Button>
+            <Button Name="ChilliCheeseFriesButton">Chilli Cheese Fries</Button>
+            <Button Name="CornDodgersButton">Corn Dodgers</Button>
+            <Button Name="PanDeCampoButton">Pan De Campo</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="2">
