@@ -6,7 +6,11 @@
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Right" Width="200" TextAlignment="Center" Background="LightSteelBlue">// TODO: Order</TextBlock>
+        <Frame Source="MenuCategorySelection.xaml" NavigationUIVisibility="Hidden">
+
+
+        </Frame>
+    </DockPanel>
 </Window>

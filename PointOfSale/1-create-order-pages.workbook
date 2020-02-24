@@ -1,0 +1,58 @@
+﻿---
+uti: com.xamarin.workbook
+id: 14dcd7b3-c0db-4702-871d-c8b431da2a8e
+title: 1-add-entree-classes
+platforms:
+- WPF
+packages:
+- id: xunit
+  version: 2.4.1
+---
+
+# Point of Sale Milestone 1
+
+## Create Order Pages
+
+For this milestone you will be working with a Windows Presentation Framework (WPF) project that draws upon our Menu library and is the basis for the Point-of-Sale system (The register) in a DinoDiner cafe.  Specifically, you will be creating WPF pages to use in displaying buttons for ordering menu items.
+
+This flow diagram presents visually the pages you will need to create:
+
+<a href="./assets/pos-ms-1.1.png">
+![Flow Diagram](./assets/pos-ms-1.1.png)
+</a>
+
+The project itself has been created in the upstream repository - you will need to pull the upstream into your current project.  
+
+## General Requirements, Usability, and Aesthetics
+
+You will need to follow the Style Guide in writing your Page code.  We will not be writing tests for the user interface (yet).  You do not have to match the pages in the flow diagram exactly, but your pages should be aesthetically pleasing, buttons should be sized appropriately for a touch screen (big enough to easily touch), and the majority of the available screen space should be used (remember, the order will take a part of the page).
+
+__Special Prize for Aesthetics__ A special prize will be given to the best aesthetic design in each section (as voted by the TAs and Instructor) for the POS system.
+
+## Menu Category Selection Page (10 points)
+
+Create a new page named _MenuCategorySelection.xaml_ that displays buttons for the four current menu categories: Combos, Entrees, Sides, and Drinks.  Clicking any of these buttons should take you to the appropriate selection page.
+
+## Combos Selection Page (15 points)
+
+Create a new page named _ComboSelection.xaml_ that displays buttons for the seven current combos: Brontowurst Combo, Dino-Nuggets Combo, Prehistoric PB&J Combo, Pterodactyl Wings Combo, Steakosarus Burger Combo, T-Rex King Burger Combo, and Veloci-Wrap Combo.  Clicking any of these should take you to the customize combo page.
+
+## Customize Combo Page (15 points)
+
+Create a new page named _CustomizeCombo.xaml_ that displays buttons with the currently selected side, drink, and size for the combo.  Clicking the side button should take you to the side selection page.  Clicking the drink selection page should take you to the drink selection page.  It should also have three radio buttons for selecting the size of the combo (small, medium, and large).
+
+## Entree Selection Page (15 points)
+
+Create a new page named _EntreeSelection.xaml_ that displays buttons for the seven current entrees: Brontowurst, Dino-Nuggets, Prehistoric PB&J, Pterodactyl Wings, Steakosarus Burger, T-Rex King Burger, and Veloci-Wrap.
+
+## Side Selection Page (15 points)
+
+Create a new page named _SideSelection.xaml_ that displays buttons for the four current sides: Fryceritops, Triceritots, Meteor Mac & Cheese, and Mozzerella Sticks.  In addition, it should have three radio buttons for selecting the size (small, medium, and large).
+
+## Drink Selection Page (25 points)
+
+Create a new page named _DrinkSelection.xaml_ that displays buttons for the four current drinks: Sodasaurus, Tryrannotea, Jurassic Java, and Water.  It should also have three radio buttons for selecting the size (small, medium, and large).  Finally, it should dynamically add/remove buttons for lemon, flavor, decaf, and sweet, when appropriate for the currently selected drink.  Clicking the flavor button should open the Flavor Selection page.
+
+## Flavor Selection Page (5 points)
+
+Create a new page named _FlavorSelection.xaml_ that displays buttons for the seven current Sodasaurus flavors offered by the DinoDiner: Cherry, Chocolate, Cola, Lime, Orange, Root Beer, and Vanilla.

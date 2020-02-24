@@ -13,5 +13,6 @@ namespace PointOfSale
     /// </summary>
     public partial class App : Application
     {
+
     }
 }
