@@ -22,5 +22,80 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        private void AngryChickenButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CowPokeChiliButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DakotaDoubleBurgerButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PecosPulledPorkButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RustlersRibsButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TexasTripleBurgerButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TrailBurgerButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BakedBeansButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ChilliCheeseFriesButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CornDodgersButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PanDeCampoButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CowboyCoffeeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void WaterButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TexasTeaButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void JerkedSodaButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
