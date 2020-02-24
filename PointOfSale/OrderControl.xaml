@@ -50,7 +50,9 @@
 
         <StackPanel Grid.Column="3">
             <TextBlock TextAlignment ="Center">Order</TextBlock>
-            
+            <ListView Name ="Order">
+                
+            </ListView>
 
         </StackPanel>
         

@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Data;
 
 namespace PointOfSale
 {
@@ -25,7 +26,7 @@ namespace PointOfSale
 
         private void AngryChickenButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Order.ItemsSource.Add(new Angrychicken());
         }
 
         private void CowPokeChiliButton_Click(object sender, RoutedEventArgs e)
