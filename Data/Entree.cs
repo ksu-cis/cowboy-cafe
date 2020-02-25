@@ -9,7 +9,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public abstract class Entree
+    public abstract class Entree : IOrderItem
     {
         /// <summary>
         /// Gets calories of dish
