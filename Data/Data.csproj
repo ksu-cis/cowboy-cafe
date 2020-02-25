@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>
       netcoreapp2.1;
-      net48;
+      net472;
     </TargetFrameworks>
     <AssemblyName>CowboyCafe.Data</AssemblyName>
     <RootNamespace>CowboyCafe.Data</RootNamespace>
