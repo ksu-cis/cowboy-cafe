@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace PointOfSale
 {
     /// <summary>
@@ -22,6 +23,8 @@ namespace PointOfSale
     {
         public MainWindow()
         {
+            
+            
             InitializeComponent();
         }
     }
