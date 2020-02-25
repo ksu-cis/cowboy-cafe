@@ -27,6 +27,9 @@ namespace CowboyCafe.Data
             set { pickle = value; }
         }
 
+        /// <summary>
+        /// special prep instrucitons
+        /// </summary>
         public override List<string> SpecialInstructions
         {
             get
@@ -39,11 +42,23 @@ namespace CowboyCafe.Data
                 return s;
             }
         }
-
+        
+        /// <summary>
+        /// constructor
+        /// </summary>
         public PecosPulledPork()
         {
             price = 5.88;
             calories = 528;
+        }
+
+        /// <summary>
+        /// returns a text representation of the entree
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Angry Chicken";
         }
     }
 }

@@ -39,5 +39,14 @@ namespace CowboyCafe.Data
         /// override calorie getter because it's always 0
         /// </summary>
         public override uint Calories { get => 0; }
+
+        /// <summary>
+        /// gives a string representation of the item
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return size.ToString() + " Water";
+        }
     }
 }

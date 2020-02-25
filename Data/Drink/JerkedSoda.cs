@@ -49,5 +49,32 @@ namespace CowboyCafe.Data
             prices = new double[] { 1.59, 2.10, 2.59 };
             calories = new uint[] { 110, 146, 198 };
         }
+
+        /// <summary>
+        /// gives a string representation of the item
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            string s = size.ToString();
+            switch (flavor) {
+                case SodaFlavor.CreamSoda:
+                    s += " Cream Soda";
+                    break;
+                case SodaFlavor.OrangeSoda:
+                    s += " Orange Soda";
+                    break;
+                case SodaFlavor.Sarsparilla:
+                    s += " Sarsparilla";
+                    break;
+                case SodaFlavor.BirchBeer:
+                    s += " Birch Beer";
+                    break;
+                case SodaFlavor.RootBeer:
+                    s += " Root Beer";
+                    break;
+            }
+            return s + " Jerked Soda";
+        }
     }
 }

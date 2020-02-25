@@ -115,5 +115,14 @@ namespace CowboyCafe.Data
             price = 5.20;
             calories = 464;
         }
+
+        /// <summary>
+        /// returns a text representation of the entree
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Dakota Double Burger";
+        }
     }
 }
