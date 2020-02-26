@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    interface IOrderItem
+    public interface IOrderItem
     {
         /// <summary>
         /// 
@@ -14,6 +14,6 @@ namespace CowboyCafe.Data
         /// <summary>
         /// 
         /// </summary>
-        IEnumerable<string> SpecialInstructions { get; }
+        List<string> SpecialInstructions { get; }
     }
 }

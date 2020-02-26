@@ -7,10 +7,12 @@ namespace CowboyCafe.Data
 {
     public class Order : IOrderItem ,INotifyPropertyChanged
     {
+        public IEnumerable<IOrderItem> Items => throw new NotImplementedException();
+
         /// <summary>
         /// 
         /// </summary>
-        static uint lastOrderNumber;
+        private static uint lastOrderNumber;
 
         /// <summary>
         /// 
@@ -20,7 +22,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// 
         /// </summary>
-        public double Subtotal { get; }
+        public double Subtotal => 0;
 
         /// <summary>
         /// 
@@ -29,16 +31,29 @@ namespace CowboyCafe.Data
 
         public double Price => throw new NotImplementedException();
 
-        public IEnumerable<string> SpecialInstructions => throw new NotImplementedException();
+        List<string> IOrderItem.SpecialInstructions => throw new NotImplementedException();
 
         /// <summary>
         /// 
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
         public void Add(IOrderItem item)
         {
+            items.Add(item);
+        }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
+        public void Remove(IOrderItem item)
+        {
+            items.Remove(item);
         }
     }
 }
