@@ -7,7 +7,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A base class representing a side
     /// </summary>
-    public abstract class Side
+    public abstract class Side : IOrderItem
     {
         /// <summary>
         /// protected backing variable for size
@@ -44,5 +44,11 @@ namespace CowboyCafe.Data
         /// Gets the calories of the entree
         /// </summary>
         public uint Calories { get => calories[(int)size]; }
+
+        /// <summary>
+        /// list of specail instrucions for the chefs to make the fud
+        /// </summary>
+        public virtual List<string> SpecialInstructions { get => new List<string>(); }
+
     }
 }
