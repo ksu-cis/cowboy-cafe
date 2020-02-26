@@ -25,5 +25,14 @@ namespace CowboyCafe.Data
             price = 7.50;
             calories = 894;
         }
+
+        /// <summary>
+        /// returns a text representation of the entree
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Rustler's Ribs";
+        }
     }
 }

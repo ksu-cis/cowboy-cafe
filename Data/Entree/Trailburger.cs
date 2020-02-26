@@ -78,5 +78,14 @@ namespace CowboyCafe.Data
             price = 4.50;
             calories = 288;
         }
+
+        /// <summary>
+        /// returns a text representation of the entree
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Trail Burger";
+        }
     }
 }

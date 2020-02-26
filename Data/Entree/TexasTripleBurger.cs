@@ -140,5 +140,14 @@ namespace CowboyCafe.Data
             price = 6.45;
             calories = 698;
         }
+
+        /// <summary>
+        /// returns a text representation of the entree
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Texas Triple Burger";
+        }
     }
 }

@@ -52,5 +52,14 @@ namespace CowboyCafe.Data
             price = 5.99;
             calories = 190;
         }
+
+        /// <summary>
+        /// returns a text representation of the entree
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Angry Chicken";
+        }
     }
 }

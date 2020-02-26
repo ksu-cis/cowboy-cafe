@@ -59,5 +59,14 @@ namespace CowboyCafe.Data
             prices = new double[] { 1.00, 1.50, 2.00 };
             calories = new uint[] { 10, 22, 36 };
         }
+
+        /// <summary>
+        /// gives a string representation of the item
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return size.ToString() + " Texas Tea";
+        }
     }
 }

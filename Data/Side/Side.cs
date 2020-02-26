@@ -44,5 +44,11 @@ namespace CowboyCafe.Data
         /// Gets the calories of the entree
         /// </summary>
         public uint Calories { get => calories[(int)size]; }
+
+        /// <summary>
+        /// string representatino of the side
+        /// </summary>
+        /// <returns></returns>
+        public abstract override string ToString();
     }
 }
