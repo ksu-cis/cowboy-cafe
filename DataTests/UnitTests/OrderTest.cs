@@ -12,14 +12,21 @@ namespace CowboyCafe.DataTests.UnitTests
         [Fact]
         public void ShouldBeAbleToAddItems()
         {
-
+            Order order = new Order();
+            IOrderItem food = new AngryChicken();
+            order.Add(food);
+            Assert.Contains<IOrderItem>(food, order.Items);
         }
 
         //should be able to remove items
         [Fact]
         public void ShouldBeAbleToRemoveItems()
         {
-
+            Order order = new Order();
+            IOrderItem food = new AngryChicken();
+            order.Add(food);
+            order.Remove(food);
+            Assert.DoesNotContain<IOrderItem>(food, order.Items);
         }
 
 
@@ -29,6 +36,7 @@ namespace CowboyCafe.DataTests.UnitTests
         {
             var order = new Order();
             order.Add(new AngryChicken());
+
         }
 
 
