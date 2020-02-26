@@ -27,5 +27,11 @@ namespace CowboyCafe.Data
         /// gets special prep instructions
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// returns a text representation of the entree
+        /// </summary>
+        /// <returns>Name of entree</returns>
+        public override abstract string ToString();
     }
 }

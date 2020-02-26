@@ -55,5 +55,11 @@ namespace CowboyCafe.Data
         /// gets special prep instructions for the drank
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// gives the name of the drink
+        /// </summary>
+        /// <returns>drink in text form</returns>
+        public override abstract string ToString();
     }
 }

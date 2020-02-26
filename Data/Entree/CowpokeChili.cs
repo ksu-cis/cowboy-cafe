@@ -74,6 +74,15 @@ namespace CowboyCafe.Data
             price = 6.10;
             calories = 171;
         }
+
+        /// <summary>
+        /// returns a text representation of the entree
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Cowpoke Chilli";
+        }
     }
 }
 

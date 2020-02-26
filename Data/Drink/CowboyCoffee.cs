@@ -44,5 +44,16 @@ namespace CowboyCafe.Data
             //unlike all other drinks, ice not included by default
             ice = false;
         }
+
+        /// <summary>
+        /// gives a string representation of the item
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            string s = size.ToString();
+            if (decaf) s += " Decaf";
+            return s + " Cowboy Coffee";
+        }
     }
 }
