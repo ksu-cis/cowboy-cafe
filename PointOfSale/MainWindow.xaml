@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <local:OrderControl></local:OrderControl>
+        Title="MainWindow" Height="600" Width="1080">
+    <Grid Background="Bisque">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <local:OrderControl/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Left" Width="190">
+            <local:OrderSummaryControl Loaded="OrderSummaryControl_Loaded" Height="601" Width="80"/>
+        </StackPanel>
+
+
     </Grid>
 </Window>

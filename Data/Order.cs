@@ -10,47 +10,65 @@ namespace CowboyCafe.Data
         public IEnumerable<IOrderItem> Items => throw new NotImplementedException();
 
         /// <summary>
-        /// 
+        /// ID of previous order
         /// </summary>
         private static uint lastOrderNumber;
 
         /// <summary>
-        /// 
+        /// List of current ordered items
         /// </summary>
-        List<IOrderItem> items = new List<IOrderItem>();
+        public List<IOrderItem> items = new List<IOrderItem>();
 
         /// <summary>
-        /// 
+        /// total of prices of dishes in order
         /// </summary>
         public double Subtotal => 0;
 
         /// <summary>
-        /// 
+        /// ID of the order
         /// </summary>
         public uint OrderNumber { get; }
 
+        /// <summary>
+        /// Price of dish
+        /// </summary>
         public double Price => throw new NotImplementedException();
 
+        /// <summary>
+        /// Special food intructions
+        /// </summary>
         List<string> IOrderItem.SpecialInstructions => throw new NotImplementedException();
 
         /// <summary>
-        /// 
+        /// Event handler to trigger when items or subtotal is updated
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
-        /// 
+        /// updates bound data properties when changed
         /// </summary>
-        /// <param name="item"></param>
+        private void NotifyPropertyChanged(IOrderItem items, double Subtotal)
+        {
+            if(PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(items.ToString()));
+                PropertyChanged(this, new PropertyChangedEventArgs(Subtotal.ToString()));
+            }
+        }
+
+        /// <summary>
+        /// Adds an item to the order
+        /// </summary>
+        /// <param name="item">To be added from the menu</param>
         public void Add(IOrderItem item)
         {
             items.Add(item);
         }
 
         /// <summary>
-        /// 
+        /// Removes item from an order
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="item">From the order menu</param>
         public void Remove(IOrderItem item)
         {
             items.Remove(item);

@@ -73,7 +73,7 @@ namespace CowboyCafe.DataTests
                 order.Add(item);
             }
 
-            Assert.equal(items.Length, order.Itmes.Count);
+            Assert.Equal(items.Length, order.items.Count);
             foreach (var item in items)
             {
                 Assert.Contains(item, order.Items);

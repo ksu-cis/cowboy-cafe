@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="1920" d:DesignWidth="1080">
+             d:DesignHeight="383" d:DesignWidth="1080">
     <UserControl.Resources>
         <Style TargetType="Button">
             <Setter Property="Height" Value="50"/>
@@ -18,7 +18,6 @@
     <Grid>
         
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -50,12 +49,5 @@
             <Button x:Name="AddWater" Click="AddWater_Click">Water</Button>
         </StackPanel>
 
-        <StackPanel Grid.Column="3">
-            <TextBlock TextAlignment="Center" FontSize="25">Order</TextBlock>
-            <ListView x:Name="OrderBox" Height="1452">
-
-            </ListView>
-        </StackPanel>
-        
     </Grid>
 </UserControl>
