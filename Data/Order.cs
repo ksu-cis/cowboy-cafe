@@ -7,7 +7,17 @@ namespace CowboyCafe.Data
 {
     public class Order : IOrderItem ,INotifyPropertyChanged
     {
-        public IEnumerable<IOrderItem> Items => throw new NotImplementedException();
+        public Order()
+        {
+            OrderNumber = lastOrderNumber++;
+        }
+        public IEnumerable<IOrderItem> Items
+        {
+            get
+            {
+                return items.ToArray();
+            }
+        }
 
         /// <summary>
         /// ID of previous order
@@ -47,12 +57,12 @@ namespace CowboyCafe.Data
         /// <summary>
         /// updates bound data properties when changed
         /// </summary>
-        private void NotifyPropertyChanged(IOrderItem items, double Subtotal)
+        private void NotifyPropertyChanged()
         {
             if(PropertyChanged != null)
             {
-                PropertyChanged(this, new PropertyChangedEventArgs(items.ToString()));
-                PropertyChanged(this, new PropertyChangedEventArgs(Subtotal.ToString()));
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Items"));
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
             }
         }
 
@@ -63,6 +73,7 @@ namespace CowboyCafe.Data
         public void Add(IOrderItem item)
         {
             items.Add(item);
+            NotifyPropertyChanged();
         }
 
         /// <summary>
@@ -72,6 +83,7 @@ namespace CowboyCafe.Data
         public void Remove(IOrderItem item)
         {
             items.Remove(item);
+            NotifyPropertyChanged();
         }
     }
 }

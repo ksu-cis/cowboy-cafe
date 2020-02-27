@@ -32,6 +32,12 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Gets special instructions for side
         /// </summary>
-        public List<string> SpecialInstructions => throw new NotImplementedException();
+        public List<string> SpecialInstructions
+        {
+            get
+            {
+                return new List<string>();
+            }
+        }
     }
 }

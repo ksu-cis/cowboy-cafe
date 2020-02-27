@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CowboyCafe.Data;
 
 namespace PointOfSale
 {
@@ -23,6 +24,11 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
+            var order = new Order();
+            var menuItem = new Water();
+            menuItem.Lemon = true;
+            order.Add(menuItem);
+            DataContext = order;
         }
     }
 }
