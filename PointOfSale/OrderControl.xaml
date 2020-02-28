@@ -12,11 +12,11 @@
             <Setter Property="FontSize" Value="18"/>
         </Style>
         <Style TargetType="Grid">
-            
+
         </Style>
     </UserControl.Resources>
     <Grid>
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>

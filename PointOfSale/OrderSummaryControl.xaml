@@ -63,7 +63,7 @@
         </StackPanel>
         
         <StackPanel Grid.Column="1" Grid.Row="2">
-            <TextBlock TextAlignment="Left" FontSize="15" Text="{Binding Path=Subtotal, StringFormat=c}"></TextBlock>
+            <TextBlock TextAlignment="Right" FontSize="25" Text="{Binding Path=Subtotal, StringFormat=c}"></TextBlock>
         </StackPanel>
 
         <StackPanel Grid.Column="0" Grid.Row="2">

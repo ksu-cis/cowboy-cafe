@@ -32,7 +32,18 @@ namespace CowboyCafe.Data
         /// <summary>
         /// total of prices of dishes in order
         /// </summary>
-        public double Subtotal => 0;
+        public double Subtotal
+        {
+            get
+            {
+                double total = 0;
+                foreach(var item in items)
+                {
+                    total += item.Price;
+                }
+                return total;
+            }
+        }
 
         /// <summary>
         /// ID of the order
