@@ -10,4 +10,10 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Entrees\**" />
+    <EmbeddedResource Remove="Entrees\**" />
+    <None Remove="Entrees\**" />
+  </ItemGroup>
+
 </Project>
