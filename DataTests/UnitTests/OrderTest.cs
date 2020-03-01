@@ -4,7 +4,7 @@ using System.Text;
 using Xunit;
 using CowboyCafe.Data;
 
-namespace CowboyCafe.DataTests.UnitTests
+namespace CowboyCafe.DataTests
 {
     public class OrderTest
     {
