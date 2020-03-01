@@ -88,7 +88,7 @@ namespace CowboyCafe.DataTests.UnitTests
 
         [Theory]
         [InlineData("Price")]
-        [InlineData)"Items")]
+        [InlineData("Items")]
         public void AddingAnItemShouldTriggerPropertyChanged(string propertyName)
         {
             var order = new Order();
@@ -101,7 +101,7 @@ namespace CowboyCafe.DataTests.UnitTests
 
         [Theory]
         [InlineData("Price")]
-        [InlineData)"Items")]
+        [InlineData("Items")]
         public void RemovingAnItemShouldTriggerPropertyChanged(string propertyName)
         {
             var order = new Order();
