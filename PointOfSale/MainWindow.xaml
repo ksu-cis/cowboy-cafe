@@ -7,17 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1080">
     <Grid Background="Bisque">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="300"/>
-        </Grid.ColumnDefinitions>
 
-        <local:OrderSummaryControl Grid.Column="1" />
-        <Grid Grid.Column="0" Grid.Row="0">
-            <StackPanel>
-                <local:OrderControl/>
-                
-            </StackPanel>
-        </Grid>
+
+        <local:OrderControl/>
     </Grid>
 </Window>

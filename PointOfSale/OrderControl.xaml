@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="1920" d:DesignWidth="1080">
+             d:DesignHeight="600" d:DesignWidth="1080">
     <UserControl.Resources>
         <Style TargetType="Button">
             <Setter Property="Height" Value="60"/>
@@ -17,31 +17,46 @@
         </Style>
     </UserControl.Resources>
     <Grid >
-    
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
 
-            <Button x:Name="ItemSelect" Grid.Row="0" Grid.Column="0" Background="CadetBlue" Click="ItemSelect_Click">Item Selection</Button>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
-            <Button x:Name="CancelOrder" Grid.Row="0" Grid.Column="1" Click="CancelOrder_Click" Background="Yellow">Cancel order</Button>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="ItemSelect" Grid.Row="0" Grid.Column="0" Background="CadetBlue" Click="ItemSelect_Click">Item Selection</Button>
 
-            <Button x:Name="CompleteOrder" Grid.Row="0" Grid.Column="2" Click="CompleteOrder_Click" Background="LawnGreen">Complete Order</Button>
+                <Button x:Name="CancelOrder" Grid.Row="0" Grid.Column="1" Click="CancelOrder_Click" Background="Yellow">Cancel order</Button>
+
+                <Button x:Name="CompleteOrder" Grid.Row="0" Grid.Column="2" Click="CompleteOrder_Click" Background="LawnGreen">Complete Order</Button>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <local:MenuItemSelectionControl/>
+            </Grid>
         </Grid>
 
-        <Grid Grid.Row="1">
-            <local:MenuItemSelectionControl/>
+        <Grid Grid.Column="1">
+            <local:OrderSummaryControl/>
         </Grid>
+        
 
         
+
+
+
+
 
 
     </Grid>
