@@ -18,9 +18,19 @@ namespace CowboyCafe.Data
         List<IOrderItem> items = new List<IOrderItem>();
 
         /// <summary>
+        /// backing variabble for prices property
+        /// </summary>
+        List<double> prices = new List<double>();
+
+        /// <summary>
         /// list of all items in the order
         /// </summary>
-        public IEnumerable<IOrderItem> Items { get => items; }
+        public IEnumerable<IOrderItem> Items { get => items.ToArray(); }
+        
+        /// <summary>
+        /// list of all prices in the order
+        /// </summary>
+        public IEnumerable<double> Prices { get => prices.ToArray(); }
 
         /// <summary>
         /// total price of all items on the order (before taxes)
@@ -30,9 +40,9 @@ namespace CowboyCafe.Data
             get
             {
                 double subtotal = 0;
-                foreach(IOrderItem item in items)
+                foreach(double price in prices)
                 {
-                    subtotal += item.Price;
+                    subtotal += price;
                 }
                 return subtotal;
             }
@@ -45,9 +55,11 @@ namespace CowboyCafe.Data
         public void Add(IOrderItem item)
         {
             items.Add(item);
+            prices.Add(item.Price);
+            
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Prices"));
         }
 
         /// <summary>
@@ -57,9 +69,11 @@ namespace CowboyCafe.Data
         public void Remove(IOrderItem item)
         {
             items.Remove(item);
+            prices.Remove(item.Price);
+
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Prices"));
         }
 
         /// <summary>

@@ -19,15 +19,11 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
-        public Order currentOrder;
-
         public OrderControl()
         {
-            
-            currentOrder = new Order();
-            currentOrder.Add(new AngryChicken());
+            var currentOrder = new Order();
+            this.DataContext = currentOrder;
             InitializeComponent();
-            DataContext = currentOrder;
         }
     }
 }
