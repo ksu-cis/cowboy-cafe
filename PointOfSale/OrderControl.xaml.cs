@@ -26,7 +26,7 @@ namespace PointOfSale
 
         private void CompleteOrder_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new Order();
+            this.DataContext = new Order();
             
         }
 
