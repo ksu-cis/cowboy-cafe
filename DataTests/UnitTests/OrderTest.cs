@@ -11,7 +11,7 @@ namespace CowboyCafe.DataTests
         public class MockOrderItem : IOrderItem
         {
             public double Price { get; set; }
-            public List<string> SpecailInstructions { get; set; }
+            public List<string> SpecialInstructions { get; set; }
         }
 
         //should be able to add items
