@@ -4,39 +4,50 @@ using System.Text;
 using Xunit;
 using CowboyCafe.Data;
 
+
 namespace CowboyCafe.DataTests
 {
     public class OrderTest
     {
+        /// <summary>
+        /// generic order item for testing purposes
+        /// </summary>
         public class MockOrderItem : IOrderItem
         {
             public double Price { get; set; }
             public List<string> SpecialInstructions { get; set; }
         }
 
-        //should be able to add items
+        /// <summary>
+        /// should be able to add items to the order
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToAddItems()
         {
             Order order = new Order();
-            IOrderItem food = new AngryChicken();
+            IOrderItem food = new MockOrderItem();
             order.Add(food);
             Assert.Contains<IOrderItem>(food, order.Items);
         }
 
-        //should be able to remove items
+        /// <summary>
+        /// should be able to remove items from order
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToRemoveItems()
         {
             Order order = new Order();
-            IOrderItem food = new AngryChicken();
+            IOrderItem food = new MockOrderItem();
             order.Add(food);
+            Assert.Contains<IOrderItem>(food, order.Items);
             order.Remove(food);
             Assert.DoesNotContain<IOrderItem>(food, order.Items);
         }
 
 
-        //should be able to get an inumeration of the items
+        /// <summary>
+        /// should give inumeration of all items in order
+        /// </summary>
         [Fact]
         public void ShouldGiveAnInumerationOfItems()
         {
@@ -61,7 +72,9 @@ namespace CowboyCafe.DataTests
         }
 
 
-        //subtotal should be the sum of all item prices
+        /// <summary>
+        /// Should give correct subtotal of prices
+        /// </summary>
         [Fact]
         public void ShouldHaveCorrectSubtotal()
         {
@@ -86,21 +99,30 @@ namespace CowboyCafe.DataTests
             Assert.Equal(420 + 69 + 1.5, order.Subtotal);
         }
 
+        /// <summary>
+        /// Adding an item should trigger property change events
+        /// </summary>
+        /// <param name="propertyName"></param>
         [Theory]
-        [InlineData("Price")]
+        [InlineData("Subtotal")]
         [InlineData("Items")]
         public void AddingAnItemShouldTriggerPropertyChanged(string propertyName)
         {
             var order = new Order();
             var item = new MockOrderItem();
+            item.Price = 1;
             Assert.PropertyChanged(order, propertyName, () =>
             {
                 order.Add(item);
             });
         }
 
+        /// <summary>
+        /// adding an items hould trigger property change events
+        /// </summary>
+        /// <param name="propertyName"></param>
         [Theory]
-        [InlineData("Price")]
+        [InlineData("Subtotal")]
         [InlineData("Items")]
         public void RemovingAnItemShouldTriggerPropertyChanged(string propertyName)
         {
