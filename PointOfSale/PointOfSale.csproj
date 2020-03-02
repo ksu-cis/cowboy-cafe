@@ -68,6 +68,12 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MenuItemSelectionControl.xaml.cs">
+      <DependentUpon>MenuItemSelectionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrderSummeryControl.xaml.cs">
+      <DependentUpon>OrderSummeryControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OrderControl.xaml.cs">
       <DependentUpon>OrderControl.xaml</DependentUpon>
     </Compile>
@@ -103,6 +109,14 @@
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MenuItemSelectionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OrderSummeryControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="OrderControl.xaml">
       <SubType>Designer</SubType>

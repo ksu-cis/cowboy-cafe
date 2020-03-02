@@ -15,43 +15,11 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="0.75*"/>
+            <ColumnDefinition Width="0.25*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0">
-            <TextBlock TextAlignment="Center">Entrees</TextBlock>
-            <Button Name="AngryChickenButton" Click="AngryChickenButton_Click">Angry Chicken</Button>
-            <Button Name="CowPokeChiliButton" Click="CowPokeChiliButton_Click">Cow PokeChili</Button>
-            <Button Name="DakotaDoubleBurgerButton" Click="DakotaDoubleBurgerButton_Click">Dakota Double Burger</Button>
-            <Button Name="PecosPulledPorkButton" Click="PecosPulledPorkButton_Click">Pecos Pulled Pork</Button>
-            <Button Name="RustlersRibsButton" Click="RustlersRibsButton_Click">Rustler's Ribs</Button>
-            <Button Name="TexasTripleBurgerButton" Click="TexasTripleBurgerButton_Click">Texas Triple Burger</Button>
-            <Button Name="TrailBurgerButton" Click="TrailBurgerButton_Click">Trailburger</Button>
-        </StackPanel>
-
-        <StackPanel Grid.Column="1">
-            <TextBlock TextAlignment ="Center">Sides</TextBlock>
-            <Button Name="BakedBeansButton" Click="BakedBeansButton_Click">Baked Beans</Button>
-            <Button Name="ChilliCheeseFriesButton" Click="ChilliCheeseFriesButton_Click">Chilli Cheese Fries</Button>
-            <Button Name="CornDodgersButton" Click="CornDodgersButton_Click">Corn Dodgers</Button>
-            <Button Name="PanDeCampoButton" Click="PanDeCampoButton_Click">Pan De Campo</Button>
-        </StackPanel>
-
-        <StackPanel Grid.Column="2">
-            <TextBlock TextAlignment ="Center">Drinks</TextBlock>
-            <Button Name="CowboyCoffeeButton" Click="CowboyCoffeeButton_Click">Cowboy Coffee</Button>
-            <Button Name="JerkedSodaButton" Click="JerkedSodaButton_Click">Jerked Soda</Button>
-            <Button Name="TexasTeaButton" Click="TexasTeaButton_Click">Texas Tea</Button>
-            <Button Name="WaterButton" Click="WaterButton_Click">Water</Button>
-        </StackPanel>
-
-        <StackPanel Grid.Column="3">
-            <TextBlock TextAlignment ="Center">Order</TextBlock>
-            <ListView Name="OrderListView"/>
-        </StackPanel>
-        
+        <local:MenuItemSelectionControl Grid.Column="0"/>
+        <local:OrderSummeryControl Grid.Column="1"/>
     </Grid>
 </UserControl>
