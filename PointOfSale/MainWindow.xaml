@@ -11,11 +11,13 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0">
-            <local:OrderControl/>
-        </StackPanel>
+
         <local:OrderSummaryControl Grid.Column="1" />
-
-
+        <Grid Grid.Column="0" Grid.Row="0">
+            <StackPanel>
+                <local:OrderControl/>
+                <local:MenuItemSelectionControl/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

@@ -5,11 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="383" d:DesignWidth="1080">
+             d:DesignHeight="60" d:DesignWidth="1080">
     <UserControl.Resources>
         <Style TargetType="Button">
-            <Setter Property="Height" Value="50"/>
+            <Setter Property="Height" Value="60"/>
             <Setter Property="FontSize" Value="18"/>
+
         </Style>
         <Style TargetType="Grid">
 
@@ -23,30 +24,15 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
-            <TextBlock TextAlignment="Center" FontSize="25">Entree</TextBlock>
-            <Button x:Name="AddCowPokeChilli" Click="AddCowPokeChilli_Click">CowPoke Chilli</Button>
-            <Button x:Name="AddRustlersRibs" Click="AddRustlersRibs_Click">Rustler's Rubs</Button>
-            <Button x:Name="AddPecosPulledPork" Click="AddPecosPulledPork_Click">Pecos Pulled Pork</Button>
-            <Button x:Name="AddTrailBurger" Click="AddTrailBurger_Click">Trail Burger</Button>
-            <Button x:Name="DakotaDoubleBurger" Click="DakotaDoubleBurger_Click">Dakota Double Burger</Button>
-            <Button x:Name="AddTexasTripleBurger" Click="AddTexasTripleBurger_Click">Texas Triple Burger</Button>
-            <Button x:Name="AddAngryChicken" Click="AddAngryChicken_Click">Angry Chicken</Button>
+            <Button x:Name="ItemSelect" Background="CadetBlue" Click="ItemSelect_Click">Item Selection</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="1">
-            <TextBlock TextAlignment="Center" FontSize="25">Side</TextBlock>
-            <Button x:Name="AddChilliCHeeseFries" Click="AddChilliCHeeseFries_Click">Chilli Cheese Fries</Button>
-            <Button x:Name="AddCornDodgers" Click="AddCornDodgers_Click">Corn Dodgers</Button>
-            <Button x:Name="AddPanDeCampo" Click="AddPanDeCampo_Click">Pan De Campo</Button>
-            <Button x:Name="AddBakedBeans" Click="AddBakedBeans_Click">Baked Beans</Button>
+            <Button x:Name="CancelOrder" Click="CancelOrder_Click" Background="Yellow">Cancel order</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="2">
-            <TextBlock TextAlignment="Center" FontSize="25">Drinks</TextBlock>
-            <Button x:Name="AddJerkedSoda" Click="AddJerkedSoda_Click">Jerked Soda</Button>
-            <Button x:Name="AddTexasTea" Click="AddTexasTea_Click">Texas Tea</Button>
-            <Button x:Name="AddCowbyCoffee" Click="AddCowbyCoffee_Click">Cowboy Coffee</Button>
-            <Button x:Name="AddWater" Click="AddWater_Click">Water</Button>
+            <Button x:Name="CompleteOrder" Click="CompleteOrder_Click" Background="LawnGreen">Complete Order</Button>
         </StackPanel>
 
     </Grid>
