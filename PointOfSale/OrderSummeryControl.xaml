@@ -26,11 +26,11 @@
                    TextAlignment="Center" Text="order #"/>
 
         <StackPanel Grid.Row="1">
-            <ListView Name="OrderListView"/>
+            <ListView Name="OrderListView" ItemsSource="{Binding Path=Items}"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <ListView Name="OrderPriceView"/>
+            <ListView Name="OrderPriceView" ItemsSource="{Binding Path=Price, StringFormat=c}"/>
         </StackPanel>
 
         <TextBlock Grid.Row="2" Text="Subtotal"/>

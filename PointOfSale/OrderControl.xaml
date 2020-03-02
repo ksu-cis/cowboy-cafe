@@ -8,13 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <UserControl.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Height" Value="50"/>
-            <Setter Property="FontFamily" Value="Papyrus"/>
-            <Setter Property="Background" Value="Purple"/>
-            <Setter Property="Foreground" Value="YellowGreen"/>
-            <Setter Property="BorderBrush" Value="LimeGreen"/>
-            <Setter Property="FontSize" Value="20"/>
+        <Style TargetType="local:OrderControl">
         </Style>
     </UserControl.Resources>
 
