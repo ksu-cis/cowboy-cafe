@@ -29,6 +29,6 @@
         <Button Grid.Column="2" Grid.Row="0">Complete Order</Button>
 
         <local:MenuItemSelectionControl Grid.ColumnSpan="3" Grid.Row="2"/>
-        <local:OrderSummeryControl Grid.Column="3" Grid.RowSpan="2"/>
+        <local:OrderSummeryControl Grid.Column="3" Grid.RowSpan="2" Loaded="OrderSummeryControl_Loaded"/>
     </Grid>
 </UserControl>
