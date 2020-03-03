@@ -23,7 +23,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Column="0" Grid.ColumnSpan="2"
-                   TextAlignment="Center" Text="{Binding Path=Subtotal, StringFormat=c}"/>
+                   TextAlignment="Center" Text="{Binding Path=OrderNumber, StringFormat=c}"/>
 
         <StackPanel Grid.Row="1">
             <ListView Name="OrderListView" ItemsSource="{Binding Path=Items}"/>
@@ -36,6 +36,6 @@
         <TextBlock Grid.Row="2" Text="Subtotal"/>
 
         <TextBlock Grid.Row="2" Grid.Column="1" 
-                   Text="{Binding Path=Subtotal, StringFormat=c}"/>
+                   Text="{Binding Path=Subtotal}"/>
     </Grid>
 </UserControl>

@@ -24,9 +24,12 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Button Grid.Column="0" Grid.Row="0">Item Selection</Button>
-        <Button Grid.Column="1" Grid.Row="0">Cancel Order</Button>
-        <Button Grid.Column="2" Grid.Row="0">Complete Order</Button>
+        <Button Grid.Column="0" Name="ItemSelectionButton" Grid.Row="0" 
+                Click="ItemSelectionButtonClick">Item Selection</Button>
+        <Button Grid.Column="1" Name="CancelOrderButton" Grid.Row="0" 
+                Click="CancelOrderButtonClick">Cancel Order</Button>
+        <Button Grid.Column="2" Name="CompleteOrderButton" Grid.Row="0" 
+                Click="CompleteOrderButtonClick">Complete Order</Button>
 
         <local:MenuItemSelectionControl Grid.ColumnSpan="3" Grid.Row="2"/>
         <local:OrderSummeryControl Grid.Column="3" Grid.RowSpan="2"/>

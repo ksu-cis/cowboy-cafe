@@ -11,19 +11,61 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace PointOfSale
 {
     /// <summary>
     /// Interaction logic for OrderControl.xaml
     /// </summary>
-    public partial class OrderControl : UserControl
+    public partial class OrderControl : UserControl, INotifyPropertyChanged
     {
+        private int orderNumber = 1;
+
+        public Order currentOrder;
+
         public OrderControl()
         {
-            var currentOrder = new Order();
+            currentOrder = new Order(orderNumber);
             this.DataContext = currentOrder;
             InitializeComponent();
         }
+
+        /// <summary>
+        /// does nothing (yet......)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ItemSelectionButtonClick(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        /// <summary>
+        /// replaces the current order with a blank one of the same ID number
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CancelOrderButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = new Order(orderNumber);
+        }
+
+        /// <summary>
+        /// Moves on the the next order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CompleteOrderButtonClick(object sender, RoutedEventArgs e)
+        {
+            orderNumber++;
+            this.DataContext = new Order(orderNumber);
+        }
+
+
+        /// <summary>
+        /// updates stuff when the order is updated.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

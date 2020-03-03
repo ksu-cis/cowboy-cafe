@@ -8,9 +8,9 @@ namespace CowboyCafe.Data
     public class Order : INotifyPropertyChanged
     {
         /// <summary>
-        /// order number from previous number i think...
+        /// ID number for order
         /// </summary>
-        private uint lastOrderNumber;
+        public int OrderNumber { get; private set; }
         
         /// <summary>
         /// backing variable for Items property
@@ -46,6 +46,15 @@ namespace CowboyCafe.Data
                 }
                 return subtotal;
             }
+        }
+
+        /// <summary>
+        /// creates a new instance of Order
+        /// </summary>
+        /// <param name="number">Order number</param>
+        public Order(int number)
+        {
+            OrderNumber = number;
         }
 
         /// <summary>
