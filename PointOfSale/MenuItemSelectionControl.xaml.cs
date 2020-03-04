@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -24,9 +25,32 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        public void OnItemAddButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            if(DataContext is Order order)
+            {
+                if(sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "CowPokeChlli":
+                            var entree = new CowpokeChili();
+                            var screen = new CustomizeCowPokeChilli();
+                            screen.DataContext = entree;
+                            order.Add(new CowpokeChili());
+                            orderControl.SwapScreen(new CustomizeCowPokeChilli());
+                            break;
+                    }
+                }
+            }
+        }
+
         private void AddCowPokeChilli_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
             ((Order)DataContext).Add(new CowboyCafe.Data.CowpokeChili());
+            orderControl.SwapScreen(new CustomizeCowPokeChilli());
         }
 
         private void AddRustlersRibs_Click(object sender, RoutedEventArgs e)

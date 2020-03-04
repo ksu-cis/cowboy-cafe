@@ -29,6 +29,10 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
+            <Border x:Name="Container" Grid.Column="0" Grid.Row="1">
+                <local:MenuItemSelectionControl/>
+            </Border>
+            
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -42,9 +46,7 @@
                 <Button x:Name="CompleteOrder" Grid.Row="0" Grid.Column="2" Click="CompleteOrder_Click" Background="LawnGreen">Complete Order</Button>
             </Grid>
 
-            <Grid Grid.Row="1">
-                <local:MenuItemSelectionControl/>
-            </Grid>
+            
         </Grid>
 
         <Grid Grid.Column="1">
