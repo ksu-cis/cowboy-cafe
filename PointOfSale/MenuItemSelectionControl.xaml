@@ -30,6 +30,7 @@
             <Button x:Name="DakotaDoubleBurger" Click="DakotaDoubleBurger_Click">Dakota Double Burger</Button>
             <Button x:Name="AddTexasTripleBurger" Click="AddTexasTripleBurger_Click">Texas Triple Burger</Button>
             <Button x:Name="AddAngryChicken" Click="AddAngryChicken_Click">Angry Chicken</Button>
+            <Button>OnItemAddButtonClicked</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="1">
