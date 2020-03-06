@@ -32,25 +32,25 @@ namespace PointOfSale
             {
                 if(sender is Button button)
                 {
-                    switch (button.Tag)
+                    switch (button.Name)
                     {
-                        case "CowPokeChlli":
+                        case "AddCowPokeChilli":
                             var entree = new CowpokeChili();
                             var screen = new CustomizeCowPokeChilli();
                             screen.DataContext = entree;
+                            order.Add(entree);
+                            orderControl.SwapScreen(screen);
+                            break;
+                        case "AddRustlersRibs":
+                            var entree2 = new RustlersRibs();
+                            var screen2 = new CustomizeCowPokeChilli();
+                            screen2.DataContext = entree2;
                             order.Add(new CowpokeChili());
                             orderControl.SwapScreen(new CustomizeCowPokeChilli());
                             break;
                     }
                 }
             }
-        }
-
-        private void AddCowPokeChilli_Click(object sender, RoutedEventArgs e)
-        {
-            var orderControl = this.FindAncestor<OrderControl>();
-            ((Order)DataContext).Add(new CowboyCafe.Data.CowpokeChili());
-            orderControl.SwapScreen(new CustomizeCowPokeChilli());
         }
 
         private void AddRustlersRibs_Click(object sender, RoutedEventArgs e)

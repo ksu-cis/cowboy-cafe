@@ -10,14 +10,10 @@
         <StackPanel>
             <TextBlock FontSize="25">Customize CowPoke Chilli</TextBlock>
             <StackPanel>
-                <Label>Green Onions</Label>
-                <CheckBox x:Name="GreenOnions" IsChecked="{Binding Path=GreenOnions}"/>
-                <Label>Cheese</Label>
-                <CheckBox x:Name="Cheese" IsChecked="{Binding Path=Cheese}"/>
-                <Label>Tortilla Strips</Label>
-                <CheckBox x:Name="TortillaStrips" IsChecked="{Binding Path=TortillaStrips}"/>
-                <Label>Sour Cream</Label>
-                <CheckBox x:Name="SourCream" IsChecked="{Binding Path=SourCream}"/>
+                <CheckBox x:Name="GreenOnions" IsChecked="{Binding Path=GreenOnions}">Green Onions</CheckBox>
+                <CheckBox x:Name="Cheese" IsChecked="{Binding Path=Cheese}"> Cheese </CheckBox>
+                <CheckBox x:Name="TortillaStrips" IsChecked="{Binding Path=TortillaStrips}"> Tortilla Strips</CheckBox>
+                <CheckBox x:Name="SourCream" IsChecked="{Binding Path=SourCream}"> Sour Cream</CheckBox>
             </StackPanel>
         </StackPanel>
         

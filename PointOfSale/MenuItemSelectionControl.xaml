@@ -23,7 +23,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
             <TextBlock TextAlignment="Center" FontSize="25">Entree</TextBlock>
-            <Button x:Name="AddCowPokeChilli" Click="AddCowPokeChilli_Click">CowPoke Chilli</Button>
+            <Button x:Name="AddCowPokeChilli" Click="OnItemAddButtonClicked">CowPoke Chilli</Button>
             <Button x:Name="AddRustlersRibs" Click="AddRustlersRibs_Click">Rustler's Rubs</Button>
             <Button x:Name="AddPecosPulledPork" Click="AddPecosPulledPork_Click">Pecos Pulled Pork</Button>
             <Button x:Name="AddTrailBurger" Click="AddTrailBurger_Click">Trail Burger</Button>

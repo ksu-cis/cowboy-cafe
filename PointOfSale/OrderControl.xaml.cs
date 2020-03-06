@@ -42,7 +42,7 @@ namespace PointOfSale
 
         private void ItemSelect_Click(object sender, RoutedEventArgs e)
         {
-
+            Container.Child = new MenuItemSelectionControl();
         }
     }
 }
