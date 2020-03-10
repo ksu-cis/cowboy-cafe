@@ -37,7 +37,7 @@ namespace PointOfSale
 
         private void CancelOrder_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new Order();
+            this.DataContext = new Order();
         }
 
         private void ItemSelect_Click(object sender, RoutedEventArgs e)

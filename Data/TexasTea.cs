@@ -1,20 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     public class TexasTea : Drink
     {
+        private bool sweet = true;
         /// <summary>
         /// Mkaes drink sweet or unsweet
         /// </summary>
-        public bool Sweet { get; set; } = true;
+        public bool Sweet { get { return sweet; } set { sweet = value; NotifyPropertyChange("Sweet"); } }
 
+
+        private bool lemon = false;
         /// <summary>
-        /// Checks whether to dd lemon or not
+        /// Checks whether to add lemon or not
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon { get { return lemon; } set { lemon = value; NotifyPropertyChange("Lemon"); } }
 
         /// <summary>
         /// Gets price of tea
@@ -106,11 +110,33 @@ namespace CowboyCafe.Data
         {
             if (Sweet)
             {
-                return Size.ToString() + " Texas Sweet Tea";
+                if (Size == Size.Small)
+                {
+                    return "Small Sweet Texas Tea";
+                }
+                else if (Size == Size.Medium)
+                {
+                    return "Medium Sweet Texas Tea";
+                }
+                else
+                {
+                    return "Large Sweet Texas Tea";
+                }
             }
             else
             {
-                return Size.ToString() + " Texas Plain Tea";
+                if (Size == Size.Small)
+                {
+                    return "Small UnSweet Texas Tea";
+                }
+                else if (Size == Size.Medium)
+                {
+                    return "Medium UnSweet Texas Tea";
+                }
+                else
+                {
+                    return "Large UnSweet Texas Tea";
+                }
             }
         }
     }

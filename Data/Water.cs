@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class Water : Drink
+    public class Water : Drink, INotifyPropertyChanged
     {
+       
+        private bool lemon = false;
         /// <summary>
         /// Checks whether to add lemon or not
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon { get { return lemon; } set { lemon = value; NotifyPropertyChange("Lemon"); } }
 
         /// <summary>
         /// Gets price of water
@@ -53,7 +56,18 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return Size.ToString() + " Water";
+            if (Size == Size.Small)
+            {
+                return "Small Water";
+            }
+            else if (Size == Size.Medium)
+            {
+                return "Medium Water";
+            }
+            else
+            {
+                return "Large Water";
+            }
         }
     }
 }

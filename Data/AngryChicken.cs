@@ -6,20 +6,43 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class AngryChicken : Entree
+    public class AngryChicken : Entree, INotifyPropertyChanged
     {
+        private bool bread = true;
         /// <summary>
         /// If chicken has Bread
         /// </summary>
-        public bool Bread { get; set; } = true;
+        public bool Bread { 
+            get 
+            { 
+                return bread; 
+            } 
+            set
+            {
+                bread = value;
+                NotifyPropertyChange("Bread");
+            } 
+        }
 
+        private bool pickle = true;
         /// <summary>
         /// If chicken has Pickle
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle { 
+            get 
+            {
+                return pickle;
+            } 
+            set 
+            {
+                pickle = value;
+                NotifyPropertyChange("Pickle");
+            } 
+        }
 
         /// <summary>
         /// The price of the Chicken

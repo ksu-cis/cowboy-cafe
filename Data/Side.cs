@@ -15,18 +15,7 @@ namespace CowboyCafe.Data
     /// </summary>
     public abstract class Side : IOrderItem, INotifyPropertyChanged
     {
-        private Size size
-        {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value;
-                NotifyPropertyChange("size"); 
-            }
-        }
+        private Size size;
         /// <summary>
         /// Gets the size of the entree
         /// </summary>

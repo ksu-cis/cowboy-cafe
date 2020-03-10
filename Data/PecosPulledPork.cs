@@ -11,15 +11,39 @@ namespace CowboyCafe.Data
 {
     public class PecosPulledPork : Entree
     {
+        private bool bread = true;
         /// <summary>
         /// If Pulled Pork has Bread
         /// </summary>
-        public bool Bread = true;
+        public bool Bread
+        {
+            get
+            {
+                return bread;
+            }
+            set
+            {
+                bread = value;
+                NotifyPropertyChange("Bread");
+            }
+        }
 
+        private bool pickle = true;
         /// <summary>
         /// If Pulled Pork has Pickle
         /// </summary>
-        public bool Pickle = true;
+        public bool Pickle
+        {
+            get
+            {
+                return pickle;
+            }
+            set
+            {
+                pickle = value;
+                NotifyPropertyChange("Pickle");
+            }
+        }
 
         /// <summary>
         /// The price of the Pulled Pork

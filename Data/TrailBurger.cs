@@ -11,30 +11,43 @@ namespace CowboyCafe.Data
 {
     public class TrailBurger : Entree
     {
+        private bool bun = true;
         /// <summary>
         /// If Burger has Bun
         /// </summary>
-        public bool Bun { get; set; } = true;
+        public bool Bun
+        {
+            get { return bun; }
+            set
+            {
+                bun = value;
+                NotifyPropertyChange("Bun");
+            }
+        }
 
+        private bool ketchup = true;
         /// <summary>
         /// If Burger has Ketchup
         /// </summary>
-        public bool Ketchup { get; set; } = true;
+        public bool Ketchup { get { return ketchup; } set { ketchup = value; NotifyPropertyChange("Ketchup"); } }
 
+        private bool pickle = true;
         /// <summary>
         /// If Burger has Pickle
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle { get { return pickle; } set { pickle = value; NotifyPropertyChange("Pickle"); } }
 
+        private bool cheese = true;
         /// <summary>
         /// If Burger has Cheese
         /// </summary>
-        public bool Cheese { get; set; } = true;
+        public bool Cheese { get { return cheese; } set { cheese = value; NotifyPropertyChange("Cheese"); } }
 
+        private bool mustard = true;
         /// <summary>
         /// If Burger has Mustard
         /// </summary>
-        public bool Mustard { get; set; } = true;
+        public bool Mustard { get { return mustard; } set { mustard = value; NotifyPropertyChange("Mustard"); } }
 
         /// <summary>
         /// The price of the Burger

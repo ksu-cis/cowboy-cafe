@@ -25,8 +25,9 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        public void OnItemAddButtonClicked(object sender, RoutedEventArgs e)
+        public void OnItemAddEntreeClicked(object sender, RoutedEventArgs e)
         {
+            IOrderItem entree;
             var orderControl = this.FindAncestor<OrderControl>();
             if(DataContext is Order order)
             {
@@ -35,92 +36,168 @@ namespace PointOfSale
                     switch (button.Name)
                     {
                         case "AddCowPokeChilli":
-                            var entree = new CowpokeChili();
-                            var screen = new CustomizeCowPokeChilli();
+                            entree = new CowpokeChili();
+                            var screen = new CustomizeEntree();
                             screen.DataContext = entree;
                             order.Add(entree);
                             orderControl.SwapScreen(screen);
+                            screen.Title.Text = "Customize Cowpoke Chilli";
+                            screen.ChilliMenu();
                             break;
                         case "AddRustlersRibs":
-                            var entree2 = new RustlersRibs();
-                            var screen2 = new CustomizeCowPokeChilli();
-                            screen2.DataContext = entree2;
-                            order.Add(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowPokeChilli());
+                            entree = new RustlersRibs();
+                            var screen2 = new CustomizeEntree();
+                            screen2.DataContext = entree;
+                            order.Add(entree);
+                            orderControl.SwapScreen(screen2);
+                            screen2.Title.Text = "Customize Rustler's Ribs";
+                            break;
+                        case "AddPecosPulledPork":
+                            entree = new PecosPulledPork();
+                            var screen3 = new CustomizeEntree();
+                            screen3.DataContext = entree;
+                            order.Add(entree);
+                            orderControl.SwapScreen(screen3);
+                            screen3.Title.Text = "Customize Pecos Pulled Pork";
+                            screen3.PecosPulledPork();
+                            break;
+                        case "AddTrailBurger":
+                            entree = new TrailBurger();
+                            var screen4 = new CustomizeEntree();
+                            screen4.DataContext = entree;
+                            order.Add(entree);
+                            orderControl.SwapScreen(screen4);
+                            screen4.Title.Text = "Customize Trail Burger";
+                            screen4.TrailBurger();
+                            break;
+                        case "DakotaDoubleBurger":
+                            entree = new DakotaDoubleBurger();
+                            var screen5 = new CustomizeEntree();
+                            screen5.DataContext = entree;
+                            order.Add(entree);
+                            orderControl.SwapScreen(screen5);
+                            screen5.Title.Text = "Customize Dakota Double Burger";
+                            screen5.DakotaDouble();
+                            break;
+                        case "AddTexasTripleBurger":
+                            entree = new TexasTripleBurger();
+                            var screen6 = new CustomizeEntree();
+                            screen6.DataContext = entree;
+                            order.Add(entree);
+                            orderControl.SwapScreen(screen6);
+                            screen6.Title.Text = "Customize Texas Triple Burger";
+                            screen6.TexasTriple();
+                            break;
+                        case "AddAngryChicken":
+                            entree = new AngryChicken();
+                            var screen7 = new CustomizeEntree();
+                            screen7.DataContext = entree;
+                            order.Add(entree);
+                            orderControl.SwapScreen(screen7);
+                            screen7.Title.Text = "Customize Angry Chicken";
+                            screen7.AngryChickenMenu();
                             break;
                     }
                 }
             }
         }
 
-        private void AddRustlersRibs_Click(object sender, RoutedEventArgs e)
+        public void OnItemAddDrinkClick(object sender, RoutedEventArgs e)
         {
-            ((Order)DataContext).Add(new CowboyCafe.Data.RustlersRibs());
+            IOrderItem Drink;
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order order)
+            {
+                if (sender is Button button)
+                {
+                    switch (button.Name)
+                    {
+                        case "AddJerkedSoda":
+                            Drink = new JerkedSoda();
+                            var screen = new CustomizeDrink();
+                            screen.DataContext = Drink;
+                            order.Add(Drink);
+                            orderControl.SwapScreen(screen);
+                            screen.Title.Text = "Customize Jerked Soda";
+                            screen.SodaMenu();
+                            break;
+                        case "AddTexasTea":
+                            Drink = new TexasTea();
+                            var screen2 = new CustomizeDrink();
+                            screen2.DataContext = Drink;
+                            order.Add(Drink);
+                            orderControl.SwapScreen(screen2);
+                            screen2.Title.Text = "Customize Texas Tea";
+                            screen2.TeaMenu();
+                            break;
+                        case "AddCowbyCoffee":
+                            Drink = new CowboyCoffee();
+                            var screen3 = new CustomizeDrink();
+                            screen3.DataContext = Drink;
+                            order.Add(Drink);
+                            orderControl.SwapScreen(screen3);
+                            screen3.Title.Text = "Customize Cowboy Coffee";
+                            screen3.CoffeeMenu();
+                            break;
+                        case "AddWater":
+                            Drink = new Water();
+                            var screen4 = new CustomizeDrink();
+                            screen4.DataContext = Drink;
+                            order.Add(Drink);
+                            orderControl.SwapScreen(screen4);
+                            screen4.Title.Text = "Customize Water";
+                            screen4.WaterMenu();
+                            break;
+                    }
+                }
+            }
         }
 
-        private void AddPecosPulledPork_Click(object sender, RoutedEventArgs e)
+        public void OnItemAddSideClick(object sender, RoutedEventArgs e)
         {
-            ((Order)DataContext).Add(new CowboyCafe.Data.PecosPulledPork());
-        }
-
-        private void AddTrailBurger_Click(object sender, RoutedEventArgs e)
-        {
-            ((Order)DataContext).Add(new CowboyCafe.Data.TrailBurger());
-        }
-
-        private void DakotaDoubleBurger_Click(object sender, RoutedEventArgs e)
-        {
-            ((Order)DataContext).Add(new CowboyCafe.Data.DakotaDoubleBurger());
-        }
-
-        private void AddTexasTripleBurger_Click(object sender, RoutedEventArgs e)
-        {
-            ((Order)DataContext).Add(new CowboyCafe.Data.TexasTripleBurger());
-        }
-
-        private void AddAngryChicken_Click(object sender, RoutedEventArgs e)
-        {
-            ((Order)DataContext).Add(new CowboyCafe.Data.AngryChicken());
-        }
-
-        private void AddChilliCHeeseFries_Click(object sender, RoutedEventArgs e)
-        {
-            ((Order)DataContext).Add(new CowboyCafe.Data.ChiliCheeseFries());
-        }
-
-        private void AddCornDodgers_Click(object sender, RoutedEventArgs e)
-        {
-            ((Order)DataContext).Add(new CowboyCafe.Data.CornDodgers());
-        }
-
-        private void AddPanDeCampo_Click(object sender, RoutedEventArgs e)
-        {
-            ((Order)DataContext).Add(new CowboyCafe.Data.PanDeCampo());
-        }
-
-        private void AddBakedBeans_Click(object sender, RoutedEventArgs e)
-        {
-            ((Order)DataContext).Add(new CowboyCafe.Data.BakedBeans());
-        }
-
-        private void AddJerkedSoda_Click(object sender, RoutedEventArgs e)
-        {
-            ((Order)DataContext).Add(new CowboyCafe.Data.JerkedSoda());
-        }
-
-        private void AddTexasTea_Click(object sender, RoutedEventArgs e)
-        {
-            ((Order)DataContext).Add(new CowboyCafe.Data.TexasTea());
-        }
-
-        private void AddCowbyCoffee_Click(object sender, RoutedEventArgs e)
-        {
-            ((Order)DataContext).Add(new CowboyCafe.Data.CowboyCoffee());
-        }
-
-        private void AddWater_Click(object sender, RoutedEventArgs e)
-        {
-            ((Order)DataContext).Add(new CowboyCafe.Data.Water());
+            IOrderItem Side;
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order order)
+            {
+                if (sender is Button button)
+                {
+                    switch (button.Name)
+                    {
+                        case "AddChilliCheeseFries":
+                            Side = new ChiliCheeseFries();
+                            var screen = new CustomizeSides();
+                            screen.DataContext = Side;
+                            order.Add(Side);
+                            orderControl.SwapScreen(screen);
+                            screen.Title.Text = "Customize Chilli Cheese Fries";
+                            break;
+                        case "AddCornDodgers":
+                            Side = new CornDodgers();
+                            var screen2 = new CustomizeSides();
+                            screen2.DataContext = Side;
+                            order.Add(Side);
+                            orderControl.SwapScreen(screen2);
+                            screen2.Title.Text = "Customize Corn Dodgers";
+                            break;
+                        case "AddPanDeCampo":
+                            Side = new PanDeCampo();
+                            var screen3 = new CustomizeSides();
+                            screen3.DataContext = Side;
+                            order.Add(Side);
+                            orderControl.SwapScreen(screen3);
+                            screen3.Title.Text = "Customize Pan De Campo";
+                            break;
+                        case "AddBakedBeans":
+                            Side = new BakedBeans();
+                            var screen4 = new CustomizeSides();
+                            screen4.DataContext = Side;
+                            order.Add(Side);
+                            orderControl.SwapScreen(screen4);
+                            screen4.Title.Text = "Customize Baked Beans";
+                            break;
+                    }
+                }
+            }
         }
     }
 }

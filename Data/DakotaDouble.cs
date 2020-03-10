@@ -11,45 +11,60 @@ namespace CowboyCafe.Data
 {
     public class DakotaDoubleBurger : Entree
     {
+        private bool bun = true;
         /// <summary>
         /// If Burger has Bun
         /// </summary>
-        public bool Bun { get; set; } = true;
+        public bool Bun { 
+            get { return bun; } 
+            set 
+            {
+                bun = value;
+                NotifyPropertyChange("Bun");
+            } 
+        }
 
+        private bool tomato = true;
         /// <summary>
         /// If Burger has Tomato
         /// </summary>
-        public bool Tomato { get; set; } = true;
+        public bool Tomato { get { return tomato; } set { tomato = value; NotifyPropertyChange("Tomato"); } }
 
+        private bool lettuce = true;
         /// <summary>
         /// If Burger has Lettuce
         /// </summary>
-        public bool Lettuce { get; set; } = true;
+        public bool Lettuce { get { return lettuce; } set { lettuce = value; NotifyPropertyChange("Lettuce"); } }
 
+        private bool mayo = true;
         /// <summary>
         /// If Burger has Mayo
         /// </summary>
-        public bool Mayo { get; set; } = true;
+        public bool Mayo { get { return mayo; } set { mayo = value; NotifyPropertyChange("Mayo"); } }
 
+        private bool ketchup = true;
         /// <summary>
         /// If Burger has Ketchup
         /// </summary>
-        public bool Ketchup { get; set; } = true;
+        public bool Ketchup { get { return ketchup; } set { ketchup = value; NotifyPropertyChange("Ketchup"); } }
 
+        private bool pickle = true;
         /// <summary>
         /// If Burger has Pickle
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle { get { return pickle; } set { pickle = value; NotifyPropertyChange("Pickle"); } }
 
+        private bool cheese = true;
         /// <summary>
         /// If Burger has Cheese
         /// </summary>
-        public bool Cheese { get; set; } = true;
+        public bool Cheese { get { return cheese; } set { cheese = value; NotifyPropertyChange("Cheese"); } }
 
+        private bool mustard = true;
         /// <summary>
         /// If Burger has Mustard
         /// </summary>
-        public bool Mustard { get; set; } = true;
+        public bool Mustard { get { return mustard; } set { mustard = value; NotifyPropertyChange("Mustard"); } }
 
         /// <summary>
         /// The price of the Burger

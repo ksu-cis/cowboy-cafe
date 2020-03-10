@@ -6,10 +6,14 @@ namespace CowboyCafe.Data
 {
     public class JerkedSoda : Drink
     {
+        private Size size = Size.Small;
+        public override Size Size { get { return size; } set { size = value; NotifyPropertyChange("Size"); } }
+
+        private SodaFlavor flavor = SodaFlavor.CreamSoda;
         /// <summary>
         /// gets flavor of soda
         /// </summary>
-        public SodaFlavor Flavor { get; set; }
+        public SodaFlavor Flavor { get { return flavor; } set { flavor = value; NotifyPropertyChange("Flavor"); } }
 
         /// <summary>
         /// Gtes price of jerked soda
@@ -78,26 +82,76 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            if(Flavor == SodaFlavor.CreamSoda)
+            if (Size == Size.Small)
             {
-                return Size.ToString() + " Cream Soda" + " Jerked Soda";
+                if (Flavor == SodaFlavor.CreamSoda)
+                {
+                    return "Small Cream Soda" + " Jerked Soda";
+                }
+                else if (Flavor == SodaFlavor.OrangeSoda)
+                {
+                    return "Small Orange Soda" + " Jerked Soda";
+                }
+                else if (Flavor == SodaFlavor.Sarsparilla)
+                {
+                    return "Small Sarsparilla" + " Jerked Soda";
+                }
+                else if (Flavor == SodaFlavor.BirchBeer)
+                {
+                    return "Small Birch Beer" + " Jerked Soda";
+                }
+                else
+                {
+                    return "Small Root Beer" + " Jerked Soda";
+                }
             }
-            else if (Flavor == SodaFlavor.OrangeSoda)
+            else if (Size == Size.Medium)
             {
-                return Size.ToString() + " Orange Soda" + " Jerked Soda";
-            }
-            else if (Flavor == SodaFlavor.Sarsparilla)
-            {
-                return Size.ToString() + " Sarsparilla" + " Jerked Soda";
-            }
-            else if (Flavor == SodaFlavor.BirchBeer)
-            {
-                return Size.ToString() + " Birch Beer" + " Jerked Soda";
+                if (Flavor == SodaFlavor.CreamSoda)
+                {
+                    return "Medium Cream Soda" + " Jerked Soda";
+                }
+                else if (Flavor == SodaFlavor.OrangeSoda)
+                {
+                    return "Medium Orange Soda" + " Jerked Soda";
+                }
+                else if (Flavor == SodaFlavor.Sarsparilla)
+                {
+                    return "Medium Sarsparilla" + " Jerked Soda";
+                }
+                else if (Flavor == SodaFlavor.BirchBeer)
+                {
+                    return "Medium Birch Beer" + " Jerked Soda";
+                }
+                else
+                {
+                    return "Medium Root Beer" + " Jerked Soda";
+                }
             }
             else
             {
-                return Size.ToString() + " Root Beer" + " Jerked Soda";
+                if (Flavor == SodaFlavor.CreamSoda)
+                {
+                    return "Large Cream Soda" + " Jerked Soda";
+                }
+                else if (Flavor == SodaFlavor.OrangeSoda)
+                {
+                    return "Large Orange Soda" + " Jerked Soda";
+                }
+                else if (Flavor == SodaFlavor.Sarsparilla)
+                {
+                    return "Large Sarsparilla" + " Jerked Soda";
+                }
+                else if (Flavor == SodaFlavor.BirchBeer)
+                {
+                    return "Large Birch Beer" + " Jerked Soda";
+                }
+                else
+                {
+                    return "Large Root Beer" + " Jerked Soda";
+                }
             }
+           
             
         }
     }

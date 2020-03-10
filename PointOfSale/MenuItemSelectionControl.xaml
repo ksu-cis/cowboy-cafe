@@ -23,30 +23,29 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
             <TextBlock TextAlignment="Center" FontSize="25">Entree</TextBlock>
-            <Button x:Name="AddCowPokeChilli" Click="OnItemAddButtonClicked">CowPoke Chilli</Button>
-            <Button x:Name="AddRustlersRibs" Click="AddRustlersRibs_Click">Rustler's Rubs</Button>
-            <Button x:Name="AddPecosPulledPork" Click="AddPecosPulledPork_Click">Pecos Pulled Pork</Button>
-            <Button x:Name="AddTrailBurger" Click="AddTrailBurger_Click">Trail Burger</Button>
-            <Button x:Name="DakotaDoubleBurger" Click="DakotaDoubleBurger_Click">Dakota Double Burger</Button>
-            <Button x:Name="AddTexasTripleBurger" Click="AddTexasTripleBurger_Click">Texas Triple Burger</Button>
-            <Button x:Name="AddAngryChicken" Click="AddAngryChicken_Click">Angry Chicken</Button>
-            <Button>OnItemAddButtonClicked</Button>
+            <Button x:Name="AddCowPokeChilli" Click="OnItemAddEntreeClicked">CowPoke Chilli</Button>
+            <Button x:Name="AddRustlersRibs" Click="OnItemAddEntreeClicked">Rustler's Rubs</Button>
+            <Button x:Name="AddPecosPulledPork" Click="OnItemAddEntreeClicked">Pecos Pulled Pork</Button>
+            <Button x:Name="AddTrailBurger" Click="OnItemAddEntreeClicked">Trail Burger</Button>
+            <Button x:Name="DakotaDoubleBurger" Click="OnItemAddEntreeClicked">Dakota Double Burger</Button>
+            <Button x:Name="AddTexasTripleBurger" Click="OnItemAddEntreeClicked">Texas Triple Burger</Button>
+            <Button x:Name="AddAngryChicken" Click="OnItemAddEntreeClicked">Angry Chicken</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="1">
             <TextBlock TextAlignment="Center" FontSize="25">Side</TextBlock>
-            <Button x:Name="AddChilliCHeeseFries" Click="AddChilliCHeeseFries_Click">Chilli Cheese Fries</Button>
-            <Button x:Name="AddCornDodgers" Click="AddCornDodgers_Click">Corn Dodgers</Button>
-            <Button x:Name="AddPanDeCampo" Click="AddPanDeCampo_Click">Pan De Campo</Button>
-            <Button x:Name="AddBakedBeans" Click="AddBakedBeans_Click">Baked Beans</Button>
+            <Button x:Name="AddChilliCheeseFries" Click="OnItemAddSideClick">Chilli Cheese Fries</Button>
+            <Button x:Name="AddCornDodgers" Click="OnItemAddSideClick">Corn Dodgers</Button>
+            <Button x:Name="AddPanDeCampo" Click="OnItemAddSideClick">Pan De Campo</Button>
+            <Button x:Name="AddBakedBeans" Click="OnItemAddSideClick">Baked Beans</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="2">
             <TextBlock TextAlignment="Center" FontSize="25">Drinks</TextBlock>
-            <Button x:Name="AddJerkedSoda" Click="AddJerkedSoda_Click">Jerked Soda</Button>
-            <Button x:Name="AddTexasTea" Click="AddTexasTea_Click">Texas Tea</Button>
-            <Button x:Name="AddCowbyCoffee" Click="AddCowbyCoffee_Click">Cowboy Coffee</Button>
-            <Button x:Name="AddWater" Click="AddWater_Click">Water</Button>
+            <Button x:Name="AddJerkedSoda" Click="OnItemAddDrinkClick">Jerked Soda</Button>
+            <Button x:Name="AddTexasTea" Click="OnItemAddDrinkClick">Texas Tea</Button>
+            <Button x:Name="AddCowbyCoffee" Click="OnItemAddDrinkClick">Cowboy Coffee</Button>
+            <Button x:Name="AddWater" Click="OnItemAddDrinkClick">Water</Button>
         </StackPanel>
     </Grid>
 </UserControl>

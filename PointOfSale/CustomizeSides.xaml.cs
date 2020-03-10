@@ -10,19 +10,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CowboyCafe.Data;
 
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CustomizeCowPokeChilli.xaml
+    /// Interaction logic for CustomizeSides.xaml
     /// </summary>
-    public partial class CustomizeCowPokeChilli : UserControl
+    public partial class CustomizeSides : UserControl
     {
-        public CustomizeCowPokeChilli()
+        public CustomizeSides()
         {
             InitializeComponent();
         }
-
-        
     }
 }

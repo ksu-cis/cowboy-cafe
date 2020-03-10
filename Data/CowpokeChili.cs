@@ -15,9 +15,6 @@ namespace CowboyCafe.Data
     /// </summary>
     public class CowpokeChili : Entree, INotifyPropertyChanged
     {
-        /// <summary>
-        /// Event handler to trigger when items or subtotal is updated
-        /// </summary>
         private bool cheese = true;
         /// <summary>
         /// If the chili is topped with Cheese

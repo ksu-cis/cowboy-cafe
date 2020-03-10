@@ -6,20 +6,23 @@ namespace CowboyCafe.Data
 {
     public class CowboyCoffee : Drink
     {
+        private bool ice = false;
         /// <summary>
         /// Checks to see if there is Ice
         /// </summary>
-        public override bool Ice { get; set; } = false;
+        public override bool Ice { get { return ice; } set { ice = value; NotifyPropertyChange("Ice"); } }
 
+        private bool decaf;
         /// <summary>
         /// Checks to see if coffee is decaf or regular
         /// </summary>
-        public bool Decaf { get; set; }
+        public bool Decaf { get { return decaf; } set { decaf = value; NotifyPropertyChange("Decaf"); } }
 
+        private bool roomforcream = false;
         /// <summary>
         /// Checks to see if there is room for cream
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
+        public bool RoomForCream { get { return roomforcream; } set { roomforcream = value; NotifyPropertyChange("RoomForCream"); } }
 
         /// <summary>
         /// Gtes price of coffe
@@ -91,11 +94,33 @@ namespace CowboyCafe.Data
         {
             if (!Decaf)
             {
-                return Size.ToString() + " Cowboy Coffee";
+                if (Size == Size.Small)
+                {
+                    return "Small Cowboy Coffee";
+                }
+                else if (Size == Size.Medium)
+                {
+                    return "Medium Cowboy Coffee";
+                }
+                else
+                {
+                    return "Large Cowboy Coffee";
+                }
             }
             else
             {
-                return Size.ToString() + " Decaf Cowboy Coffee";
+                if (Size == Size.Small)
+                {
+                    return "Small Decaf Cowboy Coffee";
+                }
+                else if (Size == Size.Medium)
+                {
+                    return "Medium Decaf Cowboy Coffee";
+                }
+                else
+                {
+                    return "Large Decaf Cowboy Coffee";
+                }
             }
         }
     }

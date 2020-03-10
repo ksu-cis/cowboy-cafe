@@ -66,7 +66,18 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return Size.ToString() + " Corn Dodgers";
+            if (Size == Size.Small)
+            {
+                return "Small Corn Dodgers";
+            }
+            else if (Size == Size.Medium)
+            {
+                return "Medium Corn Dodgers";
+            }
+            else
+            {
+                return "Large Corn Dodgers";
+            }
         }
     }
 }
