@@ -32,7 +32,6 @@
                     <CheckBox x:Name="Bacon" IsChecked="{Binding Path=Bacon}">Bacon</CheckBox>
                     <CheckBox x:Name="Egg" IsChecked="{Binding Path=Egg}">Egg</CheckBox>
                 </ListBox>
-                
             </StackPanel>
         </StackPanel>
 

@@ -27,6 +27,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"/>
                 <RowDefinition/>
+                <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
 
             <Border x:Name="Container" Grid.Column="0" Grid.Row="1">
@@ -46,11 +47,10 @@
                 <Button x:Name="CompleteOrder" Grid.Row="0" Grid.Column="2" Click="CompleteOrder_Click" Background="LawnGreen">Complete Order</Button>
             </Grid>
 
-            
         </Grid>
 
         <Grid Grid.Column="1">
-            <local:OrderSummaryControl/>
+            <local:OrderSummaryControl />
         </Grid>
         
 

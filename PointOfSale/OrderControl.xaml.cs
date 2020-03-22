@@ -44,5 +44,14 @@ namespace PointOfSale
         {
             Container.Child = new MenuItemSelectionControl();
         }
+
+        public void ChangeSize()
+        {
+            if(DataContext is Order x)
+            {
+                x.NotifyPropertyChanged();
+            }
+        }
+
     }
 }

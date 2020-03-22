@@ -69,5 +69,7 @@
         <StackPanel Grid.Column="0" Grid.Row="2">
             <TextBlock TextAlignment="Left" FontSize="25">Subtotal:</TextBlock>
         </StackPanel>
+
     </Grid>
+
 </UserControl>

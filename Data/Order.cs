@@ -68,7 +68,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// updates bound data properties when changed
         /// </summary>
-        private void NotifyPropertyChanged()
+        public void NotifyPropertyChanged()
         {
             if(PropertyChanged != null)
             {

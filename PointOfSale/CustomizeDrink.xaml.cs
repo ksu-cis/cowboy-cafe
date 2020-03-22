@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -26,57 +27,48 @@ namespace PointOfSale
         public void WaterMenu()
         {
             Lemon.Visibility = Visibility.Visible;
-            Toppings.Items.Remove(Decaf);
-            Toppings.Items.Remove(RoomForCream);
-            Toppings.Items.Remove(Soda);
-            Toppings.Items.Remove(CreamSoda);
-            Toppings.Items.Remove(OrangeSoda);
-            Toppings.Items.Remove(Sarsparilla);
-            Toppings.Items.Remove(BirchBeer);
-            Toppings.Items.Remove(RootBeer);
-            Toppings.Items.Remove(Sweet);
+            Other.Items.Remove(Decaf);
+            Other.Items.Remove(RoomForCream);
+            SodaFlavor.Visibility = Visibility.Hidden;
+            Other.Items.Remove(Sweet);
         }
 
         public void SodaMenu()
         {
-            Soda.Visibility = Visibility.Visible;
-            CreamSoda.Visibility = Visibility.Visible;
-            OrangeSoda.Visibility = Visibility.Visible;
-            Sarsparilla.Visibility = Visibility.Visible;
-            BirchBeer.Visibility = Visibility.Visible;
-            RootBeer.Visibility = Visibility.Visible;
-            Toppings.Items.Remove(Decaf);
-            Toppings.Items.Remove(RoomForCream);
-            Toppings.Items.Remove(Lemon);
-            Toppings.Items.Remove(Sweet);
+            Soda.Visibility = Visibility.Visible;           
+            Other.Items.Remove(Decaf);
+            Other.Items.Remove(RoomForCream);
+            Other.Items.Remove(Lemon);
+            Other.Items.Remove(Sweet);
         }
 
         public void CoffeeMenu()
         {
             Decaf.Visibility = Visibility.Visible;
             RoomForCream.Visibility = Visibility.Visible;
-            Toppings.Items.Remove(Lemon);
-            Toppings.Items.Remove(Soda);
-            Toppings.Items.Remove(CreamSoda);
-            Toppings.Items.Remove(OrangeSoda);
-            Toppings.Items.Remove(Sarsparilla);
-            Toppings.Items.Remove(BirchBeer);
-            Toppings.Items.Remove(RootBeer);
-            Toppings.Items.Remove(Sweet);
+            Other.Items.Remove(Lemon);
+            SodaFlavor.Visibility = Visibility.Hidden;
+            Other.Items.Remove(Sweet);
         }
 
         public void TeaMenu()
         {
             Sweet.Visibility = Visibility.Visible;
             Lemon.Visibility = Visibility.Visible;
-            Toppings.Items.Remove(Decaf);
-            Toppings.Items.Remove(Soda);
-            Toppings.Items.Remove(CreamSoda);
-            Toppings.Items.Remove(OrangeSoda);
-            Toppings.Items.Remove(Sarsparilla);
-            Toppings.Items.Remove(BirchBeer);
-            Toppings.Items.Remove(RootBeer);
-            Toppings.Items.Remove(RoomForCream);
+            Other.Items.Remove(Decaf);           
+            Other.Items.Remove(RoomForCream);
+            SodaFlavor.Visibility = Visibility.Hidden;
         }
+
+        public void ItemChanged(object sender, RoutedEventArgs e)
+        {
+            var ancestor = this.FindAncestor<OrderControl>();
+            if(ancestor is OrderControl)
+            {
+                ancestor.ChangeSize();
+            }
+        }
+
+
     }
 }

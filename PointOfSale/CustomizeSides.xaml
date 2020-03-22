@@ -4,21 +4,29 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
+             xmlns:local1="clr-namespace:CowboyCafe.Data;assembly=CowboyCafe.Data"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ObjectDataProvider MethodName="GetValues"
+                        ObjectType="{x:Type sys:Enum}"
+                        x:Key="datasize">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local1:Size"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
+
     <Grid>
 
         <StackPanel>
             <TextBlock Name="Title" FontSize="25"></TextBlock>
             <StackPanel>
-                <TextBlock FontSize="25">Choose A Size:</TextBlock>
-                <ListBox Name="Toppings">
-                    <ComboBox x:Name="Size" ItemsSource="{Binding Path=Size}">
-                        <ComboBoxItem x:Name="Small" IsSelected="True">Small</ComboBoxItem>
-                        <ComboBoxItem x:Name="Medium">Medium</ComboBoxItem>
-                        <ComboBoxItem x:Name="Large">Large</ComboBoxItem>
-                    </ComboBox>
-                </ListBox>
+                <TextBlock FontSize="15">Choose A Size:</TextBlock>
+                <ListBox x:Name="ChooseSideSize"
+                         ItemsSource="{Binding Source={StaticResource datasize}}" 
+                         SelectedItem="{Binding Path=Size}"/>
 
             </StackPanel>
         </StackPanel>

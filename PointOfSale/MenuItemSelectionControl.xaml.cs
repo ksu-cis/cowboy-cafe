@@ -120,6 +120,7 @@ namespace PointOfSale
                             orderControl.SwapScreen(screen);
                             screen.Title.Text = "Customize Jerked Soda";
                             screen.SodaMenu();
+
                             break;
                         case "AddTexasTea":
                             Drink = new TexasTea();
@@ -199,5 +200,6 @@ namespace PointOfSale
                 }
             }
         }
+
     }
 }

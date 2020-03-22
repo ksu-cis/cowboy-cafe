@@ -7,7 +7,9 @@ namespace CowboyCafe.Data
 {
     public class Water : Drink, INotifyPropertyChanged
     {
-       
+        private Size size = Size.Small;
+        public override Size Size { get { return size; } set { size = value; NotifyPropertyChange("Size"); } }
+
         private bool lemon = false;
         /// <summary>
         /// Checks whether to add lemon or not

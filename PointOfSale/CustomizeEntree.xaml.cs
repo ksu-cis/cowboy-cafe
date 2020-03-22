@@ -130,6 +130,8 @@ namespace PointOfSale
             Toppings.Items.Remove(GreenOnions);
             Toppings.Items.Remove(Bread);
         }
+
+
     }
 
     

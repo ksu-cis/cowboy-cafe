@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
+             xmlns:local1="clr-namespace:CowboyCafe.Data;assembly=CowboyCafe.Data"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib" 
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
@@ -11,34 +13,53 @@
             <Setter Property="Visibility" Value="Hidden"/>
         </Style>
         <Style TargetType="TextBlock">
-            <Setter Property="Visibility" Value="Hidden"/>
+            <Setter Property="Visibility" Value="Visible"/>
         </Style>
-    </UserControl.Resources>
-    
-    <Grid>
 
+        <ObjectDataProvider MethodName="GetValues"
+                        ObjectType="{x:Type sys:Enum}"
+                        x:Key="datasize">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local1:Size"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <ObjectDataProvider MethodName="GetValues"
+                        ObjectType="{x:Type sys:Enum}"
+                        x:Key="datasodaflavors">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local1:SodaFlavor"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+    </UserControl.Resources>
+
+    <Grid>
         <StackPanel>
-            <TextBlock Name="Title" FontSize="25"></TextBlock>
+        <TextBlock Name="Title" FontSize="25"></TextBlock>
             <StackPanel>
-                <ListBox x:Name="Toppings" ItemsSource="{Binding}">
+                <ListBox Name="Other">
                     <CheckBox x:Name="Ice" Visibility="Visible" IsChecked="{Binding Path=Ice}">Ice</CheckBox>
-                    <TextBlock Name="SizeSelect" FontSize="15" Visibility="Visible">Choose a Size:</TextBlock>
-                    <CheckBox Name="SizeSmall" Visibility="Visible" IsChecked="{Binding Path=Size}">Small</CheckBox>
-                    <CheckBox Name="SizeMedium" Visibility="Visible" IsChecked="{Binding Path=Size}">Medium</CheckBox>
-                    <CheckBox Name="SizeLarge" Visibility="Visible" IsChecked="{Binding Path=Size}">Large</CheckBox>
+                    <CheckBox x:Name="Sweet" IsChecked="{Binding Path=Sweet}">Sweet</CheckBox>
                     <CheckBox x:Name="Lemon" IsChecked="{Binding Path=Lemon}">Lemon</CheckBox>
                     <CheckBox x:Name="Decaf" IsChecked="{Binding Path=Decaf}">Decaf</CheckBox>
-                    <CheckBox x:Name="RoomForCream" IsChecked="{Binding Path=RoomForCream}">Cream</CheckBox>
-                    <TextBlock x:Name="Soda" FontSize="15">Soda Flavor:</TextBlock>
-                    <CheckBox x:Name="CreamSoda" IsChecked="{Binding Path=CreamSoda}">Cream Soda</CheckBox>
-                    <CheckBox x:Name="OrangeSoda" IsChecked="{Binding Path=OrangeSoda}">Orange Soda</CheckBox>
-                    <CheckBox x:Name="Sarsparilla" IsChecked="{Binding Path=Sarsparilla}">Sarsparilla</CheckBox>
-                    <CheckBox x:Name="BirchBeer" IsChecked="{Binding Path=BirchBeer}">Birch Beer</CheckBox>
-                    <CheckBox x:Name="RootBeer" IsChecked="{Binding Path=RootBeer}">Root Beer</CheckBox>
-                    <CheckBox x:Name="Sweet" IsChecked="{Binding Path=Sweet}">Sweet</CheckBox>
-                </ListBox>
-
+                <CheckBox x:Name="RoomForCream" IsChecked="{Binding Path=RoomForCream}">Cream</CheckBox>
+            </ListBox>
+                
+            <StackPanel>
+                <TextBlock Name="ChooseSize" FontSize="15">Choose a Size:</TextBlock>
+                <ListBox x:Name="Size"
+                         ItemsSource="{Binding Source={StaticResource datasize}}" 
+                         SelectedItem="{Binding Path=Size}"/>
             </StackPanel>
+                <TextBlock x:Name="Soda" FontSize="15" Visibility="Hidden">Soda Flavor:</TextBlock>
+            <ListBox x:Name="SodaFlavor"
+                     ItemsSource="{Binding Source={StaticResource datasodaflavors}}"
+                     SelectedItem="{Binding Path=SodaFlavor}"/>
+
+
+        </StackPanel>
+
         </StackPanel>
 
     </Grid>
