@@ -48,6 +48,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void CancelOrderButtonClick(object sender, RoutedEventArgs e)
         {
+            orderNumber++;
             this.DataContext = new Order(orderNumber);
         }
 
