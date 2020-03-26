@@ -24,8 +24,7 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
-            var order = new Order();
-            DataContext = order;
+            
         }
     }
 }

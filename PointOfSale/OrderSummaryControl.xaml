@@ -6,6 +6,13 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="150">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="25"/>
+            <Setter Property="Background" Value="Red"/>
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.2*"/>
@@ -18,25 +25,31 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="1">
-            <ListView x:Name="OrderList" ItemsSource="{Binding Path=Items}" HorizontalContentAlignment="Stretch">
+            <ListView x:Name="OrderList" ItemsSource="{Binding Path=Items}" HorizontalContentAlignment="Stretch" SelectionChanged="OnItemSelectChange">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
-                                <ColumnDefinition/>
+                                <ColumnDefinition Width="30"/>
                             </Grid.ColumnDefinitions>
                             
-                            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="0">
+                            
                                 <StackPanel>
-                                    <TextBlock Text="{Binding}"/>
+                                    <StackPanel Orientation="Horizontal">
+                                    <TextBlock Margin="3" Text="{Binding}"/>
+                                    <TextBlock Margin="3" Text="{Binding Path = Price, StringFormat= c}" Grid.Column="1" TextAlignment="Right"></TextBlock>
+                                    </StackPanel>
+                                    
                                     <ListView ItemsSource="{Binding Path=SpecialInstructions}"/>
                                 </StackPanel>
+
+
+                            <StackPanel Grid.Column="1">
+                                <Button Content="X" Click="Remove"></Button>
+                            </StackPanel>
                                 
-                            </Border>
-                            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1">
-                                <TextBlock Text="{Binding Path = Price, StringFormat= c}" Grid.Column="1" TextAlignment="Right"></TextBlock>
-                            </Border>
+                          
                             
                         </Grid>
                     </DataTemplate>

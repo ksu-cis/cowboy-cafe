@@ -22,6 +22,8 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
+            var order = new Order();
+            DataContext = order;
         }
 
         public void SwapScreen(UIElement element)
