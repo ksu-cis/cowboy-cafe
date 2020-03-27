@@ -68,15 +68,15 @@ namespace CowboyCafe.Data
         {
             if (Size == Size.Small)
             {
-                return "Small Chilli Cheese Fries";
+                return "Small Chili Cheese Fries";
             }
             else if (Size == Size.Medium)
             {
-                return "Medium Chilli Cheese Fries";
+                return "Medium Chili Cheese Fries";
             }
             else
             {
-                return "Large Chilli Cheese Fries";
+                return "Large Chili Cheese Fries";
             }
         }
     }

@@ -55,7 +55,7 @@
                 <TextBlock x:Name="Soda" FontSize="15" Visibility="Hidden">Soda Flavor:</TextBlock>
             <ListBox x:Name="SodaFlavor"
                      ItemsSource="{Binding Source={StaticResource datasodaflavors}}"
-                     SelectedItem="{Binding Path=SodaFlavor}"/>
+                     SelectedItem="{Binding Path=Flavor}"/>
 
 
         </StackPanel>
