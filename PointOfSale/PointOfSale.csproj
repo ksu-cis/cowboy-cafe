@@ -65,6 +65,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemCostomization\SideCostomization.xaml.cs">
+      <DependentUpon>SideCostomization.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -106,6 +109,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="ItemCostomization\SideCostomization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
