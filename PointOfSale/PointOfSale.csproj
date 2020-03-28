@@ -65,8 +65,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ItemCostomization\SideCostomization.xaml.cs">
-      <DependentUpon>SideCostomization.xaml</DependentUpon>
+    <Compile Include="ItemCostomizers\SideCostomizer.xaml.cs">
+      <DependentUpon>SideCostomizer.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -109,7 +109,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="ItemCostomization\SideCostomization.xaml">
+    <Page Include="ItemCostomizers\SideCostomizer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

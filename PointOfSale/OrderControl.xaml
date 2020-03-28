@@ -28,7 +28,9 @@
         <Button Grid.Column="2" Name="CompleteOrderButton" Grid.Row="0" 
                 Click="CompleteOrderButtonClick">Complete Order</Button>
 
-        <local:MenuItemSelectionControl Grid.ColumnSpan="3" Grid.Row="2"/>
+        <Border Grid.ColumnSpan="3" Grid.Row="2" Name="ControlPannel">
+            <local:MenuItemSelectionControl/>
+        </Border>
         <local:OrderSummeryControl Grid.Column="3" Grid.RowSpan="2"/>
     </Grid>
 </UserControl>

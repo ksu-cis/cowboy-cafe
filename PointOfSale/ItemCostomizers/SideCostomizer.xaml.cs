@@ -12,19 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using CowboyCafe.Data;
 
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for SideCostomization.xaml
+    /// Interaction logic for SideCostomizer.xaml
     /// </summary>
-    public partial class SideCostomization : UserControl
+    public partial class SideCostomizer : UserControl
     {
-        public Side Side;
-        public SideCostomization()
+        public SideCostomizer()
         {
-            //InitializeComponent();
+            InitializeComponent();
         }
     }
 }

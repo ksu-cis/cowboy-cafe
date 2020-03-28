@@ -8,6 +8,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
 
@@ -130,9 +131,9 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void BakedBeansButton_Click(object sender, RoutedEventArgs e)
         {
-            var beans = new BakedBeans();
-            var beansCostomizer = new SideCostomization();
-            beansCostomizer.Side = beans;
+            var orderControl = this.FindAncestor<OrderControl>();
+            var screen = new SideCostomizer();
+            orderControl.SwapScreen(screen);
 
 
             //OrderListView.Items.Add(new BakedBeans());

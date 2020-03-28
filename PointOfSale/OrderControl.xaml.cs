@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -29,6 +28,15 @@ namespace PointOfSale
             currentOrder = new Order(orderNumber);
             this.DataContext = currentOrder;
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// replaces the current controlpannel with a new one
+        /// </summary>
+        /// <param name="element"></param>
+        public void SwapScreen(UIElement element)
+        {
+            ControlPannel.Child = element;
         }
 
         /// <summary>
