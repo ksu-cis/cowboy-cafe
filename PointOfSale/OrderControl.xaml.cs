@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,7 +18,7 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for OrderControl.xaml
     /// </summary>
-    public partial class OrderControl : UserControl, INotifyPropertyChanged
+    public partial class OrderControl : UserControl
     {
         private int orderNumber = 1;
 
@@ -60,11 +61,6 @@ namespace PointOfSale
         {
             orderNumber++;
             this.DataContext = new Order(orderNumber);
-        }
-
-        public void SwapScreen(UIElement element)
-        {
-            Container.Child = element;
         }
 
 

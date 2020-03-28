@@ -8,12 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="600">
 
     <UserControl.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Height" Value="45"/>
-            <Setter Property="FontFamily" Value="Comic Sans MS"/>
-            <Setter Property="Background" Value="HotPink"/>
-            <Setter Property="FontSize" Value="18"/>
-        </Style>
+        
     </UserControl.Resources>
 
     <Grid>
