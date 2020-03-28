@@ -5,25 +5,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="200">
-
-    <UserControl.Resources>
-        
-    </UserControl.Resources>
+             d:DesignHeight="500" d:DesignWidth="250">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.7*"/>
-            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition MinHeight="20" Height="0.05*"/>
+            <RowDefinition MinHeight="30" Height="0.05*"/>
             <RowDefinition Height="0.9*"/>
             <RowDefinition MinHeight="20" Height="0.05*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Column="0" Grid.ColumnSpan="2"
-                   TextAlignment="Center" Text="{Binding Path=OrderNumber}"/>
+        <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left"
+                   Content="Order Number"/>
+        <Label Grid.Column="1" Grid.Row="0"
+                   Content="{Binding Path=OrderNumber}"/>
 
         <StackPanel Grid.Row="1">
             <ListView Name="OrderListView" ItemsSource="{Binding Path=Items}"/>

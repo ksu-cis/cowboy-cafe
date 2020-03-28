@@ -5,11 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="600">
-
-    <UserControl.Resources>
-        
-    </UserControl.Resources>
+             d:DesignHeight="500" d:DesignWidth="750">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -19,7 +15,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0">
-            <TextBlock TextAlignment="Center">Entrees</TextBlock>
+            <Label>Entrees</Label>
             <Button Name="AngryChickenButton" Click="AngryChickenButton_Click">Angry Chicken</Button>
             <Button Name="CowPokeChiliButton" Click="CowPokeChiliButton_Click">Cow PokeChili</Button>
             <Button Name="DakotaDoubleBurgerButton" Click="DakotaDoubleBurgerButton_Click">Dakota Double Burger</Button>
@@ -30,7 +26,7 @@
         </StackPanel>
 
         <StackPanel Grid.Column="1">
-            <TextBlock TextAlignment ="Center">Sides</TextBlock>
+            <Label>Sides</Label>
             <Button Name="BakedBeansButton" Click="BakedBeansButton_Click">Baked Beans</Button>
             <Button Name="ChilliCheeseFriesButton" Click="ChilliCheeseFriesButton_Click">Chilli Cheese Fries</Button>
             <Button Name="CornDodgersButton" Click="CornDodgersButton_Click">Corn Dodgers</Button>
@@ -38,7 +34,7 @@
         </StackPanel>
 
         <StackPanel Grid.Column="2">
-            <TextBlock TextAlignment ="Center">Drinks</TextBlock>
+            <Label>Drinks</Label>
             <Button Name="CowboyCoffeeButton" Click="CowboyCoffeeButton_Click">Cowboy Coffee</Button>
             <Button Name="JerkedSodaButton" Click="JerkedSodaButton_Click">Jerked Soda</Button>
             <Button Name="TexasTeaButton" Click="TexasTeaButton_Click">Texas Tea</Button>
