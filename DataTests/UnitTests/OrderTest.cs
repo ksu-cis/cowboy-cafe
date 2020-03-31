@@ -24,7 +24,7 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void ShouldBeAbleToAddItems()
         {
-            Order order = new Order();
+            Order order = new Order(0);
             IOrderItem food = new MockOrderItem();
             order.Add(food);
             Assert.Contains<IOrderItem>(food, order.Items);
@@ -36,7 +36,7 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void ShouldBeAbleToRemoveItems()
         {
-            Order order = new Order();
+            Order order = new Order(0);
             IOrderItem food = new MockOrderItem();
             order.Add(food);
             Assert.Contains<IOrderItem>(food, order.Items);
@@ -51,7 +51,7 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void ShouldGiveAnInumerationOfItems()
         {
-            var order = new Order();
+            var order = new Order(0);
             IOrderItem item0 = new MockOrderItem();
             IOrderItem item1 = new MockOrderItem();
             IOrderItem item2 = new MockOrderItem();
@@ -78,7 +78,7 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void ShouldHaveCorrectSubtotal()
         {
-            var order = new Order();
+            var order = new Order(0);
 
             MockOrderItem item0 = new MockOrderItem();
             item0.Price = 0;
@@ -108,7 +108,7 @@ namespace CowboyCafe.DataTests
         [InlineData("Items")]
         public void AddingAnItemShouldTriggerPropertyChanged(string propertyName)
         {
-            var order = new Order();
+            var order = new Order(0);
             var item = new MockOrderItem();
             item.Price = 1;
             Assert.PropertyChanged(order, propertyName, () =>
@@ -126,7 +126,7 @@ namespace CowboyCafe.DataTests
         [InlineData("Items")]
         public void RemovingAnItemShouldTriggerPropertyChanged(string propertyName)
         {
-            var order = new Order();
+            var order = new Order(0);
             var item = new MockOrderItem();
             order.Add(item);
             Assert.PropertyChanged(order, propertyName, () =>
