@@ -131,9 +131,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void BakedBeansButton_Click(object sender, RoutedEventArgs e)
         {
-            var orderControl = this.FindAncestor<OrderControl>();
-            var screen = new SideCostomizer();
-            orderControl.SwapScreen(screen);
+            
 
 
             //OrderListView.Items.Add(new BakedBeans());
