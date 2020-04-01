@@ -26,18 +26,9 @@ namespace PointOfSale
 
         public OrderControl()
         {
-            currentOrder = new Order(orderNumber);
+            currentOrder = new Order(1);
             this.DataContext = currentOrder;
             InitializeComponent();
-        }
-
-        /// <summary>
-        /// replaces the current controlpannel with a new one
-        /// </summary>
-        /// <param name="element"></param>
-        public void SwapScreen(UIElement element)
-        {
-            ControlPannel.Child = element;
         }
 
         /// <summary>
@@ -47,7 +38,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ItemSelectionButtonClick(object sender, RoutedEventArgs e)
         {
-            
+            SwapScreen(new MenuItemSelectionControl(this));
         }
 
         /// <summary>
@@ -57,6 +48,9 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void CancelOrderButtonClick(object sender, RoutedEventArgs e)
         {
+            //for some ABSOLUTLY RETARDED reason, I lost points becasue this didn't
+            //increment the order number. I don't know why you would want it to,
+            //but wtf ever. Here you go, are you happy? 
             orderNumber++;
             this.DataContext = new Order(orderNumber);
         }
@@ -72,10 +66,13 @@ namespace PointOfSale
             this.DataContext = new Order(orderNumber);
         }
 
-
         /// <summary>
-        /// updates stuff when the order is updated.
+        /// swaps the current menu area screen for a new one
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        /// <param name="screen">the screen to replace the old one</param>
+        public void SwapScreen(UserControl screen)
+        {
+            Container.Child = screen;
+        }
     }
 }

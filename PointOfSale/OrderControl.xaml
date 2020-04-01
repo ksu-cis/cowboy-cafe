@@ -6,6 +6,12 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="1000">
+    
+    <UserControl.Resources>
+        <DataTemplate x:Name="idk" DataType="IOrderItem">
+            <local:MenuItemSelectionControl/>
+        </DataTemplate>
+    </UserControl.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -28,7 +34,8 @@
         <Button Grid.Column="2" Name="CompleteOrderButton" Grid.Row="0" 
                 Click="CompleteOrderButtonClick">Complete Order</Button>
 
-        <Border Grid.ColumnSpan="3" Grid.Row="2" Name="ControlPannel">
+
+        <Border Name="Container" Grid.ColumnSpan="3" Grid.Row="2">
             <local:MenuItemSelectionControl/>
         </Border>
         <local:OrderSummeryControl Grid.Column="3" Grid.RowSpan="2"/>

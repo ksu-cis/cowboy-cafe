@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
 
+
 namespace PointOfSale
 {
     /// <summary>
@@ -131,7 +132,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void BakedBeansButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            if(DataContext is Order currentOrder)
+            {
+                parent.SwapScreen(new OrderSummeryControl());
+            }
 
 
             //OrderListView.Items.Add(new BakedBeans());

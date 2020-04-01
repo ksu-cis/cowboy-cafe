@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
 
+
 namespace CowboyCafe.Data
 {
     public class Order : INotifyPropertyChanged
@@ -11,6 +12,12 @@ namespace CowboyCafe.Data
         /// ID number for order
         /// </summary>
         public int OrderNumber { get; private set; }
+
+        /// <summary>
+        /// The Item currently being edited
+        /// When it is set to null, the menuItemSelection should display
+        /// </summary>
+        IOrderItem queuedItem = null;
         
         /// <summary>
         /// backing variable for Items property
