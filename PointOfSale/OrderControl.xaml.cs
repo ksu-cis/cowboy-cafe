@@ -38,7 +38,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ItemSelectionButtonClick(object sender, RoutedEventArgs e)
         {
-            SwapScreen(new MenuItemSelectionControl(this));
+            SwapScreen(new MenuItemSelectionControl());
         }
 
         /// <summary>

@@ -39,6 +39,9 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Northwoods.GoWPF, Version=3.0.1.47, Culture=neutral, PublicKeyToken=616e2dc80068a33d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Northwoods.GoWPF.3.0.1\lib\net47\Northwoods.GoWPF.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -97,6 +100,7 @@
     <None Include="Milestones\1-create-order-pages.workbook" />
     <None Include="Milestones\2-user-interaction-part-I.workbook" />
     <None Include="Milestones\3-user-interaction-part-II.workbook" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
