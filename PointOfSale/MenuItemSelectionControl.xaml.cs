@@ -132,10 +132,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void BakedBeansButton_Click(object sender, RoutedEventArgs e)
         {
-            var orderControl = this.FindAncestor<OrderControl>();
+            OrderControl parent = this.FindAncestor<OrderControl>();
             if(DataContext is Order currentOrder)
             {
-                //parent.SwapScreen(new OrderSummeryControl());
+                parent.SwapScreen(new OrderSummeryControl());
             }
 
 
