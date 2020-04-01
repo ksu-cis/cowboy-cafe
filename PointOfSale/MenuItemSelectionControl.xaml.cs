@@ -26,6 +26,25 @@ namespace PointOfSale
         }
 
         /// <summary>
+        /// event for when a button is pressed. creates new instance of that
+        /// order item and switches screens to the item editor
+        /// </summary>
+        /// <param name="sender">the button that was pressed</param>
+        /// <param name="e"></param>
+        private void OrderItemButton_Click(object sender, RoutedEventArgs e)
+        {
+            OrderControl parent = this.FindAncestor<OrderControl>();
+            if (DataContext is Order currentOrder)
+            {
+                parent.SwapScreen(new OrderItemCostomizer());
+            }
+        }
+
+
+
+
+
+        /// <summary>
         /// Adds an angry chicken to the currentOrder
         /// </summary>
         /// <param name="sender"></param>
@@ -135,7 +154,7 @@ namespace PointOfSale
             OrderControl parent = this.FindAncestor<OrderControl>();
             if(DataContext is Order currentOrder)
             {
-                parent.SwapScreen(new OrderSummeryControl());
+                parent.SwapScreen(new OrderItemCostomizer());
             }
 
 

@@ -75,6 +75,9 @@
     <Compile Include="MenuItemSelectionControl.xaml.cs">
       <DependentUpon>MenuItemSelectionControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OrderItemCostomizer.xaml.cs">
+      <DependentUpon>OrderItemCostomizer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OrderSummeryControl.xaml.cs">
       <DependentUpon>OrderSummeryControl.xaml</DependentUpon>
     </Compile>
@@ -116,6 +119,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MenuItemSelectionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OrderItemCostomizer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
