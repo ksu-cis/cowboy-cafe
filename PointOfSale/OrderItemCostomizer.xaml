@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel Background="Wheat">
+    <StackPanel>
+        <Label x:Name="OrderItemName"/>
         <Grid x:Name="SizeSelector" Height="75">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -31,5 +32,8 @@
                 Large
             </Button>
         </Grid>
+        <Label>
+            Test
+        </Label>
     </StackPanel>
 </UserControl>

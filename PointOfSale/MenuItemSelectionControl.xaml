@@ -16,29 +16,29 @@
 
         <StackPanel Grid.Column="0">
             <Label>Entrees</Label>
-            <Button Name="AngryChickenButton" Click="AngryChickenButton_Click">Angry Chicken</Button>
-            <Button Name="CowPokeChiliButton" Click="CowPokeChiliButton_Click">Cow PokeChili</Button>
-            <Button Name="DakotaDoubleBurgerButton" Click="DakotaDoubleBurgerButton_Click">Dakota Double Burger</Button>
-            <Button Name="PecosPulledPorkButton" Click="PecosPulledPorkButton_Click">Pecos Pulled Pork</Button>
-            <Button Name="RustlersRibsButton" Click="RustlersRibsButton_Click">Rustler's Ribs</Button>
-            <Button Name="TexasTripleBurgerButton" Click="TexasTripleBurgerButton_Click">Texas Triple Burger</Button>
-            <Button Name="TrailBurgerButton" Click="TrailBurgerButton_Click">Trailburger</Button>
+            <Button Name="AngryChickenButton" Click="OrderItemButton_Click">Angry Chicken</Button>
+            <Button Name="CowPokeChiliButton" Click="OrderItemButton_Click">Cow PokeChili</Button>
+            <Button Name="DakotaDoubleBurgerButton" Click="OrderItemButton_Click">Dakota Double Burger</Button>
+            <Button Name="PecosPulledPorkButton" Click="OrderItemButton_Click">Pecos Pulled Pork</Button>
+            <Button Name="RustlersRibsButton" Click="OrderItemButton_Click">Rustler's Ribs</Button>
+            <Button Name="TexasTripleBurgerButton" Click="OrderItemButton_Click">Texas Triple Burger</Button>
+            <Button Name="TrailBurgerButton" Click="OrderItemButton_Click">Trailburger</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="1">
             <Label>Sides</Label>
-            <Button Name="BakedBeansButton" Click="BakedBeansButton_Click">Baked Beans</Button>
-            <Button Name="ChilliCheeseFriesButton" Click="ChilliCheeseFriesButton_Click">Chilli Cheese Fries</Button>
-            <Button Name="CornDodgersButton" Click="CornDodgersButton_Click">Corn Dodgers</Button>
-            <Button Name="PanDeCampoButton" Click="PanDeCampoButton_Click">Pan De Campo</Button>
+            <Button Name="BakedBeansButton" Click="OrderItemButton_Click">Baked Beans</Button>
+            <Button Name="ChilliCheeseFriesButton" Click="OrderItemButton_Click">Chilli Cheese Fries</Button>
+            <Button Name="CornDodgersButton" Click="OrderItemButton_Click">Corn Dodgers</Button>
+            <Button Name="PanDeCampoButton" Click="OrderItemButton_Click">Pan De Campo</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="2">
             <Label>Drinks</Label>
-            <Button Name="CowboyCoffeeButton" Click="CowboyCoffeeButton_Click">Cowboy Coffee</Button>
-            <Button Name="JerkedSodaButton" Click="JerkedSodaButton_Click">Jerked Soda</Button>
-            <Button Name="TexasTeaButton" Click="TexasTeaButton_Click">Texas Tea</Button>
-            <Button Name="WaterButton" Click="WaterButton_Click">Water</Button>
+            <Button Name="CowboyCoffeeButton" Click="OrderItemButton_Click">Cowboy Coffee</Button>
+            <Button Name="JerkedSodaButton" Click="OrderItemButton_Click">Jerked Soda</Button>
+            <Button Name="TexasTeaButton" Click="OrderItemButton_Click">Texas Tea</Button>
+            <Button Name="WaterButton" Click="OrderItemButton_Click">Water</Button>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CowboyCafe.Data;
 
 namespace PointOfSale
 {
@@ -20,9 +21,25 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderItemCostomizer : UserControl
     {
-        public OrderItemCostomizer()
+        /// <summary>
+        /// the order item being costomized
+        /// </summary>
+        private IOrderItem item;
+
+        public OrderItemCostomizer(IOrderItem i)
         {
             InitializeComponent();
+            item = i;
+            OrderItemName.Content = item.ToString();
+
+            if(item is Entree)
+            {
+                SizeSelector.Visibility = Visibility.Hidden;
+                SizeSelector.Height = 0;
+            }
         }
+
+
+
     }
 }

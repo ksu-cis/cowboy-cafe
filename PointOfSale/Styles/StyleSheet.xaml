@@ -5,15 +5,17 @@
     <Style TargetType="Button">
         <Setter Property="MinHeight" Value="50"/>
         <Setter Property="Background" Value="SaddleBrown"/>
-        <Setter Property="Opacity" Value=".95"/>
         <Setter Property="BorderBrush" Value="Black"/>
         <Setter Property="FontSize" Value="18"/>
     </Style>
 
     <Style TargetType="Label">
+        <Setter Property="Background" Value="Wheat"/>
         <Setter Property="FontFamily" Value="Trebuchet MS"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="FontWeight" Value="Bold"/>
     </Style>

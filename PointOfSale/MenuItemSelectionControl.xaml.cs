@@ -36,14 +36,16 @@ namespace PointOfSale
             OrderControl parent = this.FindAncestor<OrderControl>();
             if (DataContext is Order currentOrder)
             {
-                parent.SwapScreen(new OrderItemCostomizer());
+                IOrderItem food = new TexasTripleBurger();
+                parent.SwapScreen(new OrderItemCostomizer(food));
+
             }
         }
 
 
 
 
-
+        /*
         /// <summary>
         /// Adds an angry chicken to the currentOrder
         /// </summary>
@@ -159,11 +161,11 @@ namespace PointOfSale
 
 
             //OrderListView.Items.Add(new BakedBeans());
-            /*if (DataContext is Order currentOrder)
+            if (DataContext is Order currentOrder)
             {
                 currentOrder.Add(new BakedBeans());
 
-            }*/
+            }
         }
 
         /// <summary>
@@ -267,5 +269,7 @@ namespace PointOfSale
                 currentOrder.Add(new Water());
             }
         }
+
+    */
     }
 }

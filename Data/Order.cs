@@ -12,22 +12,17 @@ namespace CowboyCafe.Data
         /// ID number for order
         /// </summary>
         public int OrderNumber { get; private set; }
-
-        /// <summary>
-        /// The Item currently being edited
-        /// When it is set to null, the menuItemSelection should display
-        /// </summary>
-        IOrderItem queuedItem = null;
         
         /// <summary>
         /// backing variable for Items property
         /// </summary>
-        List<IOrderItem> items = new List<IOrderItem>();
+        private List<IOrderItem> items = new List<IOrderItem>();
 
         /// <summary>
         /// backing variabble for prices property
         /// </summary>
-        List<double> prices = new List<double>();
+        private List<double> prices = new List<double>();
+
 
         /// <summary>
         /// list of all items in the order
