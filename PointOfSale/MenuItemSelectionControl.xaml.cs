@@ -36,8 +36,25 @@ namespace PointOfSale
             OrderControl parent = this.FindAncestor<OrderControl>();
             if (DataContext is Order currentOrder)
             {
-                IOrderItem food = new TexasTripleBurger();
-                parent.SwapScreen(new OrderItemCostomizer(food));
+
+                if (sender is Button button)
+                {
+                    IOrderItem food;
+                    switch (button.Content)
+                    {
+                        case "Angry Chicken":
+                            food = new AngryChicken();
+                            parent.SwapScreen(new OrderItemCostomizer(new AngryChicken()));
+                            break;
+                        default:
+                            food = new Water();
+                            break;
+                    }
+                    currentOrder.Add(food);
+                }
+                    
+                //IOrderItem food = new TexasTripleBurger();
+                //parent.SwapScreen(new OrderItemCostomizer(food));
 
             }
         }
