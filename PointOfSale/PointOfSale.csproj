@@ -10,4 +10,10 @@
     <ProjectReference Include="..\Data\Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="CashRegister">
+      <HintPath>CashRegister.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
