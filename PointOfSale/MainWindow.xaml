@@ -5,11 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1080" Width="1920">
+        Title="MainWindow" Height="650" Width="1060">
     <Grid Background="Bisque">
-
+        <Border x:Name="Container">
             <local:OrderControl/>
-
-
+        </Border>
     </Grid>
 </Window>

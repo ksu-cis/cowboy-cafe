@@ -27,7 +27,7 @@ namespace PointOfSale
         private double totalValue = 0;
 
         /// <summary>
-        /// Total value customer has paid
+        /// TotalWithTax value customer has paid
         /// </summary>
         public double TotalPaid { get => totalValue; }
 

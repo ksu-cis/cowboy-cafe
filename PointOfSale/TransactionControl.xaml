@@ -5,13 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="1080">
+             d:DesignHeight="650" d:DesignWidth="1000">
 
     <UserControl.Resources>
         <Style TargetType="Button">
-            <Setter Property="Margin" Value="45,25,150,1"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
             <Setter Property="FontSize" Value="30"/>
             <Setter Property="Height" Value="70"/>
+            <Setter Property="Width" Value="30"/>
         </Style>
     </UserControl.Resources>
     
@@ -64,7 +65,7 @@
 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock TextAlignment="Left" FontSize="25">Total:</TextBlock>
-                    <TextBlock TextAlignment="Right" FontSize="25" Text="{Binding Path=Total, StringFormat=c}"></TextBlock>
+                    <TextBlock TextAlignment="Right" FontSize="25" Text="{Binding Path=TotalWithTax, StringFormat=c}"/>
                 </StackPanel>
             </StackPanel>
 

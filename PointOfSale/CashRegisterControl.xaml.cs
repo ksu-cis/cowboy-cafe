@@ -40,14 +40,15 @@ namespace PointOfSale
             if (this.DataContext is CashRegisterModelView crmv)
             {
 
-                if (crmv.TotalPaid >= transaction.Total)
+                if (crmv.TotalPaid >= transaction.TotalWithTax)
                 {
                     transaction.PrintReciept();
 
                 }
             }
-            orderControl.DataContext = new Order();
-            orderControl.SwapScreen(new MenuItemSelectionControl());
+            MainWindow mw = this.FindAncestor<MainWindow>();
+            mw.DataContext = new Order();
+            mw.Container.Child= new OrderControl();
         }
     }
 }

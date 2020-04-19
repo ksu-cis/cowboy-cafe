@@ -20,13 +20,7 @@ namespace PointOfSale
     /// Interaction logic for TransactionControl.xaml
     /// </summary>
     public partial class TransactionControl : UserControl
-    {
-        public TransactionControl(Order order)
-        {
-            InitializeComponent();
-            DataContext = order;
-        }
-       
+    {      
         /// <summary>
         /// Checks to see if paid by cash or card
         /// </summary>
@@ -38,28 +32,34 @@ namespace PointOfSale
         private const double tax = 0.16;
 
         /// <summary>
+        /// Private backing variable for cash tended
+        /// </summary>
+        private double cashTend;
+
+        /// <summary>
         /// Cash tended for pay
         /// </summary>
         public double CashTend = 0.0;
+
+        /// <summary>
+        /// private backing variable for total
+        /// </summary>
+        private double total;
         
         /// <summary>
         /// Final order total
         /// </summary>
-        public double Total
+        public double TotalWithTax
         {
-            get
-            {
-                if(DataContext is Order order)
-                {
-                    var total = order.Subtotal * tax;
+            get { return Math.Round(total, 2); }
+            private set { total = Math.Round(value, 2); }
+        }
 
-                    return total + order.Subtotal;
-                }
-                else
-                {
-                    throw new Exception();
-                }
-            }
+        public TransactionControl(Order order)
+        {
+            InitializeComponent();
+            DataContext = order;
+            total = (order.Subtotal * 0.16) + order.Subtotal;
         }
 
         /// <summary>
@@ -71,95 +71,25 @@ namespace PointOfSale
             StringBuilder reciept = new StringBuilder();
             if(DataContext is Order order)
             {
-                reciept.Append(order.OrderNumber).AppendLine();
-                reciept.Append(System.DateTime.Now.ToString()).AppendLine();
-                foreach(object Item in order.items)
+                reciept.Append("---------- COWBOY CAFE ----------\n");
+                reciept.Append(DateTime.Now + "\n");
+                reciept.Append("Order #: " + order.OrderNumber + "\n");
+                foreach (IOrderItem i in order.Items)
                 {
-                    if (Item is CowpokeChili item)
-                    {
-                        reciept.AppendFormat("{0} ${1}", item, item.Price).AppendLine();
-                        SpecialsList(reciept, item.SpecialInstructions);
-                    }
-                    else if (Item is AngryChicken items)
-                    {
-                        reciept.AppendFormat("{0} ${1}", items, items.Price).AppendLine();
-                        SpecialsList(reciept, items.SpecialInstructions);
-                    }
-                    else if (Item is DakotaDoubleBurger itemA)
-                    {
-                        reciept.AppendFormat("{0} ${1}", itemA, itemA.Price).AppendLine();
-                        SpecialsList(reciept, itemA.SpecialInstructions);
-                    }
-                    else if (Item is PecosPulledPork itemB)
-                    {
-                        reciept.AppendFormat("{0} ${1}", itemB, itemB.Price).AppendLine();
-                        SpecialsList(reciept, itemB.SpecialInstructions);
-                    }
-                    else if (Item is RustlersRibs itemC)
-                    {
-                        reciept.AppendFormat("{0} ${1}", itemC, itemC.Price).AppendLine();
-                        SpecialsList(reciept, itemC.SpecialInstructions);
-                    }
-                    else if (Item is TrailBurger itemD)
-                    {
-                        reciept.AppendFormat("{0} ${1}", itemD, itemD.Price).AppendLine();
-                        SpecialsList(reciept, itemD.SpecialInstructions);
-                    }
-                    else if (Item is TexasTripleBurger itemE)
-                    {
-                        reciept.AppendFormat("{0} ${1}", itemE, itemE.Price).AppendLine();
-                        SpecialsList(reciept, itemE.SpecialInstructions);
-                    }
-                    else if (Item is BakedBeans itemF)
-                    {
-                        reciept.AppendFormat("{0} ${1}", itemF, itemF.Price).AppendLine();
-                        SpecialsList(reciept, itemF.SpecialInstructions);
+                    reciept.Append(i.ToString() + "\t\t" + i.Price.ToString("C2") + "\n");
+                    foreach (string s in i.SpecialInstructions)
+                        reciept.Append(s + "\n");
 
-                    }
-                    else if (Item is ChiliCheeseFries itemG)
-                    {
-                        reciept.AppendFormat("{0} ${1}", itemG, itemG.Price).AppendLine();
-                        SpecialsList(reciept, itemG.SpecialInstructions);
-                    }
-                    else if (Item is PanDeCampo itemH)
-                    {
-                        reciept.AppendFormat("{0} ${1}", itemH, itemH.Price).AppendLine();
-                        SpecialsList(reciept, itemH.SpecialInstructions);
-                    }
-                    else if (Item is CornDodgers itemI)
-                    {
-                        reciept.AppendFormat("{0} ${1}", itemI, itemI.Price).AppendLine();
-                        SpecialsList(reciept, itemI.SpecialInstructions);
-                    }
-                    else if (Item is JerkedSoda itemJ)
-                    {
-                        reciept.AppendFormat("{0} ${1}", itemJ, itemJ.Price).AppendLine();
-                        SpecialsList(reciept, itemJ.SpecialInstructions);
-                    }
-                    else if (Item is CowboyCoffee itemK)
-                    {
-                        reciept.AppendFormat("{0} ${1}", itemK, itemK.Price).AppendLine();
-                        SpecialsList(reciept, itemK.SpecialInstructions);
-                    }
-                    else if (Item is Water itemL)
-                    {
-                        reciept.AppendFormat("{0} ${1}", itemL, itemL.Price).AppendLine();
-                        SpecialsList(reciept, itemL.SpecialInstructions);
-                    }
-                    else if (Item is TexasTea itemM)
-                    {
-                        reciept.AppendFormat("{0} ${1}", itemM, itemM.Price).AppendLine();
-                        SpecialsList(reciept, itemM.SpecialInstructions);
-                    }
+                    reciept.Append("\n");
                 }
 
                 reciept.AppendFormat("Subtotal: ${0}", order.Subtotal).AppendLine();
                 reciept.Append("Tax: " + tax + "%").AppendLine();
-                reciept.AppendFormat("Total: ${0}", Total);
+                reciept.AppendFormat("TotalWithTax: ${0}", TotalWithTax).AppendLine();
 
                 if (paymentMethod == true)
                 {
-                    double change = Total - CashTend;
+                    double change = TotalWithTax - CashTend;
 
                     reciept.Append("Payement Method: Cash").AppendLine();
                     reciept.AppendFormat("Cash Tended: ${0}", CashTend).AppendLine();
@@ -187,22 +117,22 @@ namespace PointOfSale
             CardTerminal card = new CardTerminal();
             paymentMethod = false;
             ReceiptPrinter printer = new ReceiptPrinter();
-            var orderControl = this.FindAncestor<OrderControl>();
-            if(DataContext is Order order)
+            MainWindow mw = this.FindAncestor<MainWindow>();
+            if (DataContext is Order order)
             {
                 
-                var result = card.ProcessTransaction(Total);
+                var result = card.ProcessTransaction(TotalWithTax);
                 if (result == ResultCode.Success)
                 {
                     MessageBox.Show("Success");
                     printer.Print(Reciept());
-                    orderControl.DataContext = new Order();
-                    orderControl.SwapScreen(new MenuItemSelectionControl());
+                    mw.DataContext = new Order();
+                    mw.Container.Child = new OrderControl();
                 }
                 else
                 {
                     MessageBox.Show(result.ToString());
-                    orderControl.SwapScreen(new TransactionControl(order));
+                    mw.Container.Child = new TransactionControl(order);
                 }
             }
         }
@@ -219,7 +149,8 @@ namespace PointOfSale
             register.DataContext = new CashRegisterModelView();
             ReceiptPrinter printer = new ReceiptPrinter();
             var orderControl = this.FindAncestor<OrderControl>();
-            orderControl.SwapScreen(register);
+            MainWindow mw = this.FindAncestor<MainWindow>();
+            mw.Container.Child = register;
             paymentMethod = true;
 
 
@@ -232,9 +163,9 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void OnCancelClick(object sender, RoutedEventArgs e)
         {
-            var orderControl = this.FindAncestor<OrderControl>();
-            orderControl.DataContext = new Order();
-            orderControl.SwapScreen(new MenuItemSelectionControl());
+            MainWindow mw = this.FindAncestor<MainWindow>();
+            mw.DataContext = new Order();
+            mw.Container.Child = new OrderControl();
 
         }
 
@@ -246,20 +177,6 @@ namespace PointOfSale
         {
             ReceiptPrinter rp = new ReceiptPrinter();
             rp.Print(Reciept());
-        }
-
-
-        /// <summary>
-        /// Prints special instructions to reciept
-        /// </summary>
-        /// <param name="s"></param>
-        /// <param name="list"></param>
-        public void SpecialsList(StringBuilder s, List<string> list)
-        {
-            foreach (string v in list)
-            {
-                s.Append(v).AppendLine();
-            }
         }
 
     }
