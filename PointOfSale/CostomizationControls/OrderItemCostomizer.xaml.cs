@@ -34,8 +34,7 @@ namespace PointOfSale
 
             if(item is Entree)
             {
-                SizeSelector.Visibility = Visibility.Hidden;
-                SizeSelector.Height = 0;
+                SizeSelector.Visibility = Visibility.Collapsed;
             }
         }
 

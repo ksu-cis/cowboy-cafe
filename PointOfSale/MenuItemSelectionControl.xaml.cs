@@ -44,7 +44,7 @@ namespace PointOfSale
                     {
                         case "Angry Chicken":
                             food = new AngryChicken();
-                            parent.SwapScreen(new OrderItemCostomizer(new AngryChicken()));
+                            parent.SwapScreen(new OrderItemCostomizer(food));
                             break;
                         default:
                             food = new Water();
