@@ -4,7 +4,44 @@
     ViewData["Title"] = "Home page";
 }
 
+@{ 
+    IEnumerable<CowboyCafe.Data.IOrderItem> e = CowboyCafe.Data.Menu.Entree();
+    IEnumerable<CowboyCafe.Data.IOrderItem> s = CowboyCafe.Data.Menu.Side();
+    IEnumerable<CowboyCafe.Data.IOrderItem> d = CowboyCafe.Data.Menu.Drink();
+
+}
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to the Cowboy-Cafe</h1>
+    <p>We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. 
+    Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas. 
+    Dip your Pan de Campo into a bowl of beans. 
+    Or conquer the the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.</p>
+
 </div>
+
+
+<h1>Menu Items:</h1>
+<div class="Menu-Item">
+    <h1>Entrees:</h1>
+    <div>
+        @foreach (CowboyCafe.Data.IOrderItem item in e)
+        {
+            <p>@item.ToString() Price: $@item.Price  Calories: @item.Calories</p>
+        }
+    </div>
+    <h1>Sides:</h1>
+    <div>
+        @foreach (CowboyCafe.Data.IOrderItem item in s)
+        {
+            <p>@item.ToString() Price: $@item.Price  Calories: @item.Calories</p>
+        }
+    </div>
+    <h1>Drinks:</h1>
+    <div>
+        @foreach (CowboyCafe.Data.IOrderItem item in d)
+        {
+            <p>@item.ToString()  Price: $@item.Price  Calories: @item.Calories</p>
+        }
+    </div>
+</div>
+

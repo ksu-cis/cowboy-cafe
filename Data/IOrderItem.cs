@@ -15,5 +15,10 @@ namespace CowboyCafe.Data
         /// Gets special instructions
         /// </summary>
         List<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// Gets calories
+        /// </summary>
+        double Calories { get; }
     }
 }
