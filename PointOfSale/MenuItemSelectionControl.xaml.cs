@@ -44,12 +44,57 @@ namespace PointOfSale
                     {
                         case "Angry Chicken":
                             food = new AngryChicken();
-                            parent.SwapScreen(new OrderItemCostomizer(food));
                             break;
-                        default:
+                        case "Cow Poke Chili":
+                            food = new CowpokeChili();
+                            break;
+                        case "Dakota Double Burger":
+                            food = new DakotaDoubleBurger();
+                            break;
+                        case "Pecos Pulled Pork":
+                            food = new PecosPulledPork();
+                            break;
+                        case "Rustler's Ribs":
+                            food = new RustlersRibs();
+                            break;
+                        case "Texas Triple Burge":
+                            food = new TexasTripleBurger();
+                            break;
+                        case "Trailburger":
+                            food = new TrailBurger();
+                            break;
+
+
+                        case "Baked Beans":
+                            food = new BakedBeans();
+                            break;
+                        case "Chilli Cheese Fries":
+                            food = new ChilliCheeseFries();
+                            break;
+                        case "Corn Dodgers":
+                            food = new CornDodgers();
+                            break;
+                        case "Pan De Campo":
+                            food = new PanDeCampo();
+                            break;
+
+
+                        case "Cowboy Coffee":
+                            food = new CowboyCoffee();
+                            break;
+                        case "Jerked Soda":
+                            food = new JerkedSoda();
+                            break;
+                        case "Texas Tea":
+                            food = new TexasTea();
+                            break;
+                        case "Water":
                             food = new Water();
                             break;
+                        default:
+                            throw new Exception("type on button text");
                     }
+                    parent.SwapScreen(new OrderItemCostomizer(food));
                     currentOrder.Add(food);
                 }
                     

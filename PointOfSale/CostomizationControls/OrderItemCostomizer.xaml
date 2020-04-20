@@ -32,8 +32,8 @@
                 Large
             </Button>
         </Grid>
-        <Label>
-            Test
-        </Label>
+        <CheckBox Name="BunSelector" IsChecked="True">Bun</CheckBox>
+        <CheckBox Name="PickleSelector" IsChecked="True">Pickle</CheckBox>
+        
     </StackPanel>
 </UserControl>

@@ -17,7 +17,7 @@
         <StackPanel Grid.Column="0">
             <Label>Entrees</Label>
             <Button Click="OrderItemButton_Click">Angry Chicken</Button>
-            <Button Click="OrderItemButton_Click">Cow PokeChili</Button>
+            <Button Click="OrderItemButton_Click">Cow Poke Chili</Button>
             <Button Click="OrderItemButton_Click">Dakota Double Burger</Button>
             <Button Click="OrderItemButton_Click">Pecos Pulled Pork</Button>
             <Button Click="OrderItemButton_Click">Rustler's Ribs</Button>
