@@ -10,7 +10,7 @@
 
         <Label x:Name="OrderItemName"/>
 
-        <StackPanel x:Name="SizeSelector" Visibility="Collapsed">
+        <StackPanel x:Name="SizeSelector" Visibility="Collapsed"  Margin="0,0,0,40">
             <RadioButton Content="Small" IsChecked="True"/>
             <RadioButton Content="Medium"/>
             <RadioButton Content="Large"/>
@@ -33,7 +33,7 @@
         <CheckBox Name="SweetSelector">Sweet</CheckBox>
         <CheckBox Name="LemonSelector">Lemon</CheckBox>
 
-        <StackPanel Name="FlavorSelector" Visibility="Collapsed">
+        <StackPanel Name="FlavorSelector" Visibility="Collapsed" Margin="0,40,0,0">
             <RadioButton IsChecked="True">Cream Soda</RadioButton>
             <RadioButton>Orange Soda</RadioButton>
             <RadioButton>Sarsparilla</RadioButton>

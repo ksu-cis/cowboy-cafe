@@ -64,7 +64,28 @@ namespace PointOfSale
             else
             {
                 SizeSelector.Visibility = Visibility.Visible;
-
+                if(item is CowboyCoffee)
+                {
+                    IceSelector.Visibility = Visibility.Visible;
+                    DecafSelector.Visibility = Visibility.Visible;
+                    CreamSelector.Visibility = Visibility.Visible;
+                }
+                else if(item is JerkedSoda)
+                {
+                    IceSelector.Visibility = Visibility.Visible;
+                    FlavorSelector.Visibility = Visibility.Visible;
+                } 
+                else if(item is TexasTea)
+                {
+                    IceSelector.Visibility = Visibility.Visible;
+                    LemonSelector.Visibility = Visibility.Visible;
+                    SweetSelector.Visibility = Visibility.Visible;
+                }
+                else if(item is Water)
+                {
+                    IceSelector.Visibility = Visibility.Visible;
+                    LemonSelector.Visibility = Visibility.Visible;
+                }
             }
         }
     }
