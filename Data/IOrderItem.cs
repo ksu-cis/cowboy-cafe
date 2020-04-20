@@ -19,6 +19,11 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Gets calories
         /// </summary>
-        double Calories { get; }
+        uint Calories { get; }
+
+        /// <summary>
+        /// Gets size
+        /// </summary>
+        Size Size { get; set; }
     }
 }

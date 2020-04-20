@@ -111,6 +111,8 @@ namespace CowboyCafe.Data
             }
         }
 
+        public override Size Size => throw new NotImplementedException();
+
         /// <summary>
         /// Overrides to string method in order control
         /// </summary>

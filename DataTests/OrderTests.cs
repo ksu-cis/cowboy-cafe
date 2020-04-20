@@ -12,6 +12,12 @@ namespace CowboyCafe.DataTests
         public double Price { get; set; }
 
         public List<string> SpecialInstructions { get; set; }
+
+        public uint Calories => throw new NotImplementedException();
+
+        public Size Size => throw new NotImplementedException();
+
+        Size IOrderItem.Size { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 
     public class OrderTests

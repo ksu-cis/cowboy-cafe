@@ -37,5 +37,11 @@ namespace CowboyCafe.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
         }
+
+        /// <summary>
+        /// Exception
+        /// </summary>
+        public abstract Size Size { get; }
+        Size IOrderItem.Size { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

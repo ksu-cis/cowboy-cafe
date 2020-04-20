@@ -60,6 +60,12 @@ namespace CowboyCafe.Data
         /// </summary>
         List<string> IOrderItem.SpecialInstructions => throw new NotImplementedException();
 
+        public uint Calories => throw new NotImplementedException();
+
+        public Size Size => throw new NotImplementedException();
+
+        Size IOrderItem.Size { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         /// <summary>
         /// Event handler to trigger when items or subtotal is updated
         /// </summary>

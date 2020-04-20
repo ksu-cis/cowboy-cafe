@@ -22,25 +22,33 @@
 
 <h1>Menu Items:</h1>
 <div class="Menu-Item">
-    <h1>Entrees:</h1>
+    <h2>Entrees:</h2>
     <div>
         @foreach (CowboyCafe.Data.IOrderItem item in e)
         {
             <p>@item.ToString() Price: $@item.Price  Calories: @item.Calories</p>
         }
     </div>
-    <h1>Sides:</h1>
+    <h2>Sides:</h2>
     <div>
         @foreach (CowboyCafe.Data.IOrderItem item in s)
         {
             <p>@item.ToString() Price: $@item.Price  Calories: @item.Calories</p>
+            item.Size = CowboyCafe.Data.Size.Medium;
+            <p>@item.ToString() Price: $@item.Price  Calories: @item.Calories</p>
+            item.Size = CowboyCafe.Data.Size.Large;
+            <p>@item.ToString() Price: $@item.Price  Calories: @item.Calories</p>
         }
     </div>
-    <h1>Drinks:</h1>
+    <h2>Drinks:</h2>
     <div>
         @foreach (CowboyCafe.Data.IOrderItem item in d)
         {
-            <p>@item.ToString()  Price: $@item.Price  Calories: @item.Calories</p>
+            <p>@item.ToString() Price: $@item.Price  Calories: @item.Calories</p>
+            item.Size = CowboyCafe.Data.Size.Medium;
+            <p>@item.ToString() Price: $@item.Price  Calories: @item.Calories</p>
+            item.Size = CowboyCafe.Data.Size.Large;
+            <p>@item.ToString() Price: $@item.Price  Calories: @item.Calories</p>
         }
     </div>
 </div>

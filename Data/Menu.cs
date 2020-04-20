@@ -14,14 +14,13 @@ namespace CowboyCafe.Data
         public static IEnumerable<IOrderItem> Entree()
         {    
             List<IOrderItem> entree = new List<IOrderItem>();
-            Order order = new Order();
-            foreach (IOrderItem item in order.Items)
-            {
-                if(item is Entree e)
-                {
-                    entree.Add(item);
-                }
-            }
+            entree.Add(new CowpokeChili());
+            entree.Add(new AngryChicken());
+            entree.Add(new DakotaDoubleBurger());
+            entree.Add(new PecosPulledPork());
+            entree.Add(new RustlersRibs());
+            entree.Add(new TexasTripleBurger());
+            entree.Add(new TrailBurger());
             IEnumerable<IOrderItem> et = entree.ToArray();
             return et;
         }
@@ -33,14 +32,10 @@ namespace CowboyCafe.Data
         public static IEnumerable<IOrderItem> Side()
         {
             List<IOrderItem> side = new List<IOrderItem>();
-            Order order = new Order();
-            foreach (IOrderItem item in order.Items)
-            {
-                if (item is Side s)
-                {
-                    side.Add(item);
-                }
-            }
+            side.Add(new BakedBeans());
+            side.Add(new ChiliCheeseFries());
+            side.Add(new CornDodgers());
+            side.Add(new PanDeCampo());
             IEnumerable<IOrderItem> se = side.ToArray();
             return se;
         }
@@ -52,14 +47,10 @@ namespace CowboyCafe.Data
         public static IEnumerable<IOrderItem> Drink()
         {
             List<IOrderItem> drink = new List<IOrderItem>();
-            Order order = new Order();
-            foreach (IOrderItem item in order.Items)
-            {
-                if (item is Drink d)
-                {
-                    drink.Add(item);
-                }
-            }
+            drink.Add(new Water());
+            drink.Add(new CowboyCoffee());
+            drink.Add(new TexasTea());
+            drink.Add(new JerkedSoda());
             IEnumerable<IOrderItem> dr = drink.ToArray();
             return dr;
         }
