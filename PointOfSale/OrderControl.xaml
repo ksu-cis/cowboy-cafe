@@ -14,30 +14,30 @@
     </UserControl.Resources>
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" AlignmentX="Left" ImageSource="Styles/background.jpg"/>
+        </Grid.Background>
         
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
 
-        <Button Grid.Column="0" Name="ItemSelectionButton" Grid.Row="0" 
+
+        <StackPanel Background="Wheat">
+            <Button Name="ItemSelectionButton"
                 Click="ItemSelectionButtonClick">Item Selection</Button>
-        <Button Grid.Column="1" Name="CancelOrderButton" Grid.Row="0" 
+            <Button Name="CancelOrderButton"
                 Click="CancelOrderButtonClick">Cancel Order</Button>
-        <Button Grid.Column="2" Name="CompleteOrderButton" Grid.Row="0" 
+            <Button Name="CompleteOrderButton"
                 Click="CompleteOrderButtonClick">Complete Order</Button>
+        </StackPanel>
 
-
-        <Border Name="Container" Grid.ColumnSpan="3" Grid.Row="2">
+        <Border Name="Container" Grid.Column="1">
             <local:MenuItemSelectionControl/>
         </Border>
-        <local:OrderSummeryControl Grid.Column="3" Grid.RowSpan="2"/>
+        
+        <local:OrderSummeryControl Grid.Column="2"/>
     </Grid>
 </UserControl>

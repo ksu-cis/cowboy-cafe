@@ -68,9 +68,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CostomizationControls\EntreeCostomizationControl.xaml.cs">
-      <DependentUpon>EntreeCostomizationControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ExtentionMethods.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -78,7 +75,7 @@
     <Compile Include="MenuItemSelectionControl.xaml.cs">
       <DependentUpon>MenuItemSelectionControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CostomizationControls\OrderItemCostomizer.xaml.cs">
+    <Compile Include="OrderItemCostomizer.xaml.cs">
       <DependentUpon>OrderItemCostomizer.xaml</DependentUpon>
     </Compile>
     <Compile Include="OrderSummeryControl.xaml.cs">
@@ -117,10 +114,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="CostomizationControls\EntreeCostomizationControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -129,7 +122,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CostomizationControls\OrderItemCostomizer.xaml">
+    <Page Include="OrderItemCostomizer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -155,6 +148,5 @@
   <ItemGroup>
     <Resource Include="Styles\background.jpg" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

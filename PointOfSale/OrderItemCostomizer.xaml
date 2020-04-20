@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel Width="300" HorizontalAlignment="Center">
+    <StackPanel VerticalAlignment="Top" Background="SaddleBrown" Width="400" HorizontalAlignment="Center">
+
         <Label x:Name="OrderItemName"/>
 
         <StackPanel x:Name="SizeSelector" Visibility="Collapsed">

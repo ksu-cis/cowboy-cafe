@@ -3,6 +3,7 @@
                     xmlns:local="clr-namespace:PointOfSale">
 
     <Style TargetType="Button">
+        <Setter Property="Margin" Value="2"/>
         <Setter Property="MinHeight" Value="50"/>
         <Setter Property="Background" Value="SaddleBrown"/>
         <Setter Property="BorderBrush" Value="Black"/>
@@ -33,7 +34,9 @@
     </Style>
 
     <Style TargetType="CheckBox">
+        <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Height" Value="30"/>
+        <Setter Property="FontFamily" Value="Trebuchet MS"/>
         <Setter Property="Margin" Value="25, 0"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="FontSize" Value="18"/>
@@ -42,6 +45,8 @@
     </Style>
 
     <Style TargetType="RadioButton">
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontFamily" Value="Trebuchet MS"/>
         <Setter Property="Height" Value="30"/>
         <Setter Property="Margin" Value="25, 0"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>

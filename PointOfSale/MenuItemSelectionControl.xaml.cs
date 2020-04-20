@@ -48,7 +48,7 @@ namespace PointOfSale
                         case "Cow Poke Chili":
                             food = new CowpokeChili();
                             break;
-                        case "Dakota Double Burger":
+                        case "Dakota Double":
                             food = new DakotaDoubleBurger();
                             break;
                         case "Pecos Pulled Pork":
@@ -57,7 +57,7 @@ namespace PointOfSale
                         case "Rustler's Ribs":
                             food = new RustlersRibs();
                             break;
-                        case "Texas Triple Burge":
+                        case "Texas Triple":
                             food = new TexasTripleBurger();
                             break;
                         case "Trailburger":
