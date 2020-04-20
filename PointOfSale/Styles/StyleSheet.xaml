@@ -31,6 +31,21 @@
         <Setter Property="FontFamily" Value="Geneva"/>
         <Setter Property="FontSize" Value="12"/>
     </Style>
-  
+
+    <Style TargetType="CheckBox">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Margin" Value="25, 0"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Visibility" Value="Collapsed"/>
+        <Setter Property="IsChecked" Value="True"/>
+    </Style>
+
+    <Style TargetType="RadioButton">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Margin" Value="25, 0"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="18"/>
+    </Style>
 
 </ResourceDictionary>

@@ -32,13 +32,29 @@ namespace PointOfSale
             item = i;
             OrderItemName.Content = item.ToString();
 
-            if(item is Entree)
+            if (item is Entree && !(item is RustlersRibs))
             {
-                SizeSelector.Visibility = Visibility.Collapsed;
+                if (item is CowpokeChili)
+                {
+                    CheeseSelector.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    PickleSelector.Visibility = Visibility.Visible;
+                    BunSelector.Visibility = Visibility.Visible;
+                    
+                    if(item is TrailBurger || item is DakotaDoubleBurger || item is TexasTripleBurger)
+                    {
+
+                    }
+                    
+                }
+            }
+            else 
+            {
+                SizeSelector.Visibility = Visibility.Visible;
+
             }
         }
-
-
-
     }
 }

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="1000">
-    
+
     <UserControl.Resources>
         <DataTemplate x:Name="idk" DataType="IOrderItem">
             <local:MenuItemSelectionControl/>
@@ -25,7 +25,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Image Grid.ColumnSpan="3" Grid.RowSpan="2" Source="Styles\background.jpg"/>
+        
 
         <Button Grid.Column="0" Name="ItemSelectionButton" Grid.Row="0" 
                 Click="ItemSelectionButtonClick">Item Selection</Button>
