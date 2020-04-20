@@ -53,6 +53,7 @@ namespace PointOfSale
             //but wtf ever. Here you go, are you happy? 
             orderNumber++;
             this.DataContext = new Order(orderNumber);
+            SwapScreen(new MenuItemSelectionControl());
         }
 
         /// <summary>
@@ -64,6 +65,7 @@ namespace PointOfSale
         {
             orderNumber++;
             this.DataContext = new Order(orderNumber);
+            SwapScreen(new MenuItemSelectionControl());
         }
 
         /// <summary>
