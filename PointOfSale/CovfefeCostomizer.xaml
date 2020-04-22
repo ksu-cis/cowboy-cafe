@@ -4,10 +4,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
+             xmlns:data="clr-namespace:CowboyCafe.Data;assembly=CowboyCafe.Data"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="SizeEnum" MethodName="GetValues"
+                        ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="data:Size"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
     <StackPanel>
         <Button Click="Button_Click">make BIG</Button>
         <CheckBox Visibility="Visible" Content="{Binding}" IsChecked="{Binding Path=Decaf}"/>
+        <ListBox ItemsSource="{Binding Source={StaticResource SizeEnum}}" SelectedItem="{Binding Path=Size}"/>
     </StackPanel>
 </UserControl>

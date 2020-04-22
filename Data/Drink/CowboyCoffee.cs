@@ -5,27 +5,8 @@ using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class CowboyCoffee : Drink, INotifyPropertyChanged
-    {
-        //this stuff will go in the base class once i figure out how it works
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-        }
-
-
-
-
-
-
-
-
-
-
-
+    public class CowboyCoffee : Drink
+    {   
         /// <summary>
         /// private backing variables
         /// </summary>
@@ -38,7 +19,7 @@ namespace CowboyCafe.Data
         public bool RoomForCream { get => roomForCream; set
             {
                 roomForCream = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
+                NotifyOfPropertyChange("roomForCream");
             }
         }
 

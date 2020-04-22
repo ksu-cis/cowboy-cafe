@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
@@ -9,6 +10,18 @@ namespace CowboyCafe.Data
     /// </summary>
     public abstract class Side : IOrderItem
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Notifies the data binding stuff when something changes
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+        }
+
         /// <summary>
         /// protected backing variable for size
         /// </summary>

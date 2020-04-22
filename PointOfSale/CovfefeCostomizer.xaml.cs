@@ -21,7 +21,7 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for CovfefeCostomizer.xaml
     /// </summary>
-    public partial class CovfefeCostomizer : UserControl, INotifyPropertyChanged
+    public partial class CovfefeCostomizer : UserControl
     {
         private CowboyCoffee covfefe;
         public CovfefeCostomizer(CowboyCoffee c)
@@ -31,11 +31,10 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //covfefe.Size = Size.Large;
+            covfefe.Size = Size.Large;
             covfefe.Decaf = true;
         }
     }
