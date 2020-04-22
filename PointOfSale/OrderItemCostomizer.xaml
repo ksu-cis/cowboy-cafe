@@ -29,7 +29,7 @@
 
         <CheckBox Name="IceSelector">Ice</CheckBox>
         <CheckBox Name="CreamSelector">Leave room for cream</CheckBox>
-        <CheckBox Name="DecafSelector">Decaf</CheckBox>
+        <CheckBox Name="DecafSelector" IsChecked="{Binding Path=Decaf}">Decaf</CheckBox>
         <CheckBox Name="SweetSelector">Sweet</CheckBox>
         <CheckBox Name="LemonSelector">Lemon</CheckBox>
 

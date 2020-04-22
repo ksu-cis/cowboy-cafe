@@ -67,7 +67,12 @@ namespace CowboyCafe.Data
         {
             items.Add(item);
             prices.Add(item.Price);
-            
+
+            if (item is INotifyPropertyChanged notifier)
+            {
+                notifier.PropertyChanged += OnItemPropertyChanged;
+            }
+
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Prices"));
@@ -91,5 +96,10 @@ namespace CowboyCafe.Data
         /// updates stuff when the order is updated.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnItemPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+        }
     }
 }
