@@ -63,6 +63,13 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void CompleteOrderButtonClick(object sender, RoutedEventArgs e)
         {
+            foreach(IOrderItem item in currentOrder.Items)
+            {
+                string s = String.Join(", ", item.SpecialInstructions.ToArray());
+                
+                MessageBox.Show(s);
+            }
+
             orderNumber++;
             this.DataContext = new Order(orderNumber);
             SwapScreen(new MenuItemSelectionControl());
