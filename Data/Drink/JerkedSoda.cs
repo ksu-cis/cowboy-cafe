@@ -26,7 +26,18 @@ namespace CowboyCafe.Data
         /// <summary>
         /// gets and sets the flavor of the pop
         /// </summary>
-        public SodaFlavor Flavor { get => flavor; set => flavor = value; }
+        public SodaFlavor Flavor
+        {
+            get
+            {
+                return flavor;
+            }
+            set
+            {
+                flavor = value;
+                NotifyOfPropertyChange("Flavor");
+            }
+        }
 
         /// <summary>
         /// gets specail prep instructions for the pop
