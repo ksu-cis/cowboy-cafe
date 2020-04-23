@@ -4,34 +4,41 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
+             xmlns:data="clr-namespace:CowboyCafe.Data;assembly=CowboyCafe.Data"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="SizeEnum" MethodName="GetValues"
+                        ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="data:Size"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
     <StackPanel VerticalAlignment="Top" Background="SaddleBrown" Width="400" HorizontalAlignment="Center">
 
         <Label x:Name="OrderItemName"/>
 
-        <StackPanel x:Name="SizeSelector" Visibility="Collapsed"  Margin="0,0,0,40">
-            <RadioButton Content="Small"/>
-            <RadioButton Content="Medium"/>
-            <RadioButton Content="Large"/>
-        </StackPanel>
+        <ListView x:Name="SizeSelector" ItemsSource="{Binding Source={StaticResource SizeEnum}}" SelectedItem="{Binding Path=Size}"/>
 
-        <CheckBox Name="BunSelector">Bun</CheckBox>
-        <CheckBox Name="PickleSelector">Pickle</CheckBox>
-        <CheckBox Name="CheeseSelector">Cheese</CheckBox>
-        <CheckBox Name="KetchupSelector">Ketchup</CheckBox>
-        <CheckBox Name="MustardSelector">Mustard</CheckBox>
-        <CheckBox Name="TomatoSelector">Tomato</CheckBox>
-        <CheckBox Name="LettuceSelector">Lettuce</CheckBox>
-        <CheckBox Name="MayoSelector">Mayo</CheckBox>
-        <CheckBox Name="BaconSelector">Bacon</CheckBox>
-        <CheckBox Name="EggSelector">Egg</CheckBox>
+        <CheckBox Name="BunSelector" IsChecked="{Binding Path=Bun}">Bun</CheckBox>
+        <CheckBox Name="PickleSelector" IsChecked="{Binding Path=Pickle}">Pickle</CheckBox>
+        <CheckBox Name="CheeseSelector" IsChecked="{Binding Path=Cheese}">Cheese</CheckBox>
+        <CheckBox Name="KetchupSelector" IsChecked="{Binding Path=Ketchup}">Ketchup</CheckBox>
+        <CheckBox Name="MustardSelector" IsChecked="{Binding Path=Mustard}">Mustard</CheckBox>
+        <CheckBox Name="TomatoSelector" IsChecked="{Binding Path=Tomato}">Tomato</CheckBox>
+        <CheckBox Name="LettuceSelector" IsChecked="{Binding Path=Lettuce}">Lettuce</CheckBox>
+        <CheckBox Name="MayoSelector" IsChecked="{Binding Path=Mayo}">Mayo</CheckBox>
+        <CheckBox Name="BaconSelector" IsChecked="{Binding Path=Bacon}">Bacon</CheckBox>
+        <CheckBox Name="EggSelector" IsChecked="{Binding Path=Egg}">Egg</CheckBox>
 
-        <CheckBox Name="IceSelector">Ice</CheckBox>
-        <CheckBox Name="CreamSelector">Leave room for cream</CheckBox>
+        <CheckBox Name="IceSelector" IsChecked="{Binding Path=Ice}">Ice</CheckBox>
+        <CheckBox Name="CreamSelector" IsChecked="{Binding Path=RoomForCream}">Leave room for cream</CheckBox>
         <CheckBox Name="DecafSelector" IsChecked="{Binding Path=Decaf}">Decaf</CheckBox>
-        <CheckBox Name="SweetSelector">Sweet</CheckBox>
-        <CheckBox Name="LemonSelector">Lemon</CheckBox>
+        <CheckBox Name="SweetSelector" IsChecked="{Binding Path=Sweet}">Sweet</CheckBox>
+        <CheckBox Name="LemonSelector" IsChecked="{Binding Path=Lemon}">Lemon</CheckBox>
 
         <StackPanel Name="FlavorSelector" Visibility="Collapsed" Margin="0,40,0,0">
             <RadioButton IsChecked="True">Cream Soda</RadioButton>

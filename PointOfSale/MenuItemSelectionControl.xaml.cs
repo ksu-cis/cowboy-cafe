@@ -80,15 +80,7 @@ namespace PointOfSale
 
 
                         case "Cowboy Coffee":
-                            
-                            CowboyCoffee C = new CowboyCoffee();
-                            parent.SwapScreen(new OrderItemCostomizer(C));
-                            currentOrder.Add(C);
-                            
-
                             food = new CowboyCoffee();
-
-
                             break;
                         case "Jerked Soda":
                             food = new JerkedSoda();
@@ -102,8 +94,8 @@ namespace PointOfSale
                         default:
                             throw new Exception("type on button text");
                     }
-                    //parent.SwapScreen(new OrderItemCostomizer(food));
-                    //currentOrder.Add(food);
+                    parent.SwapScreen(new OrderItemCostomizer(food));
+                    currentOrder.Add(food);
                 }
             }
         }
