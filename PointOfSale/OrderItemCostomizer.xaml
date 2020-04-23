@@ -40,7 +40,7 @@
         <CheckBox Name="SweetSelector" IsChecked="{Binding Path=Sweet}">Sweet</CheckBox>
         <CheckBox Name="LemonSelector" IsChecked="{Binding Path=Lemon}">Lemon</CheckBox>
 
-        <StackPanel Name="FlavorSelector" Margin="0,40,0,0">
+        <StackPanel Name="FlavorSelector" Visibility="Collapsed" Margin="0,40,0,0">
             <RadioButton Name="CreamSodaSelector" Checked="CreamSodaSelector_Checked">Cream Soda</RadioButton>
             <RadioButton Name="OrangeSodaSelector" Checked="OrangeSodaSelector_Checked">Orange Soda</RadioButton>
             <RadioButton Name="SarsparillaSelector" Checked="SarsparillaSelector_Checked">Sarsparilla</RadioButton>

@@ -51,15 +51,20 @@ namespace PointOfSale
                         KetchupSelector.Visibility = Visibility.Visible;
                         MustardSelector.Visibility = Visibility.Visible;
                         CheeseSelector.Visibility = Visibility.Visible;
-                        goto case "Angry Chicken";
+                        BunSelector.Visibility = Visibility.Visible;
+                        PickleSelector.Visibility = Visibility.Visible;
+                        break;
                     case "Pecos Pulled Pork":
                         goto case "Angry Chicken";
                     case "Angry Chicken":
                         PickleSelector.Visibility = Visibility.Visible;
-                        BunSelector.Visibility = Visibility.Visible;
+                        BreadSelector.Visibility = Visibility.Visible;
                         break;
                     case "Cowpoke Chilli":
                         CheeseSelector.Visibility = Visibility.Visible;
+                        SourCreamSelector.Visibility = Visibility.Visible;
+                        GreenOnionsSelector.Visibility = Visibility.Visible;
+                        TortillaStrips.Visibility = Visibility.Visible;
                         break;
                 }
             }
