@@ -26,6 +26,7 @@ namespace PointOfSale
         /// </summary>
         private IOrderItem item;
 
+
         public OrderItemCostomizer(IOrderItem i)
         {
             InitializeComponent();
@@ -88,6 +89,24 @@ namespace PointOfSale
                     LemonSelector.Visibility = Visibility.Visible;
                 }
             }
+        }
+
+        private void SmallButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (item is Drink) ((Drink)item).Size = CowboyCafe.Data.Size.Small;
+            else if (item is Side) ((Side)item).Size = CowboyCafe.Data.Size.Small;
+        }
+
+        private void MediumButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (item is Drink) ((Drink)item).Size = CowboyCafe.Data.Size.Medium;
+            else if (item is Side) ((Side)item).Size = CowboyCafe.Data.Size.Medium;
+        }
+
+        private void LargeSelector_Checked(object sender, RoutedEventArgs e)
+        {
+            if (item is Drink) ((Drink)item).Size = CowboyCafe.Data.Size.Large;
+            else if (item is Side) ((Side)item).Size = CowboyCafe.Data.Size.Large;
         }
     }
 }
