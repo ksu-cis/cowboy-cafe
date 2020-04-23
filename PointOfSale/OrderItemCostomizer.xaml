@@ -13,7 +13,7 @@
 
         <Label x:Name="OrderItemName"/>
 
-        <StackPanel x:Name="SizeSelector">
+        <StackPanel x:Name="SizeSelector" Visibility="Collapsed" Margin="0,0,0,40">
             <RadioButton Name="SmallButton" Checked="SmallButton_Checked">Small</RadioButton>
             <RadioButton Name="MediumButton" Checked="MediumButton_Checked">Medium</RadioButton>
             <RadioButton Name="LargeSelector" Checked="LargeSelector_Checked">Large</RadioButton>
@@ -36,12 +36,12 @@
         <CheckBox Name="SweetSelector" IsChecked="{Binding Path=Sweet}">Sweet</CheckBox>
         <CheckBox Name="LemonSelector" IsChecked="{Binding Path=Lemon}">Lemon</CheckBox>
 
-        <StackPanel Name="FlavorSelector" Visibility="Collapsed" Margin="0,40,0,0">
-            <RadioButton IsChecked="True">Cream Soda</RadioButton>
-            <RadioButton>Orange Soda</RadioButton>
-            <RadioButton>Sarsparilla</RadioButton>
-            <RadioButton>Birch Beer</RadioButton>
-            <RadioButton>Root Beer</RadioButton>
+        <StackPanel Name="FlavorSelector" Margin="0,40,0,0">
+            <RadioButton Name="CreamSodaSelector" Checked="CreamSodaSelector_Checked">Cream Soda</RadioButton>
+            <RadioButton Name="OrangeSodaSelector" Checked="OrangeSodaSelector_Checked">Orange Soda</RadioButton>
+            <RadioButton Name="SarsparillaSelector" Checked="SarsparillaSelector_Checked">Sarsparilla</RadioButton>
+            <RadioButton Name="BirchBeerSelector" Checked="BirchBeerSelector_Checked">Birch Beer</RadioButton>
+            <RadioButton Name="RootBeerSelector" Checked="RootBeerSelector_Checked">Root Beer</RadioButton>
         </StackPanel>
 
     </StackPanel>

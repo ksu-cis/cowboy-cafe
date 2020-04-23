@@ -108,5 +108,30 @@ namespace PointOfSale
             if (item is Drink) ((Drink)item).Size = CowboyCafe.Data.Size.Large;
             else if (item is Side) ((Side)item).Size = CowboyCafe.Data.Size.Large;
         }
+
+        private void CreamSodaSelector_Checked(object sender, RoutedEventArgs e)
+        {
+            if (item is JerkedSoda) ((JerkedSoda)item).Flavor = SodaFlavor.CreamSoda;
+        }
+
+        private void OrangeSodaSelector_Checked(object sender, RoutedEventArgs e)
+        {
+            if (item is JerkedSoda) ((JerkedSoda)item).Flavor = SodaFlavor.OrangeSoda;
+        }
+
+        private void SarsparillaSelector_Checked(object sender, RoutedEventArgs e)
+        {
+            if (item is JerkedSoda) ((JerkedSoda)item).Flavor = SodaFlavor.Sarsparilla;
+        }
+
+        private void BirchBeerSelector_Checked(object sender, RoutedEventArgs e)
+        {
+            if (item is JerkedSoda) ((JerkedSoda)item).Flavor = SodaFlavor.BirchBeer;
+        }
+
+        private void RootBeerSelector_Checked(object sender, RoutedEventArgs e)
+        {
+            if (item is JerkedSoda) ((JerkedSoda)item).Flavor = SodaFlavor.RootBeer;
+        }
     }
 }
