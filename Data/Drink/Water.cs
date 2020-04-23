@@ -14,7 +14,19 @@ namespace CowboyCafe.Data
         /// <summary>
         /// gets and sets if a lemon gets put in en vatten
         /// </summary>
-        public bool Lemon { get => lemon; set => lemon = value; }
+        public bool Lemon 
+        {
+            get 
+            { 
+                return lemon;
+            }
+            set 
+            { 
+                lemon = value;
+                NotifyOfPropertyChange("Lemon");
+            }
+
+        }
 
         /// <summary>
         /// special prep instructions for the h2o
