@@ -82,7 +82,7 @@ namespace PointOfSale
                         case "Cowboy Coffee":
                             
                             CowboyCoffee C = new CowboyCoffee();
-                            parent.SwapScreen(new CovfefeCostomizer(C));
+                            parent.SwapScreen(new OrderItemCostomizer(C));
                             currentOrder.Add(C);
                             
 
