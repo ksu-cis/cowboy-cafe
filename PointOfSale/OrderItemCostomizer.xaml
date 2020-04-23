@@ -19,6 +19,10 @@
             <RadioButton Name="LargeSelector" Checked="LargeSelector_Checked">Large</RadioButton>
         </StackPanel>
 
+        <CheckBox Name="BreadSelector" IsChecked="{Binding Path=Bread}">Bread</CheckBox>
+        <CheckBox Name="SourCreamSelector" IsChecked="{Binding Path=SourCream}">Sour Cream</CheckBox>
+        <CheckBox Name="GreenOnionsSelector" IsChecked="{Binding Path=GreenOnions}">Green Onions</CheckBox>
+        <CheckBox Name="TortillaStrips" IsChecked="{Binding Path=TortillaStrips}">Tortilla Strips</CheckBox>
         <CheckBox Name="BunSelector" IsChecked="{Binding Path=Bun}">Bun</CheckBox>
         <CheckBox Name="PickleSelector" IsChecked="{Binding Path=Pickle}">Pickle</CheckBox>
         <CheckBox Name="CheeseSelector" IsChecked="{Binding Path=Cheese}">Cheese</CheckBox>
