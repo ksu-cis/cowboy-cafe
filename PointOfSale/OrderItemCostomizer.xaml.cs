@@ -32,7 +32,6 @@ namespace PointOfSale
             InitializeComponent();
             item = i;
             DataContext = item;
-            OrderItemName.Content = item.ToString();
 
             if (item is Entree)
             {

@@ -11,7 +11,7 @@
 
     <StackPanel VerticalAlignment="Top" Background="SaddleBrown" Width="400" HorizontalAlignment="Center">
 
-        <Label x:Name="OrderItemName"/>
+        <Label Content="{Binding}"/>
 
         <StackPanel x:Name="SizeSelector" Visibility="Collapsed" Margin="0,0,0,40">
             <RadioButton Name="SmallButton" Checked="SmallButton_Checked">Small</RadioButton>
