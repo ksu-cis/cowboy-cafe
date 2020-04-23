@@ -15,12 +15,32 @@ namespace CowboyCafe.Data
         /// <summary>
         /// gets and sets if the tea is sweet
         /// </summary>
-        public bool Sweet { get => sweet; set => sweet = value; }
+        public bool Sweet 
+        {
+            get {
+                return sweet; 
+            }
+            set
+            {
+                sweet = value;
+                NotifyOfPropertyChange("Sweet");
+            }
+        }
 
         /// <summary>
         /// gets and sets if a lemon gets put in the tea
         /// </summary>
-        public bool Lemon { get => lemon; set => lemon = value; }
+        public bool Lemon {
+            get
+            {
+                return lemon;
+            }
+            set 
+            { 
+                lemon = value;
+                NotifyOfPropertyChange("Lemon");
+            }
+        }
 
         /// <summary>
         /// special prep instructions for the covfefe
