@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="PointOfSale.MenuItemSelectionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+        <Style TargetType="Grid">
+
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <TextBlock TextAlignment="Center" FontSize="25">Entree</TextBlock>
+            <Button x:Name="AddCowPokeChilli" Click="OnItemAddEntreeClicked">CowPoke Chilli</Button>
+            <Button x:Name="AddRustlersRibs" Click="OnItemAddEntreeClicked">Rustler's Rubs</Button>
+            <Button x:Name="AddPecosPulledPork" Click="OnItemAddEntreeClicked">Pecos Pulled Pork</Button>
+            <Button x:Name="AddTrailBurger" Click="OnItemAddEntreeClicked">Trail Burger</Button>
+            <Button x:Name="DakotaDoubleBurger" Click="OnItemAddEntreeClicked">Dakota Double Burger</Button>
+            <Button x:Name="AddTexasTripleBurger" Click="OnItemAddEntreeClicked">Texas Triple Burger</Button>
+            <Button x:Name="AddAngryChicken" Click="OnItemAddEntreeClicked">Angry Chicken</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <TextBlock TextAlignment="Center" FontSize="25">Side</TextBlock>
+            <Button x:Name="AddChilliCheeseFries" Click="OnItemAddSideClick">Chilli Cheese Fries</Button>
+            <Button x:Name="AddCornDodgers" Click="OnItemAddSideClick">Corn Dodgers</Button>
+            <Button x:Name="AddPanDeCampo" Click="OnItemAddSideClick">Pan De Campo</Button>
+            <Button x:Name="AddBakedBeans" Click="OnItemAddSideClick">Baked Beans</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2">
+            <TextBlock TextAlignment="Center" FontSize="25">Drinks</TextBlock>
+            <Button x:Name="AddJerkedSoda" Click="OnItemAddDrinkClick">Jerked Soda</Button>
+            <Button x:Name="AddTexasTea" Click="OnItemAddDrinkClick">Texas Tea</Button>
+            <Button x:Name="AddCowbyCoffee" Click="OnItemAddDrinkClick">Cowboy Coffee</Button>
+            <Button x:Name="AddWater" Click="OnItemAddDrinkClick">Water</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
-/*
+
 namespace CowboyCafe.DataTests
 {
     public class WaterTest
@@ -107,4 +107,3 @@ namespace CowboyCafe.DataTests
         }
     }
 }
-*/

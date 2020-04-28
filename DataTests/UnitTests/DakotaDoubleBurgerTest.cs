@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
-/*
+
 namespace CowboyCafe.DataTests
 {
     public class DakotaDoubleBurgerTest
@@ -46,7 +46,7 @@ namespace CowboyCafe.DataTests
             burger.Ketchup = false;
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
-                Assert.Equal("hold ketchup", instruction);
+                Assert.Equal("hold Ketchup", instruction);
             });
         }
 
@@ -57,7 +57,7 @@ namespace CowboyCafe.DataTests
             burger.Mustard = false;
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
-                Assert.Equal("hold mustard", instruction);
+                Assert.Equal("hold Mustard", instruction);
             });
         }
 
@@ -68,7 +68,7 @@ namespace CowboyCafe.DataTests
             burger.Pickle = false;
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
-                Assert.Equal("hold pickle", instruction);
+                Assert.Equal("hold Pickle", instruction);
             });
         }
 
@@ -79,7 +79,7 @@ namespace CowboyCafe.DataTests
             burger.Cheese = false;
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
-                Assert.Equal("hold cheese", instruction);
+                Assert.Equal("hold Cheese", instruction);
             });
         }
 
@@ -90,7 +90,7 @@ namespace CowboyCafe.DataTests
             burger.Mayo = false;
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
-                Assert.Equal("hold mayo", instruction);
+                Assert.Equal("hold Mayo", instruction);
             });
         }
 
@@ -101,7 +101,7 @@ namespace CowboyCafe.DataTests
             burger.Lettuce = false;
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
-                Assert.Equal("hold lettuce", instruction);
+                Assert.Equal("hold Lettuce", instruction);
             });
         }
 
@@ -112,7 +112,7 @@ namespace CowboyCafe.DataTests
             burger.Tomato = false;
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
-                Assert.Equal("hold tomato", instruction);
+                Assert.Equal("hold Tomato", instruction);
             });
         }
 
@@ -122,8 +122,8 @@ namespace CowboyCafe.DataTests
             var burger = new DakotaDoubleBurger();
             burger.Ketchup = false;
             burger.Mustard = false;
-            Assert.Contains("hold ketchup", burger.SpecialInstructions);
-            Assert.Contains("hold mustard", burger.SpecialInstructions);
+            Assert.Contains("hold Ketchup", burger.SpecialInstructions);
+            Assert.Contains("hold Mustard", burger.SpecialInstructions);
         }
 
         [Fact]
@@ -134,9 +134,8 @@ namespace CowboyCafe.DataTests
             burger.Cheese = false;
             burger.Pickle = false;
             Assert.Contains("hold bun", burger.SpecialInstructions);
-            Assert.Contains("hold cheese", burger.SpecialInstructions);
-            Assert.Contains("hold pickle", burger.SpecialInstructions);
+            Assert.Contains("hold Cheese", burger.SpecialInstructions);
+            Assert.Contains("hold Pickle", burger.SpecialInstructions);
         }
     }
 }
-*/

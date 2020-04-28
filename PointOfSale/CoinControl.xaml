@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="PointOfSale.CoinControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             Height="120" Width="120"
+             d:DesignHeight="120" d:DesignWidth="120">
+    <Border Margin="5" BorderBrush="DarkGray" BorderThickness="1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="1" BorderThickness="1" BorderBrush="Goldenrod" CornerRadius="50" Background="Gold" Margin="-8 0">
+                <TextBlock Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CoinControl}}, Path=Denomination}" Foreground="Goldenrod" TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+            </Border>
+            <Button Grid.Row="1" Grid.Column="0" Click="OnRemoveClicked">-</Button>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CoinControl}}, Path=Quantity}" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Background="White"></TextBlock>
+            <Button Grid.Row="1" Grid.Column="3" Click="OnAddClicked">+</Button>
+        </Grid>
+    </Border>
+</UserControl>
