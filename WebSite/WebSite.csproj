@@ -13,6 +13,12 @@
     <ProjectReference Include="..\PointOfSale\PointOfSale.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="CashRegister">
+      <HintPath>..\PointOfSale\CashRegister.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 
 
 </Project>

@@ -4,12 +4,6 @@
     ViewData["Title"] = "Home page";
 }
 
-@{ 
-    IEnumerable<CowboyCafe.Data.IOrderItem> e = CowboyCafe.Data.Menu.Entree();
-    IEnumerable<CowboyCafe.Data.IOrderItem> s = CowboyCafe.Data.Menu.Side();
-    IEnumerable<CowboyCafe.Data.IOrderItem> d = CowboyCafe.Data.Menu.Drink();
-
-}
 <div class="text-center">
     <h1 class="display-4">Welcome to the Cowboy-Cafe</h1>
     <p>We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. 
@@ -19,37 +13,59 @@
 
 </div>
 
+<form id="menu-database">
+    <div id="search">
+        <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+        <input type="submit" value="Search">
+    </div>
 
-<h1>Menu Items:</h1>
-<div class="Menu-Item">
-    <h2>Entrees:</h2>
-    <div>
-        @foreach (CowboyCafe.Data.IOrderItem item in e)
+    
+
+    <div id="filters">
+
+        <h4>Category: </h4>
+        @foreach (String item in CowboyCafe.Data.Menu.ItemTypes)
         {
-            <p>@item.ToString() Price: $@item.Price  Calories: @item.Calories</p>
+            <label>
+                <input type="checkbox"  value="@item" checked="@WebSite.Pages.IndexModel.ItemTypes.Contains(item)" />
+                @item
+            </label>
+
         }
+
+        <h4>Price</h4>
+        <div>
+            Between
+            <input name="Price1" type="number" min="0" max="20" step="0.1" placeholder="Min" />
+            and
+            <input name="Price2" type="number" min="0" max="20" step="0.1" placeholder="Max" />
+        </div>
+
+        <h4>Calories</h4>
+        <div>
+            Between
+            <input name="Calories1" type="number" min="0" placeholder="Min" />
+            and
+            <input name="Calories2" type="number" min="0" placeholder="Max" />
+        </div>
     </div>
-    <h2>Sides:</h2>
-    <div>
-        @foreach (CowboyCafe.Data.IOrderItem item in s)
-        {
-            <p>@item.ToString() Price: $@item.Price  Calories: @item.Calories</p>
-            item.Size = CowboyCafe.Data.Size.Medium;
-            <p>@item.ToString() Price: $@item.Price  Calories: @item.Calories</p>
-            item.Size = CowboyCafe.Data.Size.Large;
-            <p>@item.ToString() Price: $@item.Price  Calories: @item.Calories</p>
-        }
+
+    <div id="results">
+        <h1>Menu</h1>
+        <ul class="item-list">
+            @foreach (CowboyCafe.Data.IOrderItem item in @Model.All)
+            {
+                <li>
+                    <div class="details">
+                        <h3 class="item-name">@item.ToString()</h3>
+                        <div class="item-price">Price: $@item.Price</div>
+                        <div class="item-calories">Calories: @item.Calories</div>
+                    </div>
+                </li>
+            }
+        </ul>
     </div>
-    <h2>Drinks:</h2>
-    <div>
-        @foreach (CowboyCafe.Data.IOrderItem item in d)
-        {
-            <p>@item.ToString() Price: $@item.Price  Calories: @item.Calories</p>
-            item.Size = CowboyCafe.Data.Size.Medium;
-            <p>@item.ToString() Price: $@item.Price  Calories: @item.Calories</p>
-            item.Size = CowboyCafe.Data.Size.Large;
-            <p>@item.ToString() Price: $@item.Price  Calories: @item.Calories</p>
-        }
-    </div>
-</div>
+
+</form>
+
 
