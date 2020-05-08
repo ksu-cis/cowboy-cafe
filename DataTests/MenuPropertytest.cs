@@ -28,7 +28,7 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void SidesShouldHaveOnlyFourItems()
         {
-            Assert.Equal(4, Menu.Sides.Count());
+            Assert.Equal(12, Menu.Sides.Count());
         }
 
         [Fact]
@@ -256,7 +256,7 @@ namespace CowboyCafe.DataTests
         public void FilterByCategoryReturnsItemsInCategory(string type)
         {
             var all = Menu.All;
-            var t = Menu.ItemTypes;
+            var t = Menu.TypeOfItems;
 
             var x = Menu.FilterByCategory(all, t);
 

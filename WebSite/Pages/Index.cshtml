@@ -2,70 +2,155 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    int inte = 0;
 }
+    <div class="text-center">
+        <h1 class="display-4">Welcome to Cowboy Cafe</h1>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to the Cowboy-Cafe</h1>
-    <p>We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. 
-    Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas. 
-    Dip your Pan de Campo into a bowl of beans. 
-    Or conquer the the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.</p>
-
-</div>
-
-<form id="menu-database">
-    <div id="search">
-        <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
-        <input type="submit" value="Search">
+        <p>
+            We at Cowboy Cafe are proud to bring you authentic trail meals
+            from the American West. Shake off the dust on your boots and sake
+            your thirst with one of our old-fashioned hand-jerked sodas. Dip
+            your Pan de Campo into a bowl of beans. Or conquer the the mighty
+            Texas Triple Burger! You’ve had a hard ride - so take it easy with
+            us.
+        </p>
     </div>
 
-    
+    <h2>Search for item:</h2>
+    <div id="SearchBar">
 
-    <div id="filters">
+        <form class="SearchMenu" id="SearchFilter" action="" method="get">
 
-        <h4>Category: </h4>
-        @foreach (String item in CowboyCafe.Data.Menu.ItemTypes)
-        {
-            <label>
-                <input type="checkbox"  value="@item" checked="@WebSite.Pages.IndexModel.ItemTypes.Contains(item)" />
-                @item
-            </label>
+            <div id="search">
+                <input type="text" name="SearchTerms" value="@Model.SearchTerms" /><br />
+                <input type="submit" value="Search" />
+            </div>
 
-        }
 
-        <h4>Price</h4>
-        <div>
-            Between
-            <input name="Price1" type="number" min="0" max="20" step="0.1" placeholder="Min" />
-            and
-            <input name="Price2" type="number" min="0" max="20" step="0.1" placeholder="Max" />
-        </div>
+            <div id="filters">
+                <h3>Types Of Items (Nothing checked, shows all items)</h3>
+                @foreach (string s in CowboyCafe.Data.Menu.TypeOfItems)
+                {
+                    <label>
+                        <input type="checkbox" name="typeOfItems" value="@s" checked="@Model.typeOfItems.Contains(s)" />
+                        @s
+                    </label>
+                }
 
-        <h4>Calories</h4>
-        <div>
-            Between
-            <input name="Calories1" type="number" min="0" placeholder="Min" />
-            and
-            <input name="Calories2" type="number" min="0" placeholder="Max" />
-        </div>
+                <h3>Calories</h3>
+                <div>
+                    Between Calorie Minimum
+                    <input name="CalorieMin" type="number" min="0" max="1000" step="1" placeholder="0" value="@Model.CalorieMin" />
+                    and Calorie Maximum
+                    <input name="CalorieMax" type="number" min="0" max="1000" step="1" placeholder="1000" value="@Model.CalorieMax" />
+                </div>
+
+
+                <h3>Price</h3>
+                <div>
+                    Between $
+                    <input name="PriceMin" type="number" min="0.00" max="100" step=".01" placeholder="0" value="@Model.PriceMin" />
+                    and $
+                    <input name="PriceMax" type="number" min="0.00" max="100" step=".01" placeholder="100" value="@Model.PriceMax" />
+                </div>
+            </div>
+
+
+            <div id="results">
+
+                <h2>Entrees</h2>
+                <ul class="entree-items">
+                    @{
+                        int j = 0;
+                        foreach (CowboyCafe.Data.IOrderItem i in Model.FullMenu)
+                        {
+                            if (i is CowboyCafe.Data.Entree e)
+                            {
+                                inte++;
+                                <li>
+                                    <div class="entree-details">
+                                        <h3>@i.ToString()</h3>
+                                        <b>Calories: </b><i>@i.Calories</i><br />
+                                        <b>Price: </b><i>@i.Price</i><br />
+
+                                    </div>
+                                </li>
+                            }
+                        }
+
+                        if (j == 0)
+                        {
+                            <li>No entrees fit the search criteria</li>
+                        }
+                    }
+                </ul>
+
+
+                <h2>Sides</h2>
+                <ul class="side-items">
+                    @{
+                        inte = 0;
+                        foreach (CowboyCafe.Data.IOrderItem i in Model.FullMenu)
+                        {
+                            if (i is CowboyCafe.Data.Side)
+                            {
+                                inte++;
+                                <li>
+                                    <div class="side-details">
+                                        <h3>@i.ToString()</h3>
+                                        <b>Calories: </b><i>@i.Calories</i><br />
+                                        <b>Price: </b><i>@i.Price</i><br />
+                                    </div>
+                                </li>
+                            }
+                        }
+
+                        if (inte == 0)
+                        {
+                            <li>No sides fit the search criteria</li>
+                        }
+                    }
+                </ul>
+
+                <h2>Drinks</h2>
+                <ul class="drink-items">
+                    @{
+                        inte = 0;
+                        foreach (CowboyCafe.Data.IOrderItem i in Model.FullMenu)
+                        {
+                            if (i is CowboyCafe.Data.Drink)
+                            {
+                                inte++;
+                                <li>
+                                    <div class="drink-details">
+                                        <h3>@i.ToString()</h3>
+                                        <b>Calories: </b><i>@i.Calories</i><br />
+                                        <b>Price: </b><i>@i.Price</i><br />
+                                        @if(@i is CowboyCafe.Data.JerkedSoda)
+                                        {
+                                            @foreach(string s in CowboyCafe.Data.Menu.flavors)
+                                            {
+                                                <div class="SF">
+                                                    <b>Jerked Soda Flavors: </b>
+                                                    <b>@s</b>
+                                                </div>
+                                                
+                                            }
+                                        }
+
+                                    </div>
+                                </li>
+                            }
+                        }
+
+                        if (inte == 0)
+                        {
+                            <li>No drinks fit the search criteria</li>
+                        }
+                    }
+                </ul>
+            </div>
+        </form>
     </div>
-
-    <div id="results">
-        <h1>Menu</h1>
-        <ul class="item-list">
-            @foreach (CowboyCafe.Data.IOrderItem item in @Model.All)
-            {
-                <li>
-                    <div class="details">
-                        <h3 class="item-name">@item.ToString()</h3>
-                        <div class="item-price">Price: $@item.Price</div>
-                        <div class="item-calories">Calories: @item.Calories</div>
-                    </div>
-                </li>
-            }
-        </ul>
-    </div>
-
-</form>
-
-
+<div class="clearfix"></div>

@@ -7,70 +7,144 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using CowboyCafe.Data;
 using CowboyCafe.Extensions;
+using System.Security.Policy;
 
 namespace WebSite.Pages
 {
     public class IndexModel : PageModel
     {
-        /// <summary>
-        /// The movies to display on the index page 
-        /// </summary>
-        public IEnumerable<IOrderItem> All { get; protected set; }
+        private readonly ILogger<IndexModel> _logger;
 
         /// <summary>
-        /// The current search terms 
+        /// Holds the current menu that is shown in the html
+        /// </summary>
+        public IEnumerable<IOrderItem> FullMenu { get; protected set; }
+
+
+        public string[] typeOfItems { get; set; }
+
+        /// <summary>
+        /// Search terms if the user wanted to search for something
         /// </summary>
         [BindProperty]
         public string SearchTerms { get; set; } = "";
 
         /// <summary>
-        /// Different types of items served
+        /// The minimum price to filter the items by
         /// </summary>
         [BindProperty]
-        public static string[] ItemTypes { get; set; } = new string[3];
+        public double? PriceMin { get; set; } = 0;
 
         /// <summary>
-        /// The minimum price
+        /// The maximum price to filter the items by
         /// </summary>
-        [BindProperty(SupportsGet = true)]
-        public double? Price1 { get; set; }
+        [BindProperty]
+        public double? PriceMax { get; set; } = 100;
 
         /// <summary>
-        /// The minimum price
+        /// The minimum calorie to filter the items by
         /// </summary>
-        [BindProperty(SupportsGet = true)]
-        public double? Price2 { get; set; }
+        [BindProperty]
+        public uint? CalorieMin { get; set; } = 0;
 
         /// <summary>
-        /// The maximum calories
+        /// The maximum calorie to filter the items by
         /// </summary>
-        [BindProperty(SupportsGet =true)]
-        public uint? Calories1 { get; set; }
+        [BindProperty]
+        public uint? CalorieMax { get; set; } = 1000;
 
-        /// <summary>
-        /// The maximum calories
-        /// </summary>
-        [BindProperty(SupportsGet = true)]
-        public uint? Calories2 { get; set; }
-
-        public void OnGet(double? Price1, double? Price2, uint? Calories1, uint? Calories2)
+        public IndexModel(ILogger<IndexModel> logger)
         {
-            var p1 = double.Parse(Request.Query["Price1"]);
-            if (double.IsNaN(p1)) Price1 = null;
-            else Price1 = p1;
+            _logger = logger;
+        }
 
-            var p2 = double.Parse(Request.Query["Price2"]);
-            if (double.IsNaN(p2)) Price2 = null;
-            else Price2 = p2;
+        /// <summary>
+        /// Hits this method when get request start flowing
+        /// </summary>
+        public void OnGet(uint? CalorieMin, uint? CalorieMax, double? PriceMin, double? PriceMax, string[]? typeOfItems)
+        {
+            this.CalorieMax = CalorieMax;
+            this.CalorieMin = CalorieMin;
+            this.PriceMin = PriceMin;
+            this.PriceMax = PriceMax;
 
-            this.Calories1 = Calories1;
-            this.Calories2 = Calories2;
+            SearchTerms = Request.Query["SearchTerms"];
+            this.typeOfItems = Request.Query["typeOfItems"];
 
-            All = Menu.All;
-            All = CowboyCafe.Data.Menu.Search(SearchTerms);
-            All = CowboyCafe.Data.Menu.FilterByCategory(All, ItemTypes);
-            All = CowboyCafe.Data.Menu.FilterByPrice(All, Price1, Price2);
-            All = CowboyCafe.Data.Menu.FilterByCalories(All, Calories1, Calories2);
+            if (this.typeOfItems.Length == 0)
+            {
+                typeOfItems = new string[]
+                {
+                    "Entrees",
+                    "Sides",
+                    "Drinks"
+                };
+            }
+
+            FullMenu = Menu.All;
+            // Search menu for the SearchTerms
+            if (SearchTerms != null)
+            {
+                FullMenu = from All in FullMenu
+                         where All.ToString() != null && All.ToString().Contains(SearchTerms, StringComparison.InvariantCultureIgnoreCase)
+                         select All;
+            }
+
+            // Filter by Category 
+            if (typeOfItems != null && typeOfItems.Length != 0)
+            {
+                FullMenu = from All in FullMenu
+                           where typeOfItems != null && typeOfItems.Contains(Menu.TypeOfItems.ToString())
+                           select All;
+            }
+
+            //Filter by category
+            if(CalorieMin == null && CalorieMax == null)
+            {
+                FullMenu = FullMenu;
+            }
+            else if(CalorieMin == null)
+            {
+                FullMenu = from All in FullMenu
+                           where All.Price <= CalorieMax
+                           select All;
+            }
+            else if (CalorieMax == null)
+            {
+                FullMenu = from All in FullMenu
+                           where All.Price >= CalorieMin
+                           select All;
+            }
+            else
+            {
+                FullMenu = from All in FullMenu
+                           where All.Price <= CalorieMax && All.Price >= CalorieMin
+                           select All;
+            }
+
+            //Filter By Price
+            if (PriceMax == null && PriceMin == null)
+            {
+                FullMenu = FullMenu;
+            }
+            else if (PriceMin == null)
+            {
+                FullMenu = from All in FullMenu
+                           where All.Price <= PriceMax
+                           select All;
+            }
+            else if (PriceMax == null)
+            {
+                FullMenu = from All in FullMenu
+                           where All.Price >= PriceMin
+                           select All;
+            }
+            else
+            {
+                FullMenu = from All in FullMenu
+                           where All.Price <= PriceMax && All.Price >= PriceMin
+                           select All;
+            }
         }
 
     }
